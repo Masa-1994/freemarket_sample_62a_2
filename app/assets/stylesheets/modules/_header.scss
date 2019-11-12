@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+.k-header {
+  background-color: #FFF;
+  width: 100%;
+  height: 100px;
+  .k-top {
+    background-color: #FFF;
+    margin: 0 auto;
+    width: 1020px;
+    height: 100px;
+    &__logo-and-search {
+     
+      width: 1020px;
+      height: 40px;
+      position:relative;
+      top: 8px;
+      font-family: inherit;
+      display: flex;
+      border: none;
+        &__logo {
+          background-color: #FFF;
+          height: 40px;
+          width: 134px;
+          margin-right: 45px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &__img {
+            background-color: #FFF;
+            height: 36px;
+            width: 134px;
+          }
+        }
+       }
+
+    &__list {
+      background-color: #FFF;
+      width: 1020px;
+      height: 44px;
+      display: flex;
+      position:relative;
+      align-items: center;
+      top: 16px;
+      &__menu {
+        font-size: 14px;
+        font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+        float: left;
+        font-weight: bold;
+        display: flex;
+        &__link {
+          padding: 0px 10px;
+          i {
+            color: red;
+          }
+        }
+      }
+      &__list {
+        font-size: 14px;
+        font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+        border-radius: 4px;
+        display: flex;
+        float: right;
+        margin:0 0 0 auto;
+        &__signup {
+          background-color: rgb(234, 53, 45);
+          color: rgb(255, 255, 255);
+          display: block;
+          font-size: 14px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(234, 53, 45);
+          border-image: initial;
+          border-radius: 4px;
+          padding: 8px 10px;
+        }
+        &__login {
+          background-color: rgb(255, 255, 255);
+          color: rgb(0, 149, 238);
+          display: block;
+          font-size: 14px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(0, 149, 238);
+          border-image: initial;
+          border-radius: 4px;
+          padding: 8px 10px;
+          transition: all 0.3s ease-out 0s;
+        }
+
+      }
+    }
+  }
+
+}
+
+.k-form {
+  background-color: orange;
+  form {
+    width: 841px;
+    
+    display: flex;
+    align-items: center;
+
+    .k-input{
+      float: left;
+      width: 100%;
+      height: 38px;
+      background-color: rgb(245, 245, 245);
+      height: 40px;
+      font-size: 16px;
+      line-height: 1.4em;
+      border-width: 1px;
+      border-style: solid
+      border-color rgb(204, 204, 204);
+      padding: 0px 50px 0px 10px;
+      font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+      position: relative;
+    }
+    .k-input:focus{
+      border: 1px solid #008cff;
+      outline: 0;
+    }
+
+    .btn {
+      top:0;
+      right: 0;
+      width: 40px;
+      margin-top: 10px;
+      position: absolute;
+      text-align: center;
+      font: 14px system-ui;
+      color: rgb(34, 34, 34);
+    }
+  }
+}
