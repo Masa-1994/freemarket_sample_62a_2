@@ -1,24 +1,154 @@
-# README
+# Mercari DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birthday_year|date|null: false|
+|phone_number|integer|null: false,limit: 11, unique: true|
+|picture|string||
+|profile|text||
+### Association
+- has_one  :address
+- has_one  :credit_card
+- has_many :products
+- has_many :comments, dependent: :destroy
+- has_many :nices, dependent: :destroy
+- has_many :evaluations, dependent: :destroy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|postal_code|integer|null: false|
+|prefectures|string|null: false|
+|municipalities|string|null: false|
+|house_number|string|null: false|
+|building_name|string||
+|phone_number|integer|limit: 11,unique: true|
+### Association
+- belongs_to :user
 
-Things you may want to cover:
+## credit_cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|card_number|integer|null: false|
+|expiration_date|date|null: false|
+|security_code|integer|null: false|
+### Association
+- belongs_to :user
 
-* Ruby version
+## productsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, add_index|
+|seller_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|null: false, foreign_key: true|
+|description|text|null: false|
+|categories_id|integer|null: false|
+|size_id|integer|null: false, foreign_key: true|
+|brand_id|integer|null: false, foreign_key: true|
+|condition|string|null: false|
+|shipping_charge|string|null: false|
+|shipping_method|string|null: false|
+|shipping_area|string|null: false|
+|shipping_date|string|null: false|
+|price|integer|null: false|
+### Association
+- belongs_to :user
+- belongs_to :category
+- belongs_to :size
+- belongs_to :brand
+- has_many :comments, dependent: :destroy
+- has_many :nices, dependent: :destroy
+- has_many :evaluations, dependent: :destroy
+- has_many :images, dependent: :destroy
 
-* System dependencies
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :products
+- has_many :sizes, through: :categories_sizes
+- has_many :categories_sizes
+- has_many :brands, through: :categories_brands
+- has_many :categories_brands
 
-* Configuration
+## categories_sizesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category_id|integer|null: false, foreign_key: true|
+|size_id|integer|null: false, foreign_key: true|
+### Association
+- belong_to :category
+- belong_to :size
 
-* Database creation
+## sizesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :products
+- has_many :categories, through: :categories_sizes
+- has_many :categories_sizes
 
-* Database initialization
+## categories_brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category_id|integer|null: false, foreign_key: true|
+|brand_id|integer|null: false, foreign_key: true|
+### Association
+- belong_to :category
+- belong_to :brand
 
-* How to run the test suite
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :products
+- has_many :categories, through: :categories_brands
+- has_many :categories_brands
 
-* Services (job queues, cache servers, search engines, etc.)
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
+|comment|text|null: false|
+### Association
+- belong_to :user
+- belong_to :product
 
-* Deployment instructions
+## nicesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
+### Association
+- belong_to :user
+- belong_to :product
 
-* ...
+## evaluationsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
+### Association
+- belong_to :user
+- belong_to :product
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|image|string|null: false|
+### Association
+- belong_to :product 
