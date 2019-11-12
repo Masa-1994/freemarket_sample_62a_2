@@ -151,4 +151,4 @@
 |user_id|integer|null: false, foreign_key: true|
 |image|string|null: false|
 ### Association
-- belong_to :product
+- belong_to :product 
