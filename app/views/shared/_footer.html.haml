@@ -1,8 +1,87 @@
+.o-exhibit
+  .o-exhibit__image
+    .o-exhibit__text
+      出品
+    .o-exhibit__icon
+      = fa_icon 'camera', class: 'o-cameraicon', type:'submit'
+.o-banner
+  = image_tag '/images/footer.jpg', class: "o-footer-photo"
+.o-footer
+  .o-footer__menu
+    .o-footer__main
+      %h2.o-footer__main__title
+        メルカリについて
+      %ul.o-footer__main__lists
+        %li.o-footer__main__list
+          会社概要（運営会社）
+        %li.o-footer__main__list
+          採用情報
+        %li.o-footer__main__list
+          プレスリリース
+        %li.o-footer__main__list
+          公式ブログ
+        %li.o-footer__main__list
+          メルカリロゴ利用ガイドライン
+        %li.o-footer__main__icon
+          = fa_icon 'twitter', class: 'footericon'
+          = fa_icon 'facebook-square', class: 'footericon'
 
--# .h-exhibit
--# .h-banner
--#   .h-install
--#     .h-install__left
--#     .h-install__right
--# -#       = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png", alt: "背景画像", class: "image", height: "260", width: "300"
--# .h-footer
+    .o-footer__main
+      %h2.o-footer__main__title
+        ヘルプ&ガイド
+      %ul.o-footer__main__lists
+        %li.o-footer__main__list
+          メルカリガイド
+        %li.o-footer__main__list
+          らくらくメルカリ便
+        %li.o-footer__main__list
+          ゆうゆうメルカリ便
+        %li.o-footer__main__list
+          大型メルカリ便
+        %li.o-footer__main__list
+          車体取引ガイド
+        %li.o-footer__main__list
+          メルカリあんしん・あんぜん宣言！
+        %li.o-footer__main__list
+          偽ブランド品撲滅への取り組み
+        %li.o-footer__main__list
+          メルカリボックス
+
+    .o-footer__main
+      %h2.o-footer__main__title
+        プライバシーと利用規約
+      %ul.o-footer__main__policys
+        %li.o-footer__main__list
+          プライバシーポリシー
+        %li.o-footer__main__list
+          メルカリ利用規約
+        %li.o-footer__main__list
+          あんしんスマホサポート制度に関する利用特約
+        %li.o-footer__main__list
+          コンプライアンスポリシー
+          
+      %ul.o-footer__main__lists
+        %li.o-footer__main__list
+          個人データの安全管理に係る基本方針
+        %li.o-footer__main__list
+          特定商取引に関する表記
+        %li.o-footer__main__list
+          資産決済法に基づく表示
+        %li.o-footer__main__list
+          法令順守と犯罪防止のために
+    
+    .o-footer__main
+      %h2.o-footer__main__title
+        国
+      %ul.o-footer__main__lists
+        %li.o-footer__main__list
+          日本
+        %li.o-footer__main__list
+          United States
+        
+  .o-footer__bottom
+    .o-footer__bottom__image
+      = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg',class: 'footerlog'
+    .o-footer__bottom__text
+      @ 2019 Mercari
+
