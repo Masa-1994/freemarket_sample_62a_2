@@ -1,6 +1,8 @@
-@import "config/colors";
 @import "reset";
-@import "modules/header";
-@import "modules/footer";
-@import "modules/product";
 @import 'font-awesome';
+@import "config/colors";
+@import "modules/top-header";
+@import "modules/top-product";
+@import "modules/top-footer";
+@import "./modules/user-new";
+@import "./modules/user-footer";
