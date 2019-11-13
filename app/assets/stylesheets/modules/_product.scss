@@ -3,13 +3,13 @@
 }
 .o-main{
   display: block; 
-  height: 290px;
 }
 .o-main-photo{
   margin: 0 auto;
   height: 400px;
   display: block;
   width: 100%;
+  object-fit: cover;
 }
 .o-category{
   height: 171px;
@@ -86,6 +86,7 @@
   &__image{
     width: 100%;
     position: relative;
+    vertical-align: bottom;
   }
   &___box{
     padding: 30px;

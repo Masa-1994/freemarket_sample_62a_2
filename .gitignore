@@ -15,5 +15,6 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-public/image/*
+
+public/images/*
 config/secrets.yml

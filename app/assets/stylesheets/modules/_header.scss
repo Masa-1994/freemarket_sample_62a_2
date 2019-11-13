@@ -12,7 +12,6 @@
     width: 1020px;
     height: 100px;
     &__logo-and-search {
-     
       width: 1020px;
       height: 40px;
       position:relative;
@@ -34,7 +33,7 @@
             width: 134px;
           }
         }
-       }
+      }
 
     &__list {
       background-color: #FFF;
@@ -43,7 +42,7 @@
       display: flex;
       position:relative;
       align-items: center;
-      top: 16px;
+      margin-top: 10px;
       &__menu {
         font-size: 14px;
         font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
@@ -75,6 +74,7 @@
           border-image: initial;
           border-radius: 4px;
           padding: 8px 10px;
+      
         }
         &__login {
           background-color: rgb(255, 255, 255);
