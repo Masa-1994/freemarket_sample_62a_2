@@ -1,0 +1,37 @@
+.k-back {
+  background-color: #f5f5f5;
+  color: #333;
+  .k-footer {
+    background-color: #f5f5f5;
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0px;
+    &__contents {
+      padding: 40px, 0px;
+      font-size: 12px;
+      nav {
+        display: block;
+        float: left;
+        margin-bottom: 40px;
+        li {
+          list-style: none;
+          margin: 12px;
+          display: inline;
+        }
+      }
+      &__logo {
+        width: 80px;
+        height: 65px;
+        text-align: center;
+        display: block;
+        margin: 40px auto 0;
+      }
+      &__c {
+        text-align: center;
+        margin: 8px auto 0;
+      }
+    }
+  }
+}
