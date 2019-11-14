@@ -1,30 +1,29 @@
 body{
   background-color: #f5f5f5;
-    nav {
+  .m-mypage-nav{
         position: relative;
         border-top: 1px solid #eee;
         background: #f5f5f5;
         -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
         box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
         background: #fff;
-        ul.subNavUl{
+        .m-mypage-ul{
           overflow: visible;
           width: 1020px;
           margin: 0 auto;
           padding: 16px 0;
           white-space: normal;
-          li{
+          .m-mypage-list{
             font-size: 14px;
             display: inline-block;
-            span.active{
+            .m-mypage-active{
               font-weight: bold
             }
           }
         }
       }
-    .m-wrapper{
-      
-      .m-container{
+    .m-mypage-wrapper{
+      .m-mypage-container{
         margin: 0 auto;
         height: 1320px;
         width: 1020px;
@@ -34,12 +33,11 @@ body{
           width: 280px;
           margin-right: 40px;
 
-          .m-side-bar{
+          .m-mypage-side-bar{
             &-list{
-              li{
+              .m-mypage-list2{
                 border-top: 1px solid #eee;
-                &:hover{opacity:0.5;.fa.fa-angle-right.icon{color:black; }}
-                a.m-list-item{
+                .m-mypage-list-item{
                   box-sizing: border-box;
                   position: relative;
                   display: block;
@@ -48,12 +46,24 @@ body{
                   background-color: #fff;
                   color: #333;
                   font-size: 14px;
-                  i{
+                  .m-mypage.fa.fa-angle-right.icon{
                     position: absolute;
                     top: 10px;
                     right: 16px;
                     color: #ccc;
                     font-size: 25px;
+                  }
+                }
+              }
+              .m-mypage-list2:hover{
+                .m-mypage-list-item{
+                  opacity: 0.7;
+                  background-color: #eee;
+                  .m-mypage.fa.fa-angle-right.icon{
+                    color: #333;
+                    right: 10px;
+                    top: 13px;
+                    font-size: 22px;
                   }
                 }
               }
@@ -75,34 +85,36 @@ body{
             padding: 20px;
             box-sizing: border-box;
             position: relative;
-            a{
+            .m-mypage-a{
               position: absolute;
               width: 700px;
               top: 50px;
               left: 0;
-              figure{
+              .m-mypage-figure{
                 width: 60px;
                 margin: 0 auto;
-                img{
+                .m-mypage-img{
                   height: 60px;
                   border-radius: 30px;
                 }
               }
-              h2{
+              .m-mypage-h2{
                 text-align: center;
                 margin-top: 8px;
                 font-size: 14px;
+                font-weight:bold
               }
-              .m-number{
+              .m-mypage-number{
                 margin-top: 8px;
                 font-size: 14px;
                 text-align: center;
                 &-detail{
                   display: inline-block;
-                  span{
+                  .m-mypage-span{
                     display: inline-block;
                     margin-left: 8px;
                     font-size: 14px;
+                    font-weight:bold
                   }
                 }
                 &-detail:not(:first-child){
@@ -110,30 +122,30 @@ body{
                 }
               }
             }
-            a:hover{
+            .m-mypage-a:hover{
               opacity: 0.7;
-              h2{
+              .m-mypage-h2{
                 text-decoration: underline;
               }
             }
           }
         }
         &-news-todo.clearfix{
-          ul.m-tabs{
+          .m-mypage-tabs{
             height: 72px;
             width:700px;
             display: inline-block;
             box-sizing: border-box;
-            li.m-list{
+            .m-mypage-list3{
               width: 50%;
               background-color: #eee;
               box-sizing: border-box;
               float: left;
               list-style: none;
-              h3{
+              .m-mypage-h3{
                 font-size: 22px;
                 text-align: center;
-                a{
+                .m-mypage-a{
                   font-size: 16px;
                   line-height: 72px;
                   display: block;
@@ -145,17 +157,17 @@ body{
                 }
               }
             }
-            li:hover{
+            .m-mypage-list3:hover{
               opacity: 0.7;
               background-color: #eee;
               border-top: 2px solid #ea352d;
             }
           }
-          .tab-contents{
+          .m-mypage-tab-contents{
             background-color: white;
             width: 700px;
             height: 236px;
-              li.m-item-not-found.bold{
+              .m-mypage-item-not-found.bold{
                 padding: 160px 0 60px;
                 color: rgb(202, 199, 199);
                 text-align: center;
@@ -172,18 +184,19 @@ body{
             background: #fafafa;
             font-size: 16px;
             line-height: 72px;
+            font-weight:bold
           }
           &-tabs{
             height: 72px;
             width:700px;
             display: inline-block;
             box-sizing: border-box;
-            li{
+            .m-mypage-trading-tabs{
               width: 50%;
               background-color: rgb(238, 238, 238);
               float: left;
               display: inline-block;
-              a{
+              .m-mypage-a2{
                 font-size: 16px;
                 line-height: 72px;
                 display: block;
@@ -191,9 +204,10 @@ body{
                 text-align: center;
                 background-color: #eee;
                 height: 74px;
+                font-weight:bold
               }
             }
-            li:hover{
+            .m-mypage-a2:hover{
               opacity: 0.7;
               border-top: 2px solid #ea352d;
             }
@@ -202,7 +216,7 @@ body{
             background-color: white;
             width: 700px;
             height: 236px;
-              li.mypage-item-not-found.bold{
+              .m-mypage-item-not-found.bold{
                 padding: 160px 0 60px;
                 color: rgb(202, 199, 199);
                 text-align: center;
