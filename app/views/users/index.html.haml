@@ -1,7 +1,7 @@
 %body
   .m-wrapper
     = render "shared/header"
-    %nav2
+    %nav#subNav
       %ul.subNavUl
         %li
           %a
@@ -12,7 +12,7 @@
             %span.active マイページ
     .m-container.clearfix
       .m-container__side
-        %nav.m-side-bar
+        %nav2.m-side-bar
           %ul.m-side-bar-list
             %li
               %a.m-list-item
@@ -123,7 +123,7 @@
             .m-number
               .m-number-detail
                 評価
-                %span.bold 
+                %span.bold 20
               .m-number-detail
                 出品数
                 %span.bold 19
