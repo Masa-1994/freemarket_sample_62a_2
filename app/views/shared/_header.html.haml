@@ -12,14 +12,16 @@
     .k-top__list
       .k-top__list__menu
         .k-top__list__menu__link
-          %i.fa.fa-list
-          カテゴリーから探す
+          %i.k-fa
+            =image_tag "/images/menu.svg/",width: '20',heigth: '16',class: 'k-faicon'
+            カテゴリーから探す
         .k-top__list__menu__link
           %i.fa.fa-tag
           ブランドから探す
       .k-top__list__list
         .k-top__list__list__signup 
-          新規会員登録
+          = link_to signup_index_path  ,class: 'signupbtn' do
+            新規会員登録
         &nbsp;&nbsp;
         .k-top__list__list__login 
           ログイン
