@@ -12,8 +12,6 @@
     width: 1020px;
     height: 100px;
     &__logo-and-search {
-      width: 1020px;
-      height: 40px;
       position:relative;
       top: 8px;
       font-family: inherit;
@@ -22,15 +20,13 @@
         &__logo {
           background-color: #FFF;
           height: 40px;
-          width: 134px;
-          margin-right: 45px;
+          margin-right: 40px;
           display: flex;
           justify-content: center;
           align-items: center;
           &__img {
             background-color: #FFF;
-            height: 49px;
-            width: 154px;
+            height: 43px;
             object-fit: cover;
           }
         }
@@ -70,6 +66,15 @@
           }
         }
       }
+.k-top__list__menu__link:hover {
+  cursor: pointer;
+  color: rgb(0, 174, 255);
+}
+.k-top__list__list__login:hover{
+  cursor: pointer;
+  background-color:rgb(0, 143, 238);
+  color: rgb(255, 255, 255);
+} 
 
       &__list {
         font-size: 14px;
@@ -113,8 +118,8 @@
 }
 
 .k-form {
-    form {
-    width: 841px;
+    .k-form {
+    width: 838px;
     display: flex;
     align-items: center;
 
