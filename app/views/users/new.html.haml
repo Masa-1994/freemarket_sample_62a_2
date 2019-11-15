@@ -1,1 +1,37 @@
-こ
+.k-login
+  .k-login-header
+    .k-login-header__img
+      = link_to image_tag( '/images/fmarket_logo_red.svg',  class: 'k-login-header__img' ), '/'
+  .k-login-panel
+    .k-login-panel__no-account
+      アカウントをお持ちでない方はこちら
+      = link_to '/signup' ,class: 'k-a' do
+        .k-login-panel__no-account__new
+          新規会員登録
+    .k-login-panel__form-inner
+      .k-login-panel__form-inner__facebook
+        = link_to '' ,class: 'k-a' do
+          %i.k-f.fa.fa-facebook-square
+          Facebookで登録する
+      .k-login-panel__form-inner__google
+        = link_to '' ,class: 'k-ag' do
+          = image_tag 'google.png', height: '', width: '', class: 'k-login-panel__form-inner__google__i'
+          Googleで登録する
+    %form.k-login-form
+      .k-login-form__inner
+        .k-login-form__inner__group
+          %input.k-login-form__inner__group__text{placeholder:'メールアドレス', type: "email", name: "email", value: ""}
+        .k-login-form__inner__group
+          %input.k-login-form__inner__group__text{placeholder:'パスワード', type: "password", name: "password"}
+        .k-login-form__inner__group
+          .k-login-form__inner__group__button
+            ログイン
+
+
+
+
+
+
+
+
+  = render "signup/signup-footer"
