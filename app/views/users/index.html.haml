@@ -1,6 +1,8 @@
 %body
   .m-mypage-wrapper
+
     = render "shared/header"
+
     %nav.m-mypage-nav
       %ul.m-mypage-ul
         %li.m-mypage-list
@@ -12,108 +14,8 @@
             %span.m-mypage-active マイページ
 
     .m-mypage-container.clearfix
-      .m-mypage-container__side
-        %nav.m-mypage-side-bar
-          %ul.m-mypage-side-bar-list
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                マイページ
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                お知らせ
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                やることリスト
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                いいね！一覧
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                出品する
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                出品した商品-出品中
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                出品した商品-取引中
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                出品した商品-売却済み
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                購入した商品-取引中
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                購入した商品-過去の取引
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                ニュース一覧
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                評価一覧
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                ガイド
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                お問い合わせ
-                %i.m-mypage.fa.fa-angle-right.icon
 
-          %h3.m-mypage-side-bar-list-header  メルペイ
-          %ul.m-mypage-side-bar-list
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                売上・振込申請
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                ポイント
-                %i.m-mypage.fa.fa-angle-right.icon
-
-          %h3.m-mypage-side-bar-list-header  設定
-          %ul.m-mypage-side-bar-list
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                プロフィール
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                発送元・お届け先住所変更
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                支払い方法
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                メール/パスワード
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                本人情報
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                電話番号の確認
-                %i.m-mypage.fa.fa-angle-right.icon
-            %li.m-mypage-list2
-              %a.m-mypage-list-item
-                ログアウト
-                %i.m-mypage.fa.fa-angle-right.icon
-
+      =render "users/side-bar"
 
       .m-mypage-container__content
         %section.m-mypage-container__content-user-icon
@@ -150,4 +52,5 @@
             %ul#trading-tab-list-now.tab-pane
               %li.m-mypage-item-not-found.bold  取引中の商品がありません
             %ul#trading-tab-list-old.tab-pane
+            
     = render "shared/footer"         
