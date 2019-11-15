@@ -1,0 +1,30 @@
+.o-proexhibit {
+  height: 1000px;
+  &__header{
+    width: 100%;
+    height: 128px;
+    text-align: center;
+  }
+  &__headerimg{
+    width: 185px;
+    height: 49px;
+    display: inline-block;
+    margin: 40px 0 0;
+  }
+  &__main{
+    height: 1000px;
+  }
+  &__inner{
+    width: 700px;
+    height: 1000px;
+    margin: 0 auto;
+    background: #fff;
+  }
+  &__title{
+    width: 700px;
+    height: 97px;
+  }
+  &_titlename{
+    font-size: 22px;
+  }
+}
