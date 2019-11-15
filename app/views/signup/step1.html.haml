@@ -266,7 +266,9 @@
 
             .h-form-group.h-text-right
               %p
-                本人情報の登録について
-                %i.h-icon-arrow-right
+                = link_to step2_signup_index_path, class: "h-text-link" do
+                  本人情報の登録について
+                  %i.h-icon-arrow-right
+                    = image_tag "/images/yazirushi.svg", class: "h-icon-arrow-right"
 
-= render "signup/signup-footer"
+  = render "signup/signup-footer"

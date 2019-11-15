@@ -73,7 +73,7 @@
 .k-top__list__list__login:hover{
   cursor: pointer;
   background-color:rgb(0, 143, 238);
-  color: rgb(255, 255, 255);
+  a{color: rgb(255, 255, 255)};
 } 
 
       &__list {
@@ -97,7 +97,8 @@
         }
         &__login {
           background-color: rgb(255, 255, 255);
-          color: rgb(0, 149, 238);
+          a{color: rgb(0, 149, 238)};
+          a{text-decoration: none;}
           display: block;
           font-size: 14px;
           border-width: 1px;
