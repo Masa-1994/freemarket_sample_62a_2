@@ -15,6 +15,7 @@
     text-align: center;
     z-index: 1;
     display: block;
+    cursor: pointer;
   }
   &__text{
     padding-top: 32px;
@@ -23,7 +24,6 @@
     margin-top: 8px;
     font-size: 50px;
   }
-  
 }
 
 .o-footer-photo{
@@ -96,9 +96,5 @@
     font-size: 11px;
     padding-top:15px;
     text-align: center;
-  }
-  .o-footerlog{
-    width: 124px;
-    
   }
 }
