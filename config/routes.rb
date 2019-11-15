@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root "products#index"
-  resources :products, only: [:index]
+  resources :products, only: [:index,:new,:create,:show] do
+    member do
+      get :buy
+    end
+  end
+
   resources :users, only: [:index, :new]
   
   resources :signup do
