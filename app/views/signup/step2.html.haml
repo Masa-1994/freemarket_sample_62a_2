@@ -1,1 +1,30 @@
-STEP2
+.h-user-body
+  = render "signup/signup-header"
+  .h-user-main
+    .h-user-contents
+      %h2.h-user-title
+        電話番号の確認
+      .h-user-content
+        %form.h-user-form
+          .h-user-form-box
+
+            .h-form-group
+              %label.h-label{for: "phone_number"}
+                携帯電話の番号
+              %input.h-input-default{placeholder:'携帯電話の番号を入力', type: 'text', name: 'nicknsme'}
+            %p
+              本人確認のため、携帯電話のSMS(ショートカットメッセージサービス)を利用して認証を行います。
+
+            %button.h-btn-default.h-btn-red{type: "submit"}
+              = link_to step2_signup_index_path, class: "" do
+                SMSを送信する
+            %p
+              ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+            .h-form-group.h-text-right
+              %p
+                = link_to root_path, class: "h-text-link" do
+                  電話番号の確認が必要な理由
+                  %i.h-icon-arrow-right
+                    = image_tag "/images/yazirushi.svg", class: "h-icon-arrow-right"
+
+  = render "signup/signup-footer"

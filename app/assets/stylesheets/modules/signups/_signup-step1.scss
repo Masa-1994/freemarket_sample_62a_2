@@ -144,6 +144,11 @@
           text-align: center;
         }
 
+        p {
+          margin: 8px 0 0;
+          line-height: 1.5;
+        }
+
         .h-btn-default {
           margin-top: 32px;
           width: 100%;
@@ -160,11 +165,22 @@
           background: #ea352d;
           border: 1px solid #ea352d;
           color: #fff;
+          a {text-decoration: none};
+          a {color: #fff};
         }
 
         .h-text-right {
           text-align: right;
           
+        }
+
+        .h-text-link {
+          color: #0099e8;
+          text-decoration: none;
+
+          .h-icon-arrow-right {
+            height: 15px;
+          }
         }
       }
     }
