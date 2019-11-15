@@ -12,11 +12,11 @@
       .k-login-panel__form-inner__facebook
         = link_to '' ,class: 'k-a' do
           %i.k-f.fa.fa-facebook-square
-          Facebookで登録する
+          Facebookでログイン
       .k-login-panel__form-inner__google
         = link_to '' ,class: 'k-ag' do
           = image_tag 'google.png', height: '', width: '', class: 'k-login-panel__form-inner__google__i'
-          Googleで登録する
+          Googleでログイン
     %form.k-login-form
       .k-login-form__inner
         .k-login-form__inner__group
@@ -26,12 +26,9 @@
         .k-login-form__inner__group
           .k-login-form__inner__group__button
             ログイン
-
-
-
-
-
-
-
-
-  = render "signup/signup-footer"
+        .k-login-form__inner__group
+          = image_tag 'google-reCAPTCHA.png', height: '78', width: '304', class: 'k-login-panel__form-inner__google__img'
+        .k-password-link
+          = link_to '' ,class: 'k-password-link-a' do
+            パスワードをお忘れの方
+= render "signup/signup-footer"
