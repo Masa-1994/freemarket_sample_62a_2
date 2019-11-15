@@ -169,6 +169,14 @@
           a {color: #fff};
         }
 
+        .h-btn-red:active {
+          background: gray;
+          border: 1px solid gray;
+          color: #fff;
+          a {text-decoration: none};
+          a {color: #fff};
+        }
+
         .h-text-right {
           text-align: right;
           
@@ -181,6 +189,16 @@
           .h-icon-arrow-right {
             height: 15px;
           }
+        }
+
+        .h-text-link:hover {
+          color: #32ADEC;
+          text-decoration: underline;;
+        }
+
+
+        .h-l-chapter-sub-head {
+          font-weight: bold;
         }
       }
     }

@@ -15,6 +15,9 @@ class SignupController < ApplicationController
   def step4
   end
 
+  def step5
+  end
+
   def done
   end
   
