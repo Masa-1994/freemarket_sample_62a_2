@@ -52,7 +52,7 @@
       margin: 16px 0 0;
       color: #fff;
       background-color: #385185;
-      width: 341px;
+      width: 326px;
       height: 48px;
       order: 1px solid transparent;
       text-align: center;
@@ -73,7 +73,7 @@
       color: #333;
       background-color: #FFF;
       border: #979797 solid 1px;
-      width: 341px;
+      width: 326px;
       height: 48px;
       order: 1px solid transparent;
       text-align: center;
@@ -98,22 +98,20 @@
 
 
 .k-login-form {
-  background-color: palevioletred;
   width: 456px;
   height: 406px;
   margin: 0 auto;
   margin-left: auto;
   margin-right: auto;
   &__inner {
-    background-color: red;
     width: 328px;
     height: 358px;
     margin-left: auto;
     margin-right: auto;
     &__group {
-      background-color: blue;
       margin-top: 24px;
       width: 328px;
+      height: 48;
       margin-left: auto;
       margin-right: auto;
       &__text {
@@ -121,8 +119,7 @@
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        background-color: orange;
-        width: 294px;
+        width: 328px;
         height: 48px;
         padding: 10px 16px 8px;
         border-radius: 4px;
@@ -130,21 +127,39 @@
         line-height: 1.5;
         font-size: 16px;
       }
-    }
-    &__button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-      margin-top: 8px;
-      background-color: #ea352d;
-      width: 326px;
-      height: 48px;
-      order: 1px solid transparent;
-      text-align: center;
-      line-height: 48px;
-      color: #fff;
+      &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 8px;
+        background-color: #ea352d;
+        width: 326px;
+        height: 48px;
+        order: 1px solid transparent;
+        text-align: center;
+        line-height: 48px;
+        color: #fff;
+      }
+      &__img {
+        width: 304px;
+        height: 78px;
+      }
     }
   }
 } 
 
+.k-password-link {
+  display: block;
+  margin: 40px 0 0;
+}
+
+.k-password-link-a {
+  color: #0099e8;
+  text-decoration: none;
+}
+
+.k-password-link-a:hover {
+  color: #b3d4fc;
+  text-decoration: underline;
+}
