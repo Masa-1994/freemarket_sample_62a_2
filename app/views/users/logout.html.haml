@@ -1,0 +1,26 @@
+%body
+  .m-mypage-wrapper
+
+    = render "shared/header"
+
+    %nav.m-mypage-nav
+      %ul.m-mypage-ul
+        %li.m-mypage-list
+          %a
+            %span メルカリ
+          %i.fa.fa-angle-right.icon
+        %li.m-mypage-list
+          %a
+            %span.m-mypage マイページ
+          %i.fa.fa-angle-right.icon
+        %li.m-mypage-list
+          %a
+            %span.m-mypage-active プロフィール
+
+    .m-mypage-container.clearfix
+
+      =render "users/side-bar"
+
+      .m-profile-content
+        
+    = render "shared/footer"
