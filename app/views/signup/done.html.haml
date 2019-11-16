@@ -1,0 +1,22 @@
+.h-user-body
+  = render "signup/signup-header"
+  .h-user-main
+    .h-user-contents
+      %h2.h-user-title
+        会員登録完了
+      .h-user-content
+        %form.h-user-form
+          .h-user-form-box
+
+            .h-form-group
+              %p.h-text-center
+                ありがとうございます。
+              %p.h-text-center
+                会員登録が完了しました。
+
+
+            %button.h-btn-default.h-btn-red{type: "submit"}
+              = link_to root_path, class: "" do
+                メルカリを始める
+
+  = render "signup/signup-footer"
