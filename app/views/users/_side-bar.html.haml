@@ -2,7 +2,7 @@
   %nav.m-mypage-side-bar
     %ul.m-mypage-side-bar-list
       %li.m-mypage-list2
-        = link_to users_path, class: "m-profile-link" do
+        = link_to user_path, class: "m-profile-link" do
           .m-mypage-list-item
             マイページ
             %i.m-mypage.fa.fa-angle-right.icon
@@ -73,7 +73,7 @@
     %h3.m-mypage-side-bar-list-header  設定
     %ul.m-mypage-side-bar-list
       %li.m-mypage-list2
-        = link_to "/users/1/edit", class: "m-profile-link" do
+        = link_to "/users/1/profile", class: "m-profile-link" do
           .m-mypage-list-item
             プロフィール
             %i.m-mypage.fa.fa-angle-right.icon
@@ -98,6 +98,7 @@
           電話番号の確認
           %i.m-mypage.fa.fa-angle-right.icon
       %li.m-mypage-list2
-        %a.m-mypage-list-item
-          ログアウト
-          %i.m-mypage.fa.fa-angle-right.icon
+        = link_to "/users/1/logout", class: "m-profile-link" do
+          .m-mypage-list-item
+            ログアウト
+            %i.m-mypage.fa.fa-angle-right.icon

@@ -6,7 +6,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:index, :new, :edit]
+  resources :users, only: [:show] do
+    member do
+      get :login
+      get :logout
+      get :profile
+    end
+  end
   
   resources :signup do
     collection do
