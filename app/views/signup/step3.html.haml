@@ -27,7 +27,7 @@
             %p.h-l-single-text
               電話で認証番号を聞くこともできます。
 
-            = link_to step3_signup_index_path, class: "" do
+            = link_to step3_signup_index_path, class: "h-link-btn" do
               .h-btn-default.h-btn-red
                 電話で認証番号を聞く (通話無料) 
 
@@ -47,3 +47,16 @@
               を確認して、もう一度電話番号を入力してください。
 
   = render "signup/signup-footer"
+
+
+  -# プログレスバー用 css 記述↓
+:css
+  #through .progress-status_bar{
+      background: #ea352d;
+  }  
+  #active{
+    color: #ea352d;
+  }
+  #active .progress-status{
+      background: #ea352d;
+  }

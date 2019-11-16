@@ -109,9 +109,6 @@
             margin-right: 8px;
           }
 
-          .h-birthday-select-wrap {
-          
-          }
 
           .h-birthday-select-wrap .h-select-wrap {
             display: inline-block;
@@ -151,7 +148,6 @@
             margin: 8px 0 0;
           }
 
-
         }
         .h-form-info-text {
           margin: 8px 0 0;
@@ -181,22 +177,19 @@
           transition: all ease-out .3s;
           cursor: pointer;
           text-align: center;
+          text-decoration: none;
         }
 
         .h-btn-red {
           background: #ea352d;
-          border: 1px solid #ea352d;
           color: #fff;
-          a {text-decoration: none};
-          a {color: #fff};
+          text-decoration: none;
+          color: #fff;
         }
 
         .h-btn-red:active {
           background: gray;
-          border: 1px solid gray;
           color: #fff;
-          a {text-decoration: none};
-          a {color: #fff};
         }
 
         .h-text-right {
@@ -215,7 +208,7 @@
 
         .h-text-link:hover {
           color: #32ADEC;
-          text-decoration: underline;;
+          text-decoration: underline;
         }
 
 
@@ -232,5 +225,7 @@
   position: relative;
 }
 
-
+.h-link-btn {
+  text-decoration: none;
+}
 

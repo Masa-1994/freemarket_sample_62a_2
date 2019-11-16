@@ -15,9 +15,38 @@
                 会員登録が完了しました。
 
 
-            .h-btn-default.h-btn-red
-              = link_to root_path, class: "" do
-                .h-btn-text
-                  メルカリを始める
+            = link_to root_path, class: "h-link-btn" do
+              .h-btn-default.h-btn-red
+                メルカリを始める
 
   = render "signup/signup-footer"
+
+-# プログレスバー用 css 記述↓
+:css
+  #through .progress-status_bar{
+      background: #ea352d;
+  }  
+  #active .progress-status{
+      background: #ea352d;
+  }
+  #active .progress-status_bar{
+      background: #ea352d;
+  }
+  #address .progress-status{
+      background: #ea352d;
+  }
+  #address .progress-status_bar{
+      background: #ea352d;
+  }
+  #payment .progress-status{
+      background: #ea352d;
+  }
+  #payment .progress-status_bar{
+      background: #ea352d;
+  }
+  #end{
+    color: #ea352d;
+  }
+  #end .progress-status{
+      background: #ea352d;
+  }

@@ -9,7 +9,7 @@
     border: 0;
 
     .h-header-logo {
-      height: 50px;
+      height: 60px;
       line-height: 66px;
     }
   }
@@ -21,6 +21,7 @@
     display: inline-block;
     vertical-align: top;
     font-size: 0;
+    text-align: center;
     &-bar{
       margin: 0;
       li{
@@ -45,30 +46,29 @@
       }
     }
   }
-  
-  // デフォルトのプログレスバー
+
+// デフォルトのプログレスバー
   .progress-status_bar {
-  position: absolute;
-  left: 50%;
-  top: 25px;
-  bottom: 5px;
-  display: block;
-  width: 130px;
-  height: 2px;
-  background: gray;
-  z-index: 10;
+    position: absolute;
+    left: 50%;
+    top: 25px;
+    bottom: 5px;
+    display: block;
+    width: 130px;
+    height: 2px;
+    background: gray;
+    z-index: 10;
   }
-  
+
   .end .progress-status_bar {
-  width: 0px;
+    width: 0px;
   }
   .payment .progress-status_bar {
-  width: 100px;
+    width: 100px;
   }
   #through{
-  color: #ea352d;
-  .progress-status{
-    background: #ea352d;
+    .progress-status{
+      background: #ea352d;
     }
   }
 }
