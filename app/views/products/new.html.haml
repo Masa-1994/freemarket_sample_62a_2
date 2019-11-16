@@ -1,18 +1,162 @@
 .o-proexhibit
   %header.o-proexhibit__header
     %h2.o-proexhibit__headerimage
-      = link_to image_tag( '/images/fmarket_logo_red.svg',  class: 'o-proexhibit__headerimg' )
+      = link_to root_path do
+        = image_tag( '/images/fmarket_logo_red.svg',  class: 'o-proexhibit__headerimg' )
   .o-proexhibit__main
     %section.o-proexhibit__inner
       .o-proexhibit__title
         %h2.o-proexhibit__titlename
           商品の情報を入力
+
       .o-proexhibit__inner__form
         .o-proexhibit__imageuploads
+          %h3.o-proexhibit__imageuploads__title
+            出品画像
+          %span.o-proexhibit__required
+            必須
+          %p.o-proexhibit__imageuploads__text
+            最大10枚までアップロードできます
+          %label
+            .o-proexhibit__imageuploads__file
+              %input{type: 'file',class:'o-proexhibit__imageuploads__fileimage, o-hidden'}
+              %pre.o-proexhibit__imageuploads__filetext
+                ドラックアンドドロップ
+                またはクリックしてファイルをアップロード
         .o-proexhibit__productname
-        .o-proexhibit__explain
-        .o-proexhibit__details
-        .o-proexhibit__deivery
-        .o-proexhibit__price
-        .o-proexhibit__btn
+          .o-proexhibit__productname__formgroup
+            %h3.o-proexhibit__productname__title
+              商品名
+            %span.o-proexhibit__required
+              必須
+            %input.o-inputproductname{placeholder:'商品名（必須 40文字まで）'}
+          .o-proexhibit__productname__formgroup
+            %h3.o-proexhibit__productname__title
+              商品の説明
+            %span.o-proexhibit__required
+              必須
+            %textarea.o-inputproducttext{style:'overflow:hidden',placeholder:'商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'}
 
+        .o-proexhibit__explain
+          %h3.o-proexhibit__explain__title
+            商品の詳細
+          .o-proexhibit__explain__formbox
+            .o-proexhibit__explain__fformgroup
+              %h3.o-proexhibit__productname__title
+                カテゴリー
+              %span.o-proexhibit__required
+                必須
+              .o-proexhibit__explain__from
+                %i.icon-bottom
+                  = image_tag '/images/yazirushibottom.svg' ,class: 'icon-bottom'
+                %select.o-select
+                  %option.value: ---
+                  %option.value: レディース
+                  %option.value: メンズ
+                  %option.value: ベビー・キッズ
+                  %option.value: インテリア・住まい・小物
+                  %option.value: 本・音楽・ゲーム
+                  %option.value: おもちゃ・ホビー・グッズ
+                  %option.value: コスメ・香水・美容
+                  %option.value: 家電・スマホ・カメラ
+                  %option.value: スポーツ・レジャー
+                  %option.value: ハンドメイド
+                  %option.value: チケット
+                  %option.value: 自動車・オートバイ
+                  %option.value: その他
+                
+            .o-proexhibit__explain__formgroup
+              %h3.o-proexhibit__productname__title
+                商品の状態
+              %span.o-proexhibit__required
+                必須
+              .o-proexhibit__explain__from
+                %i.icon-bottom
+                  = image_tag '/images/yazirushibottom.svg' ,class: 'icon-bottom'
+                %select.o-select
+                  %option.value: ---
+
+        .o-proexhibit__deivery
+          %h3.o-proexhibit__deivery__title
+            配送について
+          .o-proexhibit__deivery__formbox
+            .o-proexhibit__deivery__fformgroup
+              %h3.o-proexhibit__productname__title
+                配送料の負担
+              %span.o-proexhibit__required
+                必須
+              .o-proexhibit__deivery__from
+                %i.icon-bottom
+                  = image_tag '/images/yazirushibottom.svg' ,class: 'icon-bottom'
+                %select.o-select
+                  %option.value: ---
+                  %option.value: 送料込み(出品者負担)
+                  %option.value: 着払い(購入者負担)
+
+            .o-proexhibit__deivery__formgroup
+              %h3.o-proexhibit__productname__title
+                発送元の地域
+              %span.o-proexhibit__required
+                必須
+              .o-proexhibit__deivery__from
+                %i.icon-bottom
+                  = image_tag '/images/yazirushibottom.svg' ,class: 'icon-bottom'
+                %select.o-select
+                  %option.value: ---
+
+            .o-proexhibit__deivery__formgroup
+              %h3.o-proexhibit__productname__title
+                発送までの日数
+              %span.o-proexhibit__required
+                必須
+              .o-proexhibit__deivery__from
+                %i.icon-bottom
+                  = image_tag '/images/yazirushibottom.svg' ,class: 'icon-bottom'
+                %select.o-select
+                  %option.value: ---
+
+        .o-proexhibit__price
+          %h3.o-proexhibit__price__title
+            販売価格(300~9,999,999)
+          %ul.o-proexhibit__price__formbox
+            %li.o-proexhibit__price__formgroup
+              %label.o-proexhibit__productnamee__title
+                価格
+                %span.o-proexhibit__required
+                  必須
+              %label.o-proexhibit__price__yen
+                ¥
+              .o-proexhibit__price__from
+                %input.o-priceselect{placeholder:'例）300'}
+            %li.o-fee
+              .o-fee__left
+                販売手数料(10%)
+              .o-fee__right
+            %li.o-profit
+              .o-profit__left
+                販売利益
+              .o-profit__right
+                
+        .o-proexhibit__btn
+          .o-proexhibit__notes
+            %p.o-proexhibit__note
+              = link_to "禁止されている出品", root_path, class: "h-text-link"
+              、
+              = link_to "行為", root_path, class: "h-text-link"
+              を必ずご確認ください。
+            %p.o-proexhibit__note
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              = link_to "偽ブランドの販売", root_path, class: "h-text-link"
+              は犯罪であり処罰される可能性があります。
+            %p.o-proexhibit__note
+              また、出品をもちまして
+              = link_to "加盟店規約", root_path, class: "h-text-link"
+              に同意したことになります。
+
+            %button.o-proexhibit__linkred
+              出品する
+            = link_to root_path ,class: "o-proexhibit__return" do
+              .o-proexhibit__linkgray
+                もどる
+  
+= render "signup/signup-footer"
