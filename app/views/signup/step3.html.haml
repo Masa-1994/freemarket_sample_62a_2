@@ -15,20 +15,20 @@
             %p
               SMSで届いた認証番号を入力してください
 
-            %button.h-btn-default.h-btn-red{type: "submit"}
-              = link_to step4_signup_index_path, class: "" do
+            = link_to step4_signup_index_path, class: "" do
+              %button.h-btn-default.h-btn-red{type: "submit"}
                 認証して完了
 
       .h-user-content
-        %form.h-user-form
+        .h-user-form
           .h-user-form-box
             %h3.h-l-chapter-sub-head
               30秒たっても認証番号が届かない方へ
             %p.h-l-single-text
               電話で認証番号を聞くこともできます。
 
-            %button.h-btn-default.h-btn-red{type: "submit"}
-              = link_to step3_signup_index_path, class: "" do
+            = link_to step3_signup_index_path, class: "" do
+              .h-btn-default.h-btn-red
                 電話で認証番号を聞く (通話無料) 
 
       .h-user-content

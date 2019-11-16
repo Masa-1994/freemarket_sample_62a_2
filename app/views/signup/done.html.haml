@@ -15,8 +15,9 @@
                 会員登録が完了しました。
 
 
-            %button.h-btn-default.h-btn-red{type: "submit"}
+            .h-btn-default.h-btn-red
               = link_to root_path, class: "" do
-                メルカリを始める
+                .h-btn-text
+                  メルカリを始める
 
   = render "signup/signup-footer"

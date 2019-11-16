@@ -73,8 +73,8 @@
                 = link_to root_path, class: "h-text-link" do
                   カード裏面の番号とは？
 
-            %button.h-btn-default.h-btn-red{type: "submit"}
-              = link_to done_signup_index_path, class: "" do
+            = link_to done_signup_index_path, class: "" do
+              %button.h-btn-default.h-btn-red{type: "submit"}
                 次へ進む
 
   = render "signup/signup-footer"
