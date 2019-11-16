@@ -1,0 +1,44 @@
+.m-logout-content {
+  float: right;
+  background-color: #f5f5f5;
+  width: 700px;
+  .m-logout-chapter-container {
+    margin: 40px 0 0;
+    background: #fff;
+    &:first-child {
+        margin: 0;
+    }
+    .m-logout-single-inner {
+      padding: 64px;
+      border-top: 1px solid #f5f5f5;
+      .m-logout-path{
+        text-decoration: none;
+      }
+        .m-logout-single-content {
+            max-width: 320px;
+            margin: 0 auto;
+
+            .m-logout-btn-red {
+                margin: 40px 0 0;
+                background: #ea352d;
+                border: 1px solid #ea352d;
+                color: #fff;
+                &:first-child {
+                  margin: 0;
+              }
+            }
+            .btn-default {
+                display: block;
+                width: 100%;
+                line-height: 48px;
+                font-size: 14px;
+                border: 1px solid transparent;
+                -webkit-transition: all ease-out .3s;
+                transition: all ease-out .3s;
+                cursor: pointer;
+                text-align: center;
+            }
+        }
+    }
+  }
+}

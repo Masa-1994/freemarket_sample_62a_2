@@ -15,12 +15,17 @@
           %i.fa.fa-angle-right.icon
         %li.m-mypage-list
           %a
-            %span.m-mypage-active プロフィール
+            %span.m-mypage-active ログアウト
 
     .m-mypage-container.clearfix
 
       =render "users/side-bar"
 
-      .m-profile-content
-        
+      .m-logout-content
+        .m-logout-chapter-container
+          %form.m-logout-single-inner
+            .m-logout-single-content
+              = link_to root_path, class: "m-logout-path" do
+                %button.btn-default.m-logout-btn-red{type: "submit"} ログアウト
+      
     = render "shared/footer"
