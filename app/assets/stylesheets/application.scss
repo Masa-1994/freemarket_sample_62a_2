@@ -1,14 +1,24 @@
-@import "reset";
-@import 'font-awesome';
-@import "config/colors";
-@import "modules/tops/top-header";
-@import "modules/tops/top-product";
-@import "modules/tops/top-footer";
+// option
+@import "./reset";
+@import "./font-awesome";
+@import "./config/colors";
+
+// main
+@import "./modules/tops/top-header";
+@import "./modules/tops/top-product";
+@import "./modules/tops/top-footer";
+
+// signup
 @import "./modules/signups/signup-index";
-@import "./modules/signups/signup-footer";
-@import "./modules/users/users-new"; 
-@import "modules/users/mypage-main";
-@import "modules/users/mypage-side-bar";
-@import "modules/products/product-new";
 @import "./modules/signups/signup-header";
+@import "./modules/signups/signup-footer";
 @import "./modules/signups/signup-step1";
+
+// users
+@import "./modules/users/users-new"; 
+@import "./modules/users/mypage-main";
+@import "./modules/users/mypage-side-bar";
+@import "./modules/users/mypage-profile";
+
+// products
+@import "./modules/products/product-new";
