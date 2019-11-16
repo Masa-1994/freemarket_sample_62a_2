@@ -2,9 +2,10 @@
   %nav.m-mypage-side-bar
     %ul.m-mypage-side-bar-list
       %li.m-mypage-list2
-        %a.m-mypage-list-item
-          マイページ
-          %i.m-mypage.fa.fa-angle-right.icon
+        = link_to users_path, class: "m-profile-link" do
+          .m-mypage-list-item
+            マイページ
+            %i.m-mypage.fa.fa-angle-right.icon
       %li.m-mypage-list2
         %a.m-mypage-list-item
           お知らせ
@@ -72,9 +73,10 @@
     %h3.m-mypage-side-bar-list-header  設定
     %ul.m-mypage-side-bar-list
       %li.m-mypage-list2
-        %a.m-mypage-list-item
-          プロフィール
-          %i.m-mypage.fa.fa-angle-right.icon
+        = link_to "/users/1/edit", class: "m-profile-link" do
+          .m-mypage-list-item
+            プロフィール
+            %i.m-mypage.fa.fa-angle-right.icon
       %li.m-mypage-list2
         %a.m-mypage-list-item
           発送元・お届け先住所変更

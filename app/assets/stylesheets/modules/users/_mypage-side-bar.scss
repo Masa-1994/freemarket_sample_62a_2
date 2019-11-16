@@ -12,23 +12,28 @@
       &-list{
         .m-mypage-list2{
           border-top: 1px solid #eee;
-          .m-mypage-list-item{
-            box-sizing: border-box;
-            position: relative;
-            display: block;
-            min-height: 48px;
-            padding: 16px;
-            background-color: #fff;
+          .m-profile-link{
+            text-decoration:  none;
             color: #333;
-            font-size: 14px;
-            .m-mypage.fa.fa-angle-right.icon{
-              position: absolute;
-              top: 10px;
-              right: 16px;
-              color: #ccc;
-              font-size: 25px;
-            }
           }
+            .m-mypage-list-item{
+              box-sizing: border-box;
+              position: relative;
+              display: block;
+              min-height: 48px;
+              padding: 16px;
+              background-color: #fff;
+              color: #333;
+              font-size: 14px;
+              
+              .m-mypage.fa.fa-angle-right.icon{
+                position: absolute;
+                top: 10px;
+                right: 16px;
+                color: #ccc;
+                font-size: 25px;
+              }
+            }
         }
         .m-mypage-list2:hover{
           .m-mypage-list-item{
