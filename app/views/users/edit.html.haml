@@ -1,0 +1,39 @@
+%body
+  .m-mypage-wrapper
+
+    = render "shared/header"
+
+    %nav.m-mypage-nav
+      %ul.m-mypage-ul
+        %li.m-mypage-list
+          %a
+            %span メルカリ
+          %i.fa.fa-angle-right.icon
+        %li.m-mypage-list
+          %a
+            %span.m-mypage マイページ
+          %i.fa.fa-angle-right.icon
+        %li.m-mypage-list
+          %a
+            %span.m-mypage-active プロフィール
+
+    .m-mypage-container.clearfix
+
+      =render "users/side-bar"
+
+      .m-profile-content
+        .m-profile-content-chapter
+          .m-profile-content-chapter-head
+            プロフィール
+          .m-profile-content-chapter-icon
+            .m-profile-content-chapter-icon-face
+              %figure
+                %label.form-mask
+                  %img.m-profile-img{src: "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png"}
+              %input.m-mypage-input-default{:name => "nickname", :placeholder => "例)AYA☆セール中", :type => "text", :value => "タラちゃん"}/
+          .m-profile-content-chapter-setting
+            %textarea.m-profile-textarea-default{:name => "introduction", :placeholder => "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+            %input{:name => "after_save_callback", :type => "hidden", :value => "https://www.mercari.com/jp/mypage/profile/"}/
+            %button.m-profile-btn-default.btn-red{:type => "submit"} 変更する
+
+    = render "shared/footer"
