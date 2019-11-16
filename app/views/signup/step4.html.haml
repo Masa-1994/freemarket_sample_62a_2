@@ -120,8 +120,22 @@
               %button.h-btn-default.h-btn-red{type: "submit"}                
                 次へ進む
   
-  
-  
-  
-  
   = render "signup/signup-footer"
+
+-# プログレスバー用 css 記述↓
+:css
+  #through .progress-status_bar{
+      background: #ea352d;
+  }  
+  #active .progress-status{
+      background: #ea352d;
+  }
+  #active .progress-status_bar{
+      background: #ea352d;
+  }
+  #address{
+    color: #ea352d;
+  }
+  #address .progress-status{
+      background: #ea352d;
+  }
