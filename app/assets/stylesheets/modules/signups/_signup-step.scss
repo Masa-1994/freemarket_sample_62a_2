@@ -113,12 +113,22 @@
           .h-birthday-select-wrap .h-select-wrap {
             display: inline-block;
             width: 76px;
+            position: relative;
           }
 
-          .h-select-wrap-card {
-            display: inline-block;
-            width: 130px;
+          .h-select-wrap {
+            position: relative;
           }
+          
+          .h-icon-bottom{
+            width: 17px;
+            height: 17px;
+            top: 45%;
+            right: 10px;
+            cursor: pointer;
+            position: absolute;
+          }
+          
 
           .h-select-default {
             margin: 8px 0 0;
@@ -135,6 +145,17 @@
             cursor: pointer;
             -webkit-appearance: none;
           }
+
+
+          
+
+          .h-select-wrap-card {
+            position: relative;
+            display: inline-block;
+            width: 130px;
+          }
+
+
 
           .h-birthday-select-wrap .h-select-wrap+span {
             margin: 0 2px;
