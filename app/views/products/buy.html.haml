@@ -1,0 +1,59 @@
+.o-buycontainer
+  %header.o-proexhibit__header
+    %h2.o-proexhibit__headerimage
+      = link_to root_path do
+        = image_tag( '/images/fmarket_logo_red.svg',  class: 'o-proexhibit__headerimg' )
+  .o-buymain
+    %section.o-buysection
+      %h2.o-buytitle
+        購入内容の確認
+      %section.o-buycontents
+        .o-buycontent
+          %h3.o-buycontent
+            = image_tag('/images/sampleimage.jpg',class: 'o-buycontent__image')
+          %p.o-buycontent__name
+            ZARA ブラウス Sサイズ 
+        .o-buyform
+          %p.o-buyform__sabprice
+            ¥2,800
+            %span.o-buyform__sabfee
+              送料込み
+        %ul.o-buypoints
+          %li.o-pointtext 
+            ポイントはありません
+        %ul.o-buyprices
+          %li.o-buyprice
+            %p
+              支払い金額
+              %span.o-buyprice__cell
+                ¥2,800
+        %button.o-buyprice__btn
+          購入する
+
+      %section.o-buyusers
+        .o-buyuser
+          %h3.o-buyuser__title
+            配送先
+          %address.o-buyuser__text
+            〒468-0000 
+            %br
+            愛知県 名古屋市 中区 栄3-13-2
+            %br
+            山田 太郎
+            .o-buyuser__link
+              = link_to "変更する", root_path, class: "h-text-link"
+              .o-buyuser__icon
+                = link_to (image_tag '/images/yazirushi.svg',class: "o-buyuser__icon"), root_path
+      %section.o-buyusers
+        .o-buyuser
+          %h3.o-buyuser__title
+            支払い方法
+          .o-buyuser__text
+            aaaa
+            .o-buyuser__link
+              = link_to "変更する", root_path, class: "h-text-link"
+              .o-buyuser__icon
+                = link_to (image_tag '/images/yazirushi.svg',class: "o-buyuser__icon"), root_path
+
+  = render "signup/signup-footer"
+          
