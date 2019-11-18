@@ -1,15 +1,21 @@
 class UsersController < ApplicationController
 
-  def show
-  end
-
   def login
   end
 
   def logout
   end
 
+  def show
+  end
+
   def profile
+  end
+
+  def credit
+  end
+
+  def identification
   end
 
 end

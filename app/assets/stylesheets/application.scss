@@ -15,11 +15,13 @@
 @import "./modules/signups/signup-step";
 
 // users
-@import "./modules/users/users-login"; 
+@import "./modules/users/users-login";
+@import "./modules/users/mypage-logout";
 @import "./modules/users/mypage-main";
 @import "./modules/users/mypage-side-bar";
 @import "./modules/users/mypage-profile";
-@import "./modules/users/mypage-logout";
+@import "./modules/users/mypage-credit";
+@import "./modules/users/mypage-identification";
 
 // products
 @import "./modules/products/product-new";
