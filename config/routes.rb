@@ -5,18 +5,19 @@ Rails.application.routes.draw do
   #商品関連情報
   resources :products, only: [:index,:new,:create,:show] do
     member do
-      get :buy             #商品購入
+      get :buy              #商品購入
     end
   end
 
   #ユーザー関連情報
   resources :users, only: [:show] do
     member do
-      get :login           #ログイン
-      get :logout          #ログアウト
-      get :profile         #プロフィール
-      get :credit          #支払い方法
-      get :identification  #本人情報
+      get :login            #ログイン
+      get :logout           #ログアウト
+      get :profile          #プロフィール
+      get :payment          #支払い方法
+      get :credit           #クレジットカード情報入力
+      get :identification   #本人情報
     end
   end
   
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
       get 'step3'           #電話番号認証
       get 'step4'           #発送元・お届け先住所入力
       get 'step5'           #支払い方法
-      get 'done'            # 登録完了後のページ
+      get 'done'            #登録完了後のページ
     end
   end
 end

@@ -1,0 +1,52 @@
+%body
+  .m-mypage-wrapper
+
+    = render "shared/header"
+
+    %nav.m-mypage-nav
+      %ul.m-mypage-ul
+        %li.m-mypage-list
+          %a
+            %span メルカリ
+          %i.fa.fa-angle-right.icon
+        %li.m-mypage-list
+          %a
+            %span.m-mypage マイページ
+          %i.fa.fa-angle-right.icon
+        %li.m-mypage-list
+          %a
+            %span.m-mypage プロフィール
+          %i.fa.fa-angle-right.icon
+        %li.m-mypage-list
+          %a
+            %span.m-mypage-active 支払い方法
+
+    .m-mypage-container.clearfix
+
+      =render "users/side-bar"
+
+      .h-payment-content
+        %h2.h-paymentt-title
+          支払い方法
+          
+        .h-payment-main
+          .h-payment-main-title
+            .h-payment-main-title__name
+              クレジットカード一覧
+
+            %ul.h-payment-list
+
+          %section.h-add-credit-card
+            = link_to "/users/1234/credit", class: "h-payment-btn-default" do
+              .h-l-single-content
+                %i.fa.fa-credit-card
+                クレジットカードを追加する
+
+          .h-payment-blue-text
+            %p
+              = link_to "/users/1234/", class: "h-payment-text-link" do
+                本人情報の登録について
+                %i.h-payment-icon-arrow-right
+                  = image_tag "/images/yazirushi.svg", class: "h-payment-icon-arrow-right"
+
+    = render "shared/footer"
