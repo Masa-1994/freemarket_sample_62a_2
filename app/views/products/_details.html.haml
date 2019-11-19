@@ -1,9 +1,9 @@
--# :javascript
--#   <!--
--#   function myChgPic(myPicURL){
--#     document.images["myBigImage"].src = myPicURL;
--#   }
--#   // -->
+:javascript
+  <!--
+  function myChgPic(myPicURL){
+    document.images["myBigImage"].src = myPicURL;
+  }
+  // -->
 
 .k-product-details
   .k-product-details__contents
@@ -12,76 +12,96 @@
     %h2.k-product-details__contents__explanation 『値下げ限界 早い者勝ちPRADA プラダ カナパ』は、53回の取引実績を持つ小森 かなさんから出品されました。プラダ（トートバッグ/レディース）の商品で、大阪府から2~3日で発送されます。
     .k-product-details__contents__content
       .k-product-details__contents__content__left
-        -# %table.k-product-details__contents__content__left__picture
-        -#   %tr
-        -#     %td{:cellpadding => "0", :align => "center"}
-        -#       %img{:height => "300", :name => "myBigImage", :src => "/images/google.png", :width => "300", :class => "k-product-details__contents__content__left__picture__img"}/
-        -# %table.k-product-details__contents__content__left__pictures
-        -#   %tr
-        -#     %td
-        -#       %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/google.png' )"}
-        -#         %img{:src => "/images/google.png", :class => "k-product-details__contents__content__left__pictures__imgs"}/
-        -#     %td
-        -#       %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/main2.jpg' )"}
-        -#         %img{:src => "/images/main2.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
-        -#     %td
-        -#       %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/main.jpg' )"}
-        -#         %img{:src => "/images/main.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
-        -#     %td
-        -#       %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/footer.jpg' )"}
-        -#         %img{:src => "/images/footer.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
-        -#     %td
-        -#       %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/mercari_icon.png' )"}
-        -#         %img{:src => "/images/mercari_icon.png", :class => "k-product-details__contents__content__left__pictures__imgs"}/
-        -#   %tr
-        -#     %td
-        -#       %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/main2.jpg' )"}
-        -#         %img{:src => "/images/main2.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
-        -#     %td
-        -#       %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/main.jpg' )"}
-        -#         %img{:src => "/images/main.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
-        -#     %td
-        -#       %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/footer.jpg' )"}
-        -#         %img{:src => "/images/footer.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
-        -#     %td
-        -#       %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/mercari_icon.png' )"}
-        -#         %img{:src => "/images/mercari_icon.png", :class => "k-product-details__contents__content__left__pictures__imgs"}/
-        -#     %td
-        -#       %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/google.png' )"}
-        -#         %img{:src => "/images/google.png", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+        %table.k-product-details__contents__content__left__picture
+          %tr
+            %td{cellpadding: "0", align: "center"}
+              = image_tag '/images/google.png', height: '300', width: '300', name: 'myBigImage', class: 'k-product-details__contents__content__left__picture__img'
+        %table.k-product-details__contents__content__left__pictures
+          %tr
+            %td
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/google.png' )" do
+                = image_tag '/images/google.png', class: 'k-product-details__contents__content__left__pictures__imgs'
+            %td
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main2.jpg' )" do
+                = image_tag '/images/main2.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+            %td
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main.jpg' )" do
+                = image_tag '/images/main.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+            %td
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/footer.jpg' )" do
+                = image_tag '/images/footer.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+            %td
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/mercari_icon.png' )" do
+                = image_tag '/images/mercari_icon.png', class: 'k-product-details__contents__content__left__pictures__imgs'
+          %tr
+            %td
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main2.jpg' )" do
+                = image_tag '/images/main2.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+            %td
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main.jpg' )" do
+                = image_tag '/images/main.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+            %td
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/footer.jpg' )" do
+                = image_tag '/images/footer.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+            %td
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/mercari_icon.png' )" do
+                = image_tag '/images/mercari_icon.png', class: 'k-product-details__contents__content__left__pictures__imgs'
+            %td
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/google.png' )" do
+                = image_tag '/images/google.png', class: 'k-product-details__contents__content__left__pictures__imgs'
 
 
       .k-product-details__contents__content__right
-        %table{style: "border: 1px solid; width: 300px; height: 420px;"}
+        %table.k-table
           %tbody
-            %tr{style: "border: 1px solid;"}
-              %td 出品者
+            %tr
+              %td{bgcolor: "#fafafa"} 出品者
               %td
-                %p 小森かな
-                %p 54 3 1
+                %p
+                = link_to '' ,class: 'k-password-link-a' do
+                  小森かな
+                %p 
+                .fa.fa-smile-o.k-face__pink
+                54
+                .fa.fa-meh-o.k-face__yellow
+                3
+                .fa.fa-frown-o.k-face__blue
+                1
             %tr
-              %td カテゴリー
+              %td{bgcolor: "#fafafa"}  カテゴリー
               %td
-                %p レディース
-                %p バック
-                %p トートバック
+                %p
+                = link_to '' ,class: 'k-password-link-a' do
+                  レディース
+                %p
+                = link_to '' ,class: 'k-password-link-a' do
+                  .fa.fa-angle-right
+                  バック
+                %p
+                = link_to '' ,class: 'k-password-link-a' do
+                  .fa.fa-angle-right
+                  トートバック
             %tr
-              %td ブランド
-              %td プラダ
+              %td{bgcolor: "#fafafa"}  ブランド
+              %td
+                = link_to '' ,class: 'k-password-link-a' do
+                  プラダ
             %tr
-              %td 商品の状態
+              %td{bgcolor: "#fafafa"}  商品の状態
               %td やや傷や汚れあり
             %tr
-              %td 配送料の負担
+              %td{bgcolor: "#fafafa"}  配送料の負担
               %td 送料込み(出品者負担)
             %tr
-              %td 配送の方法
+              %td{bgcolor: "#fafafa"}  配送の方法
               %td ゆうゆうメルカリ便
             %tr
-              %td 配送元の地域
-              %td 大阪府
+              %td{bgcolor: "#fafafa"}  配送元の地域
+              %td
+                = link_to '' ,class: 'k-password-link-a' do
+                  大阪府
             %tr
-              %td 発送日の目安
+              %td{bgcolor: "#fafafa"}  発送日の目安
               %td 2~3日で発送
 
 
@@ -90,10 +110,10 @@
     .k-product-details__contents__price-box
       %span.k-product-details__contents__price-box__price
         ¥15,500
-      %span.k-product-details__contents__price-box__text
-        (税込)
-      %span.k-product-details__contents__price-box__shipping-fee
-        送料込み
+        %span.k-product-details__contents__price-box__text
+          (税込)
+        %span.k-product-details__contents__price-box__shipping-fee
+          送料込み
     .k-product-details__contents__buy
       購入画面に進む
     -# .k-product-details__contents__buy-not
@@ -111,6 +131,7 @@
         .k-circle
           = link_to '' ,class: 'k-black-a' do
             .k-product-details__contents__container__left__like
+              .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
               いいね!
         .k-circle
           = link_to '' ,class: 'k-black-a' do
@@ -120,22 +141,21 @@
       .k-product-details__contents__container__right
         = link_to '' ,class: 'k-blue-a' do
           .fa.fa-lock
-          %span.k-product-details__contents__container__right__text あんしん・あんぜんへの取り組み
+          %span.k-product-details__contents__container__right__text
+            = link_to '' ,class: 'k-relief' do
+              あんしん・あんぜんへの取り組み
+
   .k-product-details__comment
     .k-product-details__comment__posted
-      テスト
-      テスト
-      テスト
-      テスト
+      コメント
+      コメント
+      コメント
     .k-product-details__comment__post
       .k-product-details__comment__post__form
         %p.k-product-details__comment__post__form__p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
         %textarea.k-product-details__comment__post__form__textarea{:name => "body", :type => "text", :value => ""}
         .k-product-details__comment__post__form__textarea__button
         %button.k-product-details__comment__post__form__button コメントする
-
-        -# %textarea.k-product-details__comment__post__form__textarea{:disabled => "", :name => "body", :type => "text", :value => ""}
-
 
   %ul.k-product-details__itemlink
     %li.k-product-details__itemlink__prev

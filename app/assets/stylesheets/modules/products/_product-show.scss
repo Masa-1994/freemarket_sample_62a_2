@@ -1,18 +1,16 @@
 .k-product-details {
   overflow-x: hidden;
-  background-color: red;
   margin: auto;
   color: rgb(51, 51, 51);
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 
 
   &__contents {
-    background-color: yellow;
+    background-color: #fff;
     width: 700px;
     margin: 40px auto 0;
     padding: 24px 40px 40px;
     &__title {
-      background-color: palegoldenrod;
       color: #333;
       font-weight: bold;
       border-style: solid;
@@ -24,7 +22,6 @@
     }
 
     &__explanation {
-      background-color: saddlebrown;
       width: 620px;
       margin: 8px 0 0;
       font-size: 14px;
@@ -34,19 +31,14 @@
     }
 
     &__content {
-      background-color: palevioletred;
       width: 620px;
-      height: 420px;
-      // ↑仮
       margin: 16px 0 0;
       display: flex;
       &__left {
         text-align: justify;
-        background-color: wheat;
         width: 300px;
         height: 420px;
         &__picture {
-          background-color: turquoise;
           width: 300px;
           height: 300px;
           &__img {
@@ -54,18 +46,17 @@
           }
         }
         &__pictures {
-          background-color: red;
           width: 100%;
           height: 120px;
           &__imgs {
             width: 60px;
             height: 60px;
+            object-fit: cover;
           }
         }
       }
       &__right {
         margin:0 0 0 auto;
-        background-color: red;
         width: 300px;
         height: 420px;
       }
@@ -82,15 +73,17 @@
         font-weight: 600;
         vertical-align: baseline;
       }
-      &__text {
-        font-size: 10px;
-        vertical-align: bottom;
-      }
-      &__shipping-fee {
-        display: inline-block;
-        font-size: 16px;
-        vertical-align: bottom;
-      }
+        &__text {
+          font-size: 10px;
+          font-weight: normal;
+          vertical-align: bottom;
+        }
+        &__shipping-fee {
+          display: inline-block;
+          font-size: 16px;
+          font-weight: normal;
+          vertical-align: bottom;
+        }
     }
 
     &__buy {
@@ -116,15 +109,14 @@
     }
 
     &__message {
-      background-color: #eee;
       color: #ea352d;
       line-height: 1.5;
       font-size: 14px;
       margin-top: 16px;
+      text-align: center;
     }
 
     &__details {
-      background-color: forestgreen;
       padding: 32px 0 0;
       line-height: 1.5;
       font-size: 18px;
@@ -132,7 +124,6 @@
     }
 
     &__container {
-      background-color: blue;
       margin-top: 16px;
       display: flex;
       font-size: 14px;
@@ -169,6 +160,14 @@
           margin-left: 8px;
         }
       }
+      .k-relief {
+        color: #0099e8;
+        text-decoration: none;
+      }
+      .k-relief:hover {
+        color: #b3d4fc;
+        text-decoration: none;
+      }
     }
 
 
@@ -176,19 +175,16 @@
   
 
   &__comment {
-    background-color: purple;
+    background-color: #fff;
     width: 700px;
     margin: 8px auto;
     &__posted {
-      background-color: plum;
       white-space: pre-wrap;
       padding: 24px;
     }
     &__post {
-      background-color: yellow;
       padding: 24px;
       &__form {
-        background-color: orange;
         width: 652px;
         &__p {
           padding: 8px;
@@ -209,6 +205,10 @@
           touch-action: manipulation;
           overflow: auto;
         }
+        .k-product-details__comment__post__form__textarea:focus{
+          border: 1px solid #008cff;
+          outline: 0;
+        }
         &__button {
           width: 650px;
           height: 48px;
@@ -227,7 +227,6 @@
 
 
   &__itemlink {
-    background-color: yellowgreen;
     width: 700px;
     height: 28px;
     margin-top: 24px;
@@ -249,7 +248,7 @@
 
 
   &__supply {
-    background-color: palevioletred;
+    background-color: #fff;
     width: 700px;
     height: 138px;
     padding: 32px 0px 24px 0px;
@@ -257,11 +256,9 @@
     margin-left: auto;
     margin-right: auto;
     &__margin {
-      background-color: orange;
       height: 14px;
     }
     &__contents {
-      background-color: gray;
       width: 700px;
       height: 52px;
       margin: 16px 0 0;
@@ -271,7 +268,6 @@
       align-items: center;
       &__box {
         display: flex;
-        background-color: green;
         width: 44px;
         height: 44px;
         margin: 0 8px 8px 0;
@@ -315,14 +311,11 @@
 
 
   &__item-box {
-    background-color: blue;
     width: 700px;
     margin: 0 auto;
     &__main {
       width: 700px;
-      background-color: pink;
       &__head {
-        background-color: brown;
         height: 30px;
         margin: 24px 0 8px;
         margin-left: auto;
@@ -331,7 +324,6 @@
         font-weight: bold;
       }
       &__products {
-        background-color: gray;
         height: 700px;
         text-align: justify;
         table-layout: fixed;
@@ -345,13 +337,14 @@
           display: inline-block;
           margin-left: 5px;
           margin-right: 5px;
-          background-color: yellow;
+          background-color: #fff;
           width: 220px;
           height: 330px;
           margin-bottom: 20px;
           &__img {
             width: 220px;
             height: 220px;
+            object-fit: cover;
           }
           &__item {
             width: 188px;
@@ -390,7 +383,6 @@
 
 
   &__footer {
-    background-color: aqua;
     width: 1440px;
     height: 48px;
     position: relative;
@@ -426,13 +418,37 @@
 
   }
 
-
-
 }
 
 .k-table {
+  border: 2px solid;
+  width: 300px;
+  height: 420px;
+  td {
+    border: 2px solid;
+    border-color: #f5f5f5;
+    vertical-align: middle;
+    margin: 8px;
+    padding-left: 8px;
+    color: #333;
+  }
+}
 
-  
+.k-face {
+  width: 16px;
+  height: 16px;
+  font-weight: normal;
+  &__pink {
+    color: #ef5185;
+  }
+  &__yellow {
+    color: #fba933;
+    margin-left: 15px;
+  }
+  &__blue {
+    color: #6ab5d8;
+    margin-left: 15px;
+  }
 }
 
 
@@ -481,3 +497,5 @@
 .k-span {
   font-weight: bold; 
 }
+
+
