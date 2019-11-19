@@ -72,3 +72,6 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'pry-rails'
 gem 'fog-aws'
+
+
+gem "gretel"
