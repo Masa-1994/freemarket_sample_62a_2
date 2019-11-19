@@ -14,48 +14,48 @@
       .k-product-details__contents__content__left
         %table.k-product-details__contents__content__left__picture
           %tr
-            %td{:cellpadding => "0", :align => "center"}
-              %img{:height => "300", :name => "myBigImage", :src => "/images/google.png", :width => "300", :class => "k-product-details__contents__content__left__picture__img"}/
+            %td{cellpadding: "0", align: "center"}
+              = image_tag '/images/google.png', height: '300', width: '300', name: 'myBigImage', class: 'k-product-details__contents__content__left__picture__img'
         %table.k-product-details__contents__content__left__pictures
           %tr
             %td
-              %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/google.png' )"}
-                %img{:src => "/images/google.png", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/google.png' )" do
+                = image_tag '/images/google.png', class: 'k-product-details__contents__content__left__pictures__imgs'
             %td
-              %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/main2.jpg' )"}
-                %img{:src => "/images/main2.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main2.jpg' )" do
+                = image_tag '/images/main2.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
             %td
-              %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/main.jpg' )"}
-                %img{:src => "/images/main.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main.jpg' )" do
+                = image_tag '/images/main.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
             %td
-              %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/footer.jpg' )"}
-                %img{:src => "/images/footer.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/footer.jpg' )" do
+                = image_tag '/images/footer.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
             %td
-              %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/mercari_icon.png' )"}
-                %img{:src => "/images/mercari_icon.png", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/mercari_icon.png' )" do
+                = image_tag '/images/mercari_icon.png', class: 'k-product-details__contents__content__left__pictures__imgs'
           %tr
             %td
-              %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/main2.jpg' )"}
-                %img{:src => "/images/main2.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main2.jpg' )" do
+                = image_tag '/images/main2.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
             %td
-              %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/main.jpg' )"}
-                %img{:src => "/images/main.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main.jpg' )" do
+                = image_tag '/images/main.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
             %td
-              %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/footer.jpg' )"}
-                %img{:src => "/images/footer.jpg", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/footer.jpg' )" do
+                = image_tag '/images/footer.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
             %td
-              %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/mercari_icon.png' )"}
-                %img{:src => "/images/mercari_icon.png", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/mercari_icon.png' )" do
+                = image_tag '/images/mercari_icon.png', class: 'k-product-details__contents__content__left__pictures__imgs'
             %td
-              %a{:href => "javascript:void(0)", :onmouseover => "myChgPic( '/images/google.png' )"}
-                %img{:src => "/images/google.png", :class => "k-product-details__contents__content__left__pictures__imgs"}/
+              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/google.png' )" do
+                = image_tag '/images/google.png', class: 'k-product-details__contents__content__left__pictures__imgs'
 
 
       .k-product-details__contents__content__right
         %table.k-table
           %tbody
             %tr
-              %td{:bgcolor => "#fafafa"} 出品者
+              %td{bgcolor: "#fafafa"} 出品者
               %td
                 %p
                 = link_to '' ,class: 'k-password-link-a' do
@@ -68,7 +68,7 @@
                 .fa.fa-frown-o.k-face__blue
                 1
             %tr
-              %td{:bgcolor => "#fafafa"}  カテゴリー
+              %td{bgcolor: "#fafafa"}  カテゴリー
               %td
                 %p
                 = link_to '' ,class: 'k-password-link-a' do
@@ -82,26 +82,26 @@
                   .fa.fa-angle-right
                   トートバック
             %tr
-              %td{:bgcolor => "#fafafa"}  ブランド
+              %td{bgcolor: "#fafafa"}  ブランド
               %td
                 = link_to '' ,class: 'k-password-link-a' do
                   プラダ
             %tr
-              %td{:bgcolor => "#fafafa"}  商品の状態
+              %td{bgcolor: "#fafafa"}  商品の状態
               %td やや傷や汚れあり
             %tr
-              %td{:bgcolor => "#fafafa"}  配送料の負担
+              %td{bgcolor: "#fafafa"}  配送料の負担
               %td 送料込み(出品者負担)
             %tr
-              %td{:bgcolor => "#fafafa"}  配送の方法
+              %td{bgcolor: "#fafafa"}  配送の方法
               %td ゆうゆうメルカリ便
             %tr
-              %td{:bgcolor => "#fafafa"}  配送元の地域
+              %td{bgcolor: "#fafafa"}  配送元の地域
               %td
                 = link_to '' ,class: 'k-password-link-a' do
                   大阪府
             %tr
-              %td{:bgcolor => "#fafafa"}  発送日の目安
+              %td{bgcolor: "#fafafa"}  発送日の目安
               %td 2~3日で発送
 
 
@@ -156,9 +156,6 @@
         %textarea.k-product-details__comment__post__form__textarea{:name => "body", :type => "text", :value => ""}
         .k-product-details__comment__post__form__textarea__button
         %button.k-product-details__comment__post__form__button コメントする
-
-        -# %textarea.k-product-details__comment__post__form__textarea{:disabled => "", :name => "body", :type => "text", :value => ""}
-
 
   %ul.k-product-details__itemlink
     %li.k-product-details__itemlink__prev
