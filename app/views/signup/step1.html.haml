@@ -5,7 +5,7 @@
       %h2.h-user-title
         会員情報入力
       .h-user-content
-        %form.h-user-form
+        = form_for @user, url: step2_signup_index_path, method: :get, html: {class: 'h-user-form'} do |f|
           .h-user-form-box
 
             .h-form-group

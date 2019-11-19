@@ -72,6 +72,6 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'pry-rails'
 gem 'fog-aws'
-
-
 gem "gretel"
+gem 'active_hash'
+gem 'seed-fu', '~> 2.3'
