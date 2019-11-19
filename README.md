@@ -44,21 +44,21 @@
 - belongs_to :user
 
 ## productsテーブル
-|Column         |Type      |Options                       |
-|---------------|----------|------------------------------|
-|name           |string    |null: false, add_index        |
-|seller_id      |references|null: false, foreign_key: true|
-|buyer_id       |references|null: false, foreign_key: true|
-|description    |text      |null: false                   |
-|categories_id  |references|null: false                   |
-|size_id        |references|null: false, foreign_key: true|
-|brand_id       |references|null: false, foreign_key: true|
-|condition      |string    |null: false                   |
-|shipping_charge|string    |null: false                   |
-|shipping_method|string    |null: false                   |
-|shipping_area  |string    |null: false                   |
-|shipping_date  |string    |null: false                   |
-|price          |integer   |null: false                   |
+|Column         |Type      |Options                                     |
+|---------------|----------|--------------------------------------------|
+|name           |string    |null: false, add_index                      |
+|seller_id      |references|null: false, foreign_key: {to_table: :users}|
+|buyer_id       |references|foreign_key: { to_table: :users }           |
+|description    |text      |null: false                                 |
+|categories_id  |references|null: false                                 |
+|size_id        |references|null: false, foreign_key: true              |
+|brand_id       |references|foreign_key: true                           |
+|condition      |string    |null: false                                 |
+|shipping_charge|string    |null: false                                 |
+|shipping_method|string    |null: false                                 |
+|shipping_area  |string    |null: false                                 |
+|shipping_date  |string    |null: false                                 |
+|price          |integer   |null: false                                 |
 ### Association
 - belongs_to :user
 - belongs_to :category
