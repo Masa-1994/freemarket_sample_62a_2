@@ -126,11 +126,15 @@
     .o-select{
       margin: 8px 0 0;
       width: 100%;
+      position: relative;
+      z-index: 2;
       height: 48px;
-      border: 1px solid #ccc;
-      background: #fff;
       padding: 0 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: 0;
       font-size: 16px;
+      line-height: 1.5;
       cursor: pointer;
       -webkit-appearance: none;
     }
@@ -167,11 +171,15 @@
     .o-select{
       margin: 8px 0 0;
       width: 100%;
+      position: relative;
+      z-index: 2;
       height: 48px;
-      border: 1px solid #ccc;
-      background: #fff;
       padding: 0 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: 0;
       font-size: 16px;
+      line-height: 1.5;
       cursor: pointer;
       -webkit-appearance: none;
     }
@@ -207,11 +215,15 @@
     .o-select{
       margin: 8px 0 0;
       width: 100%;
+      position: relative;
+      z-index: 2;
       height: 48px;
-      border: 1px solid #ccc;
-      background: #fff;
       padding: 0 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: 0;
       font-size: 16px;
+      line-height: 1.5;
       cursor: pointer;
       -webkit-appearance: none;
     }
