@@ -4,16 +4,16 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.string  :nickname,           null: false
-      t.string  :email,              null: false, unique: true
-      t.string  :encrypted_password, null: false, default: ""
-      t.string  :family_name,        null: false
-      t.string  :first_name,         null: false
-      t.string  :family_name_kana,   null: false
-      t.string  :first_name_kana,    null: false
-      t.date    :birthday_year,      null: false
-      t.integer :phone_number,       null: false,limit: 4, unique: true
-      t.text    :introduce
+      t.string  :nickname,           null: false                            #ニックネーム
+      t.string  :email,              null: false, unique: true              #Eメールアドレス
+      t.string  :encrypted_password, null: false, default: ""               #パスワード（暗号化された）
+      t.string  :family_name,        null: false                            #苗字（漢字）
+      t.string  :first_name,         null: false                            #名前（漢字）
+      t.string  :family_name_kana,   null: false                            #苗字（フリガナ）
+      t.string  :first_name_kana,    null: false                            #名前（フリガナ）
+      t.date    :birthday_year,      null: false                            #生年月日
+      t.integer :phone_number,       null: false,limit: 4, unique: true     #電話番号 ※integer型だと電話番号の先頭０は反映されない。　変更が必要！！string型のlimit: 11
+      t.text    :introduce                                                  #紹介文
 
       ## Recoverable
       t.string   :reset_password_token
