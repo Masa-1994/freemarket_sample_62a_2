@@ -20,6 +20,15 @@
           %i.fa.fa-tag
           ブランドから探す
       .k-top__list__list
+        -# .k-user-signed
+        -#   .fa.k-user-signed__i.fa-heart-o
+        -#   %span.k-user-signed__text いいね!一覧
+        -#   .fa.k-user-signed__i.fa-bell-o
+        -#   %span.k-user-signed__text お知らせ
+        -#   .fa.k-user-signed__i.fa-check
+        -#   %span.k-user-signed__text やることリスト
+        -#   = image_tag '/images/member.png', height: '', width: '', class: 'k-user-signed__img'
+        -#   %span.k-user-signed__text マイページ
         = link_to signup_index_path  ,class: 'signupbtn' do
           .k-top__list__list__signup 
             新規会員登録
