@@ -38,7 +38,8 @@
 |---------------|----------|------------------------------|
 |user_id        |references|null: false, foreign_key: true|
 |card_number    |integer   |null: false                   |
-|expiration_date|date      |null: false                   |
+|deadline_month |integer   |null: false                   |
+|deadline_year  |integer   |null: false                   |
 |security_code  |integer   |null: false                   |
 ### Association
 - belongs_to :user
@@ -80,7 +81,7 @@
 - has_many :brands, through: :categories_brands
 - has_many :categories_brands
 
-## categories_sizesテーブル
+## category_sizesテーブル
 |Column     |Type      |Options                       |
 |-----------|----------|------------------------------|
 |category_id|references|null: false, foreign_key: true|
@@ -98,7 +99,7 @@
 - has_many :categories, through: :categories_sizes
 - has_many :categories_sizes
 
-## categories_brandsテーブル
+## category_brandsテーブル
 |Column     |Type      |Options                       |
 |-----------|----------|------------------------------|
 |category_id|references|null: false, foreign_key: true|
@@ -110,7 +111,7 @@
 ## brandsテーブル
 |Column|Type  |Options    |
 |------|------|-----------|
-|name  |string|null: false|
+|name  |string|           |
 ### Association
 - has_many :products
 - has_many :categories, through: :categories_brands
@@ -145,9 +146,9 @@
 - belong_to :product
 
 ## imagesテーブル
-|Column |Type      |Options                       |
-|-------|----------|------------------------------|
-|user_id|references|null: false, foreign_key: true|
-|image  |string    |null: false                   |
+|Column    |Type      |Options                       |
+|----------|----------|------------------------------|
+|product_id|references|null: false, foreign_key: true|
+|image     |string    |null: false                   |
 ### Association
 - belong_to :product 
