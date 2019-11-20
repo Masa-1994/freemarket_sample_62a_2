@@ -52,7 +52,7 @@
 |buyer_id       |references|foreign_key: { to_table: :users }           |
 |description    |text      |null: false                                 |
 |categories_id  |references|null: false                                 |
-|size_id        |references|null: false, foreign_key: true              |
+|size_id        |references|foreign_key: true                           |
 |brand_id       |references|foreign_key: true                           |
 |condition      |string    |null: false                                 |
 |shipping_charge|string    |null: false                                 |
