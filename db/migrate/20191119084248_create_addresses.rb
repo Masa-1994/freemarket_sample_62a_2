@@ -8,7 +8,7 @@ class CreateAddresses < ActiveRecord::Migration[5.0]
       t.string     :municipalities,  null: false                        #市区町村
       t.string     :house_number,    null: false                        #番地
       t.string     :building_name                                       #建物名
-      t.integer    :phone_number,    limit: 4                           #電話番号
+      t.integer    :phone_number,    limit: 4                           #電話番号 ※integer型だと電話番号の先頭０は反映されない。　変更が必要！！string型のlimit: 11
       t.timestamps
     end
   end
