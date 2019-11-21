@@ -8,14 +8,14 @@ class SignupController < ApplicationController
   end
 
   def step2
-    session[:nickname] = user_params[:nickname]
-    session[:email] = user_params[:email]
-    session[:pasword] = user_params[:pasword]
-    session[:family_name] = user_params[:family_name]
-    session[:first_name] = user_params[:first_name]
-    session[:family_name_kana] = user_params[:family_name_kana]
-    session[:first_name_kana] = user_params[:first_name_kana]
-    session[:birthday_year] = user_paeams[:birthday_year]
+    # session[:nickname] = user_params[:nickname]
+    # session[:email] = user_params[:email]
+    # session[:pasword] = user_params[:pasword]
+    # session[:family_name] = user_params[:family_name]
+    # session[:first_name] = user_params[:first_name]
+    # session[:family_name_kana] = user_params[:family_name_kana]
+    # session[:first_name_kana] = user_params[:first_name_kana]
+    # session[:birthday_year] = user_paeams[:birthday_year]
 
     @user = User.new
   end
