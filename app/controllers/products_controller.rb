@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
 
   def index
+    @products = Product.find(1)
+    @images = Image.find(1)
   end
 
   def new
