@@ -10,7 +10,7 @@
 |family_name_kana|string |null: false                        |
 |first_name_kana |string |null: false                        |
 |birthday_year   |date   |null: false                        |
-|phone_number    |integer|null: false,limit: 11, unique: true|
+|phone_number    |string |null: false,limit: 11, unique: true|
 |introduce       |text   |                                   |
 ### Association
 - has_one  :address
@@ -29,7 +29,7 @@
 |municipalities|string    |null: false                   |
 |house_number  |string    |null: false                   |
 |building_name |string    |                              |
-|phone_number  |integer   |limit: 11                     |
+|phone_number  |string    |limit: 11                     |
 ### Association
 - belongs_to :user
 
