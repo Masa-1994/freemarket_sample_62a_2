@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # validation
+
   validates               :nickname,         length: { in: 1..15, message: 'は1〜15文字で記入してください'}, presence: true
   validates               :email,            length: { maximum: 50, too_long: 'は50文字以内で記入してください'}, presence: true, format: { with: /\A\S+@\S+\.\S+\z/, message: "は「***@***.***」で登録してください"}
   validates_uniqueness_of :email,            message: 'は既に登録されています' 
@@ -25,5 +25,6 @@ class User < ApplicationRecord
   has_many                      :comments,    dependent: :destroy
   has_many                      :nices,       dependent: :destroy
   has_many                      :evaluations, dependent: :destroy
+
 
 end

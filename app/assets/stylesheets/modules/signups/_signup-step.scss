@@ -60,6 +60,7 @@
             color: #fff;
             font-size: 12px;
             vertical-align: top;
+            font-weight: normal;
           }
 
           .h-form-any {
@@ -140,10 +141,11 @@
             border-radius: 4px;
             border: 1px solid #ccc;
             background: 0;
-            font-size: 16px;
+            font-size: 14px;
             line-height: 1.5;
             cursor: pointer;
             -webkit-appearance: none;
+            display: inline-block;
           }
 
 

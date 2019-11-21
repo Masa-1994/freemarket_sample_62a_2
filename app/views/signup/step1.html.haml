@@ -9,33 +9,33 @@
           .h-user-form-box
 
             .h-form-group
-              %label.h-label{for: "nickname"}
+              %label.h-label
                 ニックネーム
               %span.h-form-require
                 必須
-              %input.h-input-default{placeholder:'例) メルカリ太郎', type: 'text', name: 'nicknsme'}
+              = f.text_field :nickname, placeholder: '例) メルカリ太郎', class: "h-input-default" 
 
             .h-form-group 
-              %label.h-label{for: "email"}
+              %label.h-label
                 メールアドレス
               %span.h-form-require
                 必須
-              %input.h-input-default.h-form-password-revelation{placeholder:'PC・携帯どちらでも可', type: 'email', name: 'email'}
+              = f.email_field :email, placeholder: 'PC・携帯どちらでも可', class: "h-input-default" 
 
             .h-form-group 
-              %label.h-label{for: "password"}
-                パスワード
+              %label.h-label
+              パスワード
               %span.h-form-require
                 必須
-              %input.h-input-default{placeholder:'7文字以上', type: 'password', name: 'password'} 
-                .h-form-password-revelation-toggle
-                  .h-checkbox-default
-                    %input#reveal_password{type: "checkbox"}/
-                    %i.h-icon-check
-                    %label{for: "reveal_password"}
-                      パスワードを表示する
-                  .h-form-password-revelation-revealed-password-container
-                    %span.h-form-password-revelation-revealed-password
+              = f.password_field :password, placeholder: '7文字以上', class: "h-input-default"
+              .h-form-password-revelation-toggle
+                .h-checkbox-default
+                  %input#reveal_password{type: "checkbox"}/
+                  %i.h-icon-check
+                  %label{for: "reveal_password"}
+                    パスワードを表示する
+                .h-form-password-revelation-revealed-password-container
+                  %span.h-form-password-revelation-revealed-password
 
             .h-form-group
               %h3.h-text
@@ -45,23 +45,25 @@
 
             .h-form-group
               %div
-                %label.h-label{for: "family_name_kanji"}
+                %label.h-label
                   お名前（全角）
                 %span.h-form-require
                   必須
-              %input.h-input-default.h-half{placeholder:'例) 山田', type: 'text', name: 'family_name_kanji'}
-              %input.h-input-default.h-half{placeholder:'例) 彩', type: 'text', name: 'family_name_kanji'}
+              = f.text_field :family_name, placeholder: '例) 山田', class: "h-input-default h-half"
+              = f.text_field :first_name, placeholder: '例) 彩', class: "h-input-default h-half"
+
 
             .h-form-group
               %div
-                %label.h-label{for: "family_name_kana"}
+                %label.h-label
                   お名前カナ（全角）
                 %span.h-form-require
                   必須
-              %input.h-input-default.h-half{placeholder:'例) ヤマダ', type: 'text', name: 'family_name_kana'}
-              %input.h-input-default.h-half{placeholder:'例) アヤ', type: 'text', name: 'family_name_kana'}
+              = f.text_field :family_name_kana, placeholder: '例) ヤマダ', class: "h-input-default h-half"
+              = f.text_field :first_name_kana, placeholder: '例) アヤ', class: "h-input-default h-half"
+
             .h-form-group
-              %label.h-label{for: "birthday"}
+              %label.h-label{for: "birthday_year"}
                 生年月日
               %span.h-form-require
                 必須
@@ -260,9 +262,7 @@
               %p.h-text-center
                 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
 
-            = link_to step2_signup_index_path, class: "" do
-              %button.h-btn-default.h-btn-red{type: "submit"}
-                次へ進む
+              = f.submit "次へ進む", class: "h-btn-default h-btn-red"
 
             .h-form-group.h-text-right
               %p
