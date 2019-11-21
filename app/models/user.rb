@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates               :first_name,       presence: true
   validates               :family_name_kana, presence: true
   validates               :first_name_kana,  presence: true
-  validates               :phone_number,     presence: true
+  validates               :phone_number,     length: { in: 10..11, message: 'は10,11文字で記入してください'}, presence: true
   validates_uniqueness_of :phone_number,     message: 'は既に登録されています'
 
 
