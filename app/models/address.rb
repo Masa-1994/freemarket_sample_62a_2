@@ -4,7 +4,7 @@ class Address < ApplicationRecord
   belongs_to :user
 
   validates :municipalities, presence: true
-  validates :postal_code,    length: maximum: 8, presence: true
+  validates :postal_code,    length: {maximum: 8}, presence: true
   validates :house_number,   presence: true
 
 end

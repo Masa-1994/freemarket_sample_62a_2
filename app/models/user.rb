@@ -5,15 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  validates               :nickname,           length: in: 1..15, presence: true
-  validates               :email,              length: maximum: 50, presence: true, format: with: /\A\S+@\S+\.\S+\z/
-  validates               :encrypted_password, length: in: 6..15, presence: true
+  validates               :nickname,           length: {in: 1..15}, presence: true
+  validates               :email,              length: {maximum: 50}, presence: true, format: {with: /\A\S+@\S+\.\S+\z/}
+  validates               :encrypted_password, length: {in: 6..15}, presence: true
   validates               :family_name,        presence: true
   validates               :first_name,         presence: true
   validates               :family_name_kana,   presence: true
   validates               :first_name_kana,    presence: true
   validates               :birthday,           presence: true
-  validates               :phone_number,       length: in: 10..11, presence: true
+  validates               :phone_number,       length: {in: 10..11}, presence: true
 
 
 
