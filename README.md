@@ -21,15 +21,19 @@
 - has_many :evaluations, dependent: :destroy
 
 ## addressesテーブル
-|Column        |Type      |Options                       |
-|--------------|----------|------------------------------|
-|user_id       |references|null: false, foreign_key: true|
-|postal_code   |integer   |null: false                   |
-|prefectures   |string    |null: false                   |
-|municipalities|string    |null: false                   |
-|house_number  |string    |null: false                   |
-|building_name |string    |                              |
-|phone_number  |string    |limit: 11                     |
+|Column          |Type      |Options                       |
+|----------------|----------|------------------------------|
+|user_id         |references|null: false, foreign_key: true|
+|family_name     |string    |null: false                   |
+|first_name      |string    |null: false                   |
+|family_name_kana|string    |null: false                   |
+|first_name_kana |string    |null: false                   |
+|postal_code     |integer   |null: false                   |
+|prefectures_id  |integer   |null: false                   |
+|municipalities  |string    |null: false                   |
+|house_number    |string    |null: false                   |
+|building_name   |string    |                              |
+|phone_number    |string    |limit: 11                     |
 ### Association
 - belongs_to :user
 
