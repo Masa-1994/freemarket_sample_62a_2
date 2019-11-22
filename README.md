@@ -1,17 +1,17 @@
 # Mercari DB設計
 ## usersテーブル
-|Column          |Type   |Options                            |
-|----------------|-------|-----------------------------------|
-|nickname        |string |null: false                        |
-|email           |string |null: false, unique: true          |
-|password        |string |null: false                        |
-|family_name     |string |null: false                        |
-|first_name      |string |null: false                        |
-|family_name_kana|string |null: false                        |
-|first_name_kana |string |null: false                        |
-|birthday_year   |date   |null: false                        |
-|phone_number    |string |null: false,limit: 11, unique: true|
-|introduce       |text   |                                   |
+|Column             |Type   |Options                            |
+|-------------------|-------|-----------------------------------|
+|nickname           |string |null: false                        |
+|email              |string |null: false, unique: true          |
+|encrypted_password |string |null: false                        |
+|family_name        |string |null: false                        |
+|first_name         |string |null: false                        |
+|family_name_kana   |string |null: false                        |
+|first_name_kana    |string |null: false                        |
+|birthday_year      |date   |null: false                        |
+|phone_number       |string |null: false,limit: 11, unique: true|
+|introduce          |text   |                                   |
 ### Association
 - has_one  :address
 - has_one  :credit_card
