@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.images.build
     @images = Image
   end
 
@@ -27,7 +28,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:images, :name, :condition, :price, image_attributes: [image])
+    params.require(:product).permit(:name, :description, :condition, :price, image_attributes: [:url, :product_id])
   end
 
 end
