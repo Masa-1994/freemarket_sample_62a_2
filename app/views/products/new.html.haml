@@ -14,14 +14,15 @@
           .o-proexhibit__imageuploads
             %h3.o-proexhibit__imageuploads__title
               出品画像
-            %p.o-proexhibit__imageuploads__text
-              最大10枚までアップロードできます
-            %label
+            -# %p.o-proexhibit__imageuploads__text
+            -#   最大10枚までアップロードできます
+            =i.label :image do
               .o-proexhibit__imageuploads__file
-                = i.file_field :url, type: 'file', class: "o-proexhibit__imageuploads__fileimage, o-hidden"
+                = i.file_field :image, type: 'file', class: "o-proexhibit__imageuploads__fileimage, o-hidden"
                 %pre.o-proexhibit__imageuploads__filetext
                   ドラックアンドドロップ
                   またはクリックしてファイルをアップロード
+
           .o-proexhibit__productname
             .o-proexhibit__productname__formgroup
               %h3.o-proexhibit__productname__title
@@ -42,14 +43,14 @@
               商品の詳細
             .o-proexhibit__explain__formbox
               .o-proexhibit__explain__fformgroup
-                %h3.o-proexhibit__productname__title
-                  カテゴリー
-                %span.o-proexhibit__required
-                  必須
-                .o-proexhibit__explain__from
-                  %i.o-icon-bottom
-                    = image_tag '/images/yazirushibottom.svg' ,class: 'icon-bottom'
-                    =f.select :description, [["レディース"], ["メンズ"],["ベビー・キッズ"], ["インテリア・住まい・小物"], ["本・音楽・ゲーム"], ["おもちゃ・ホビー・グッズ"], ["コスメ・香水・美容"],["家電・スマホ・カメラ"],["スポーツ・レジャー"],["ハンドメイド"],["チケット"],["自動車・オートバイ"],["その他"]], include_blank: "---"
+                -# %h3.o-proexhibit__productname__title
+                -#   カテゴリー
+                -# %span.o-proexhibit__required
+                -#   必須
+                -# .o-proexhibit__explain__from
+                -#   %i.o-icon-bottom
+                -#     = image_tag '/images/yazirushibottom.svg' ,class: 'icon-bottom'
+                -#     =f.select :description, [["レディース"], ["メンズ"],["ベビー・キッズ"], ["インテリア・住まい・小物"], ["本・音楽・ゲーム"], ["おもちゃ・ホビー・グッズ"], ["コスメ・香水・美容"],["家電・スマホ・カメラ"],["スポーツ・レジャー"],["ハンドメイド"],["チケット"],["自動車・オートバイ"],["その他"]], include_blank: "---"
                   -# %select.o-select
                   -#   %option.value: ---
                   -#   %option.value: レディース
@@ -222,3 +223,4 @@
                   もどる
     
   = render "signup/signup-footer"
+  
