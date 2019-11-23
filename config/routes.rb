@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     member do
       get :buy              #商品購入
     end
+    collection do
+      get 'category_children',defaults: { format: 'json' }             #子カテゴリー選択
+      get 'category_grandchildren',defaults: { format: 'json' }    #孫カテゴリー選択
+    end
   end
 
   #ユーザー関連情報
