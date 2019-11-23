@@ -7,11 +7,11 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.build
-    @images = Image
+    # @images = Image
   end
 
   def create
-    @product = Product.new(product_params)
+    @product= Product.create(product_params)
     if @product.save
         render 'index'
     else
@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :condition, :price, image_attributes: [:url, :product_id])
+    params.require(:product).permit(:name, :description, :condition, :price, images_attributes: [:image, :product_id])
   end
 
 end
