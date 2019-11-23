@@ -41,10 +41,8 @@
 |Column         |Type      |Options                       |
 |---------------|----------|------------------------------|
 |user_id        |references|null: false, foreign_key: true|
-|card_number    |integer   |null: false                   |
-|deadline_month |integer   |null: false                   |
-|deadline_year  |integer   |null: false                   |
-|security_code  |integer   |null: false                   |
+|customer_id    |string    |null: false                   |
+|card_id        |string    |null: false                   |
 ### Association
 - belongs_to :user
 
