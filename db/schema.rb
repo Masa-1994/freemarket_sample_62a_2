@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191122041138) do
+ActiveRecord::Schema.define(version: 20191123084556) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                     null: false
@@ -62,13 +62,11 @@ ActiveRecord::Schema.define(version: 20191122041138) do
   end
 
   create_table "credit_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",        null: false
-    t.integer  "card_number",    null: false
-    t.integer  "deadline_month", null: false
-    t.integer  "deadline_year",  null: false
-    t.integer  "security_code",  null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "user_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
     t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
   end
 
@@ -110,6 +108,15 @@ ActiveRecord::Schema.define(version: 20191122041138) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "uid"
+    t.string   "provider"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                                          null: false
     t.string   "email",                                             null: false
@@ -142,4 +149,5 @@ ActiveRecord::Schema.define(version: 20191122041138) do
   add_foreign_key "products", "sizes"
   add_foreign_key "products", "users", column: "buyer_id"
   add_foreign_key "products", "users", column: "seller_id"
+  add_foreign_key "sns_credentials", "users"
 end

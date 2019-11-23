@@ -76,3 +76,9 @@ gem "gretel"
 gem 'active_hash'
 gem 'seed-fu', '~> 2.3'
 gem 'ancestry'
+gem 'payjp'
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
