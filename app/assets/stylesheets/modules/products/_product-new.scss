@@ -338,6 +338,7 @@
   border-top: 1px solid #ccc;
   padding: 30px 0;
   height: 66px;
+  display: flex;
   &__left{
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     color: #333;
@@ -351,6 +352,7 @@
 .o-profit{
   border-top: 1px solid #ccc;
   padding: 24px 0;
+  display: flex;
   &__left{
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     color: #333;
@@ -362,6 +364,20 @@
     }
   }
 }
+
+.o-fee-calculation {
+  font-size: 14px;
+  color: #333;
+  margin:0 0 0 auto
+}
+
+.o-profit-calculation {
+  font-weight: bold;
+  font-size: 27px;
+  color: #333;
+  margin:0 0 0 auto
+}
+
 .h-text-link {
   color: #0099e8;
   text-decoration: none;
