@@ -1,7 +1,8 @@
 class SignupController < ApplicationController
 
-  before_action :validates_step1, only: :step2 # step1のバリデーション
-  before_action :validates_step2, only: :step3 # step2のバリデーション
+  before_action :validates_step1, only: :step2   # step1のバリデーション
+  before_action :validates_step2, only: :step3   # step2のバリデーション
+  before_action :validates_step3, only: :create  # step2のバリデーション
 
   def index
   end
@@ -73,7 +74,7 @@ class SignupController < ApplicationController
     session[:address_family_name] = user_params[:address_attributes][:family_name]
     session[:address_first_name] = user_params[:address_attributes][:first_name]
     session[:address_family_name_kana] = user_params[:address_attributes][:family_name_kana]
-    session[:address_first_name_kana] = user_params[:address_attributes][:first_name_kana]    
+    session[:address_first_name_kana] = user_params[:address_attributes][:first_name_kana]
     session[:address_postal_code] = user_params[:address_attributes][:postal_code]
     session[:address_prefecture_id] = user_params[:address_attributes][:prefecture_id]
     session[:address_municipalities] = user_params[:address_attributes][:municipalities]
@@ -93,6 +94,7 @@ class SignupController < ApplicationController
       municipalities: session[:address_municipalities],
       house_number: session[:address_house_number],
     )
+    binding.pry
     render "/signup/step3" unless @address.valid?(:validates_step3)
   end
 
@@ -121,6 +123,7 @@ class SignupController < ApplicationController
       municipalities: session[:address_municipalities],
       house_number: session[:address_house_number],
     )
+    binding.pry
     if @user.save
       session[:id] = @user.id
 

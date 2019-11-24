@@ -5,7 +5,6 @@
       %h2.h-user-title
         発送元・お届け先住所入力
       .h-user-content
-        -# = form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'h-user-form'} do |f|
         = form_for @user, url: "/signup", method: :post, html: {class: 'h-user-form'} do |f|
           = f.fields_for :address, @user.build_address do |a|
             .h-user-form-box
