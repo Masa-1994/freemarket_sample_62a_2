@@ -73,7 +73,7 @@
             vertical-align: top;
           }
 
-          .h-input-default {
+          .h-input-default,.year,.month,.day {
             width: 100%;
             margin: 8px 0 0;
             height: 48px;
@@ -131,7 +131,7 @@
           }
           
 
-          .h-select-default {
+          .h-select-default,#user_address_attributes_prefecture_id {
             margin: 8px 0 0;
             width: 100%;
             position: relative;

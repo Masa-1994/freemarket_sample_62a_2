@@ -5,21 +5,20 @@
       %h2.h-user-title
         電話番号の確認
       .h-user-content
-        %form.h-user-form
+        = form_for @user, url: step3_signup_index_path, method: :get, html: {class: 'h-user-form'} do |f|
           .h-user-form-box
 
             .h-form-group
-              %label.h-label{for: "phone_number"}
+              %label.h-label
                 携帯電話の番号
-              %input.h-input-default{placeholder:'携帯電話の番号を入力', type: 'text', name: 'nicknsme'}
+              = f.text_field :phone_number, placeholder: '携帯電話の番号を入力', class: "h-input-default"
+
             %p
               本人確認のため、携帯電話のSMS(ショートカットメッセージサービス)を利用して認証を行います。
 
-            = link_to step3_signup_index_path, class: "" do           
-              %button.h-btn-default.h-btn-red{type: "submit"}
-                SMSを送信する
-            %p
-              ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+            = f.submit "SMSを送信する", class: "h-btn-default h-btn-red"
+
+            %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
             .h-form-group.h-text-right
               %p
                 = link_to root_path, class: "h-text-link" do
