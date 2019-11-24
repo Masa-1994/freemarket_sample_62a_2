@@ -26,10 +26,11 @@ class ProductsController < ApplicationController
   def create
     @product= Product.create(product_params)
     if @product.save
-        render 'index'
+      redirect_to root_path
     else
-        render 'new'
+      render :new
     end
+    
   end
 
   def show
@@ -43,7 +44,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :condition, :price, images_attributes: [:image, :product_id])
+    params.require(:product).permit(:name, :description,:condition, :shipping_charge,:shipping_area,:shipping_charge,:shipping_area,:shipping_date,:shipping_method,:price,images_attributes: [:image,:product_id]).merge(seller_id:"1",category_id:"1")
   end
 
 end

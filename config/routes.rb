@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       get 'category_children',defaults: { format: 'json' }             #子カテゴリー選択
       get 'category_grandchildren',defaults: { format: 'json' }    #孫カテゴリー選択
+      # get 'get_size', defaults: { format: 'json' }                             #サイズ選択
     end
   end
 

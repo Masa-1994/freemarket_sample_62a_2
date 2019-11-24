@@ -1,6 +1,6 @@
 class CategorySize < ApplicationRecord
 
-  belong_to :category
-  belong_to :size
+  belongs_to :category
+  belongs_to :size
 
 end

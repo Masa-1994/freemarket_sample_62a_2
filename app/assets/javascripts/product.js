@@ -6,26 +6,26 @@ $(document).on('turbolinks:load', function(){
    // 子カテゴリーの表示作成
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<div class='o-proexhibit__explain__from__added' id= 'children_wrapper'>
-                                        <select class="o-proexhibit__explain__from--select" id="child_category" name="category_id">
+    childSelectHtml = `<div class='o-proexhibit__explain__from' id= 'children_wrapper'>
+                                        <select class="o-select" id="child_category" name="category_id">
                                           <option value="---" data-category="---">---</option>
                                           ${insertHTML}
                                         <select>
                                         <i class='fa fa-chevron-down.icon-bottom'></i>
                                     </div>`
-    $('.o-proexhibit__explain__formbox').append(childSelectHtml);
+    $('.o-proexhibit__explain__fformgroup').append(childSelectHtml);
   }
   // 孫カテゴリーの表示作成
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
-    grandchildSelectHtml = `<div class='o-proexhibit__explain__from__added' id= 'grandchildren_wrapper'>
-                                                  <select class="o-proexhibit__explain__from--select" id="grandchild_category" name="category_id">
+    grandchildSelectHtml = `<div class='o-proexhibit__explain__from' id= 'grandchildren_wrapper'>
+                                                  <select class="o-select" id="grandchild_category" name="category_id">
                                                     <option value="---" data-category="---">---</option>
                                                     ${insertHTML}
                                                   <select>
                                                   <i class='fa fa-chevron-down.icon-bottom'></i>
                                               </div>`
-    $('.o-proexhibit__explain__formbox').append(grandchildSelectHtml);
+    $('.o-proexhibit__explain__fformgroup').append(grandchildSelectHtml);
   }
   // 親カテゴリー選択後のイベント
   $('#parent_category').on('change', function(){
@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function(){
         $('#grandchildren_wrapper').remove();
         $('#size_wrapper').remove();
         $('#brand_wrapper').remove();
-        var insertHTML = '';
+        var insertHTML = ' ';
         children.forEach(function(child){
           insertHTML += appendOption(child);
         });
@@ -70,10 +70,10 @@ $(document).on('turbolinks:load', function(){
       })
       .done(function(grandchildren){
         if (grandchildren.length != 0) {
-          $('#grandchildren_wrapper').remove(); //子が変更された時、孫以下を削除するする
+          $('#grandchildren_wrapper').remove(); //子が変更された時、孫以下を削除する
           $('#size_wrapper').remove();
           $('#brand_wrapper').remove();
-          var insertHTML = '';
+          var insertHTML = ' ';
           grandchildren.forEach(function(grandchild){
             insertHTML += appendOption(grandchild);
           });
