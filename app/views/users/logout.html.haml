@@ -25,7 +25,7 @@
         .m-logout-chapter-container
           %form.m-logout-single-inner
             .m-logout-single-content
-              = link_to root_path, class: "m-logout-path" do
+              = link_to destroy_user_session_path, method: :delete, class: 'm-logout-path' do
                 %button.btn-default.m-logout-btn-red{type: "submit"} ログアウト
       
     = render "shared/footer"

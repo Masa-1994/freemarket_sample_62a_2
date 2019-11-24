@@ -31,9 +31,9 @@ Rails.application.routes.draw do
     collection do
       get 'step1'           #会員情報入力
       get 'step2'           #電話番号の確認
-      get 'step3'           #電話番号認証
-      get 'step4'           #発送元・お届け先住所入力
-      get 'step5'           #支払い方法
+      get 'step2_5'         #電話番号認証
+      get 'step3'           #発送元・お届け先住所入力
+      get 'step4'           #支払い方法
       get 'done'            #登録完了後のページ
     end
   end
