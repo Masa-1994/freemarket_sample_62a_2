@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
   
   #ユーザー新規登録
-  resources :signup do
+  resources :signup, onry: [:index] do
     collection do
       get 'step1'           #会員情報入力
       get 'step2'           #電話番号の確認

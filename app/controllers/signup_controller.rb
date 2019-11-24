@@ -121,19 +121,20 @@ class SignupController < ApplicationController
       municipalities: session[:address_municipalities],
       house_number: session[:address_house_number],
     )
-      if @user.save
-        session[:id] = @user.id
+    if @user.save
+      session[:id] = @user.id
 
-        redirect_to "/signup/done"
+      redirect_to "/signup/done"
 
-        # redirect_to step4_signup_index_path
-      else
-        render '/signup/step1'
-      end
+      # redirect_to step4_signup_index_path
+    else
+      render '/signup/step1'
     end
 
+  end
 
-　　#登録完了　自動ログイン
+
+    #登録完了自動ログイン
     def done
       sign_in User.find(session[:id]) unless user_signed_in?
     end
@@ -160,4 +161,5 @@ class SignupController < ApplicationController
       # credit_card_attributes: [:customer_id, :card_id]
     )
   end
+
 end
