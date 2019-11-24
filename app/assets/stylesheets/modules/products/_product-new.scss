@@ -1,5 +1,4 @@
 .o-proexhibit {
-  height: 2150px;
   &__header{
     width: 100%;
     height: 128px;
@@ -13,13 +12,8 @@
   }
   &__inner{
     width: 700px;
-    height: 2016px;
     margin: 0 auto;
     background: #fff;
-  }
-  &__title{
-    width: 700px;
-    height: 97px;
   }
   &__titlename{
     color: #333;
@@ -34,7 +28,6 @@
   &__imageuploads{
     color: #333;
     width: 620px;
-    height: 303px;
     padding: 40px;
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     &__title{
@@ -70,9 +63,7 @@
   }
   &__productname{
     border-top: 1px solid #eee;
-    width: 700px;
-    height: 355px;
-    padding-left: 40px;
+    padding: 0 40px 40px;
     &__formgroup{
       margin: 40px 0 0;
     }
@@ -95,7 +86,6 @@
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   }
   &__explain{
-    width: 700px;
     height: 260px;
     padding: 40px;
     border-top: 1px solid #eee;
@@ -140,8 +130,7 @@
     }
   }
   &__deivery{
-    width: 700px;
-    height: 370px;
+    height: 500px;
     padding: 40px;
     border-top: 1px solid #eee;
     &__formbox{
@@ -185,7 +174,6 @@
     }
   }
   &__price{
-    width: 700px;
     height: 300px;
     padding: 40px;
     border-top: 1px solid #eee;
@@ -193,6 +181,7 @@
     &__formbox{
       float: right;
       width: 400px;
+      height: 300px;
     }
     &__title{
       float: left;
@@ -254,8 +243,6 @@
     }
   }
   &__btn{
-    width: 700px;
-    height: 330px;
     padding: 40px;
   }
   &__note{
@@ -391,4 +378,9 @@
 }
 .o-hidden{
   display: none;
+}
+.clearfix{
+  content: '';
+  display: block;
+  clear: both;
 }

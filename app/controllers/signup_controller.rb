@@ -94,7 +94,6 @@ class SignupController < ApplicationController
       municipalities: session[:address_municipalities],
       house_number: session[:address_house_number],
     )
-    binding.pry
     render "/signup/step3" unless @address.valid?(:validates_step3)
   end
 
@@ -123,7 +122,6 @@ class SignupController < ApplicationController
       municipalities: session[:address_municipalities],
       house_number: session[:address_house_number],
     )
-    binding.pry
     if @user.save
       session[:id] = @user.id
 
