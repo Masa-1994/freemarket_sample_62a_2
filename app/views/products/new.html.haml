@@ -64,7 +64,7 @@
                   必須
                 .o-proexhibit__explain__from
                   %i.o-icon-bottom
-                    =f.select :condition, Product.conditions.keys,{},{class:'o-select'}
+                    =f.select :condition, Product.conditions.keys.to_a,{},{class:'o-select'}
                     %i.fa.fa-chevron-down.icon-bottom
 
           .o-proexhibit__explain
@@ -75,7 +75,7 @@
                 = f.label '配送料の負担', class: 'o-proexhibit__productname__title'
                 %span.o-proexhibit__required 必須
                 .o-proexhibit__deivery__from
-                  =f.select :shipping_charge,  Product.shipping_charges.keys,{},{class:'o-select'}
+                  =f.select :shipping_charge,  Product.shipping_charges.keys.to_a, {},{class:'o-select'}
                   %i.fa.fa-chevron-down.icon-bottom
               
               .o-proexhibit__deivery__formgroup
