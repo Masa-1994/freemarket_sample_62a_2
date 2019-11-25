@@ -13,16 +13,19 @@
 ActiveRecord::Schema.define(version: 20191123075126) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",        null: false
-    t.integer  "postal_code",    null: false
-    t.integer  "prefecture_id",  null: false
-    t.string   "city",           null: false
-    t.string   "municipalities", null: false
-    t.string   "house_number",   null: false
+    t.integer  "user_id",                     null: false
+    t.string   "family_name",                 null: false
+    t.string   "first_name",                  null: false
+    t.string   "family_name_kana",            null: false
+    t.string   "first_name_kana",             null: false
+    t.integer  "postal_code",                 null: false
+    t.integer  "prefecture_id",               null: false
+    t.string   "municipalities",              null: false
+    t.string   "house_number",                null: false
     t.string   "building_name"
-    t.integer  "phone_number"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "phone_number",     limit: 11
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(version: 20191123075126) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
+    t.string   "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,13 +61,11 @@ ActiveRecord::Schema.define(version: 20191123075126) do
   end
 
   create_table "credit_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",        null: false
-    t.integer  "card_number",    null: false
-    t.integer  "deadline_month", null: false
-    t.integer  "deadline_year",  null: false
-    t.integer  "security_code",  null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "user_id",     null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
   end
 
@@ -83,11 +85,11 @@ ActiveRecord::Schema.define(version: 20191123075126) do
     t.integer  "category_id",                   null: false
     t.integer  "size_id"
     t.integer  "brand_id"
-    t.string   "condition",                     null: false
-    t.string   "shipping_charge",               null: false
-    t.string   "shipping_method",               null: false
-    t.string   "shipping_area",                 null: false
-    t.string   "shipping_date",                 null: false
+    t.integer  "condition",                     null: false
+    t.integer  "shipping_charge",               null: false
+    t.integer  "shipping_method",               null: false
+    t.integer  "shipping_area",                 null: false
+    t.integer  "shipping_date",                 null: false
     t.integer  "price",                         null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
@@ -101,6 +103,7 @@ ActiveRecord::Schema.define(version: 20191123075126) do
 
   create_table "sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
+    t.string   "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -123,7 +126,7 @@ ActiveRecord::Schema.define(version: 20191123075126) do
     t.string   "family_name_kana",                                  null: false
     t.string   "first_name_kana",                                   null: false
     t.date     "birthday_year",                                     null: false
-    t.integer  "phone_number",                                      null: false
+    t.string   "phone_number",           limit: 11,                 null: false
     t.text     "introduce",              limit: 65535
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
