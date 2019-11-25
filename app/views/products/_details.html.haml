@@ -16,9 +16,9 @@
     』は、53回の取引実績を持つ
     = @seller.nickname
     さんから出品されました。プラダ（トートバッグ/レディース）の商品で、
-    = @product.shipping_area_before_type_cast
+    = @product.shipping_area
     から
-    = @product.shipping_date_before_type_cast
+    = @product.shipping_date
     されます。
     .k-product-details__contents__content
       .k-product-details__contents__content__left
@@ -99,24 +99,24 @@
             %tr
               %td{bgcolor: "#fafafa"}  商品の状態
               %td
-                = @product.condition_before_type_cast
+                = @product.condition
             %tr
               %td{bgcolor: "#fafafa"}  配送料の負担
               %td
-                = @product.shipping_charge_before_type_cast
+                = @product.shipping_charge
             %tr
               %td{bgcolor: "#fafafa"}  配送の方法
               %td
-                = @product.shipping_method_before_type_cast
+                = @product.shipping_method
             %tr
               %td{bgcolor: "#fafafa"}  配送元の地域
               %td
                 = link_to '' ,class: 'k-password-link-a' do
-                  = @product.shipping_area_before_type_cast
+                  = @product.shipping_area
             %tr
               %td{bgcolor: "#fafafa"}  発送日の目安
               %td
-                = @product.shipping_date_before_type_cast
+                = @product.shipping_date
 
 
 
