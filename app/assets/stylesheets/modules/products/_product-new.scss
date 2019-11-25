@@ -86,21 +86,20 @@
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   }
   &__explain{
-    height: 260px;
     padding: 40px;
+    display: flex;
     border-top: 1px solid #eee;
     &__formbox{
-      float: right;
       width: 400px;
     }
     &__formgroup{
       margin: 40px 0 0;
     }
     &__title{
-      float: left;
       color: #888;
       font-weight: bold;
       font-size: 14px;
+      margin-right: 130px;
     }
     &__from{
       position: relative;
@@ -130,21 +129,21 @@
     }
   }
   &__deivery{
-    height: 500px;
-    padding: 40px;
+    display: flex;
+    padding: 0 40px 40px;
     border-top: 1px solid #eee;
     &__formbox{
-      float: right;
+      margin-left: 150px;
       width: 400px;
     }
     &__formgroup{
       margin: 40px 0 0;
     }
     &__title{
-      float: left;
       color: #888;
       font-weight: bold;
       font-size: 14px;
+      margin-right: 115px;
     }
     &__from{
       position: relative;
@@ -181,7 +180,6 @@
     &__formbox{
       float: right;
       width: 400px;
-      height: 300px;
     }
     &__title{
       float: left;

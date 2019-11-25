@@ -60,42 +60,34 @@
                     =f.select :condition, Product.conditions.keys,{},{class:'o-select'}
                     %i.fa.fa-chevron-down.icon-bottom
 
-          .o-proexhibit__deivery
+          .o-proexhibit__explain
             %h3.o-proexhibit__deivery__title
               配送について
-            .o-proexhibit__deivery__formbox
-              .o-proexhibit__deivery__fformgroup
-                %h3.o-proexhibit__productname__title
-                  配送料の負担
-                %span.o-proexhibit__required
-                  必須
+            .o-proexhibit__explain__formbox
+              .o-proexhibit__explain__formmgroup
+                = f.label '配送料の負担', class: 'o-proexhibit__productname__title'
+                %span.o-proexhibit__required 必須
                 .o-proexhibit__deivery__from
                   =f.select :shipping_charge,  Product.shipping_charges.keys,{},{class:'o-select'}
                   %i.fa.fa-chevron-down.icon-bottom
               
               .o-proexhibit__deivery__formgroup
-                %h3.o-proexhibit__productname__title
-                  配送の方法
-                %span.o-proexhibit__required
-                  必須
+                = f.label '配送の方法', class: 'o-proexhibit__productname__title'
+                %span.o-proexhibit__required 必須
                 .o-proexhibit__deivery__from
                   =f.select :shipping_method, Product.shipping_methods.keys,{},{class:'o-select'}
                   %i.fa.fa-chevron-down.icon-bottom
 
               .o-proexhibit__deivery__formgroup
-                %h3.o-proexhibit__productname__title
-                  発送元の地域
-                %span.o-proexhibit__required
-                  必須
+                = f.label '発送元の地域', class: 'o-proexhibit__productname__title'
+                %span.o-proexhibit__required 必須
                 .o-proexhibit__deivery__from
                   =f.select :shipping_area, Product.shipping_areas.keys,{},{class:'o-select'}
                   %i.fa.fa-chevron-down.icon-bottom
 
               .o-proexhibit__deivery__formgroup
-                %h3.o-proexhibit__productname__title
-                  発送までの日数
-                %span.o-proexhibit__required
-                  必須
+                = f.label '発送までの日数', class: 'o-proexhibit__productname__title'
+                %span.o-proexhibit__required 必須
                 .o-proexhibit__deivery__from
                   =f.select :shipping_date, Product.shipping_dates.keys,{},{class:'o-select'}
                   %i.fa.fa-chevron-down.icon-bottom
