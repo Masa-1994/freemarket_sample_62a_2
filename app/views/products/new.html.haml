@@ -23,6 +23,13 @@
                 %pre.o-proexhibit__imageuploads__filetext
                   ドラックアンドドロップ
                   またはクリックしてファイルをアップロード
+                .o-image-move
+                  .o-image-move__image
+                  .o-image-move__up
+                    .o-image-move__up__edit
+                      編集
+                    .o-image-move__up__choice
+                      削除
 
           .o-proexhibit__productname
             .o-proexhibit__productname__formgroup
@@ -116,12 +123,12 @@
               %li.o-fee
                 .o-fee__left
                   販売手数料(10%)
-                .o-fee__calculation
+                .o-fee-calculation
                   .o-fee__right
               %li.o-profit
                 .o-profit__left
                   販売利益
-                .o-profit__calculation
+                .o-profit-calculation
                   .o-profit__right
                   
           .o-proexhibit__btn
@@ -145,4 +152,3 @@
                   もどる
     
   = render "signup/signup-footer"
-  

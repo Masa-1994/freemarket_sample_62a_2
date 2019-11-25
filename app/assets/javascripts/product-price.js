@@ -6,7 +6,6 @@ $(document).on('turbolinks:load',function() {
     var commission = Math.ceil(calculation);
     var profits = input - commission;
 
-
     $('.o-fee__right').text("￥" + commission);
     $('.o-profit__right').text("￥" + profits);
   });
