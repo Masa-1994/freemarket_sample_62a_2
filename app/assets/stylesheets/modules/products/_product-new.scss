@@ -384,3 +384,40 @@
   display: block;
   clear: both;
 }
+
+.o-image-move {
+  width: 114px;
+  height: 160px;
+  border: 1px solid #eee;
+  background: #f5f5f5;
+  padding-top: 15px;
+  &__image {
+    width: 114px;
+    height: 116px;
+    object-fit: cover;
+    &__img {
+      width: 114px;
+      height: 116px;
+      max-width:100%;
+    }
+  }
+  &__up {
+    width: 114px;
+    height: 116px;
+    display: flex;
+    padding: 0 10px;
+    &__edit {
+      color: #0099e8;
+      text-decoration: none;
+      width: 57px;
+      height: 44px;
+    }
+    &__choice {
+      color: #0099e8;
+      text-decoration: none;
+      width: 57px;
+      height: 44px;
+      text-align: right;
+    }
+  }
+}
