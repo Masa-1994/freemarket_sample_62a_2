@@ -73,7 +73,7 @@
             vertical-align: top;
           }
 
-          .h-input-default,.year,.month,.day {
+          .h-input-default {
             width: 100%;
             margin: 8px 0 0;
             height: 48px;
@@ -83,6 +83,7 @@
             background: #fff;
             line-height: 1.5;
             font-size: 16px;
+            
 
             .h-form-password-revelation-toggle {
               
@@ -121,7 +122,22 @@
 
           .h-select-wrap {
             position: relative;
+            display: inline;
+
+
+            .year,.month,.day {
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
           }
+        
           
           .h-icon-bottom{
             width: 17px;

@@ -50,6 +50,7 @@ class SignupController < ApplicationController
       family_name_kana: session[:family_name_kana],
       first_name_kana: session[:first_name_kana],
       birthday_year: session[:birthday_year],
+      phone_number: '09012345678'
     )
     render "/signup/step1" unless @user.valid?(:validates_step1)    #sessionに対してのバリデーション
   end
@@ -60,9 +61,16 @@ class SignupController < ApplicationController
     session[:phone_number] = user_params[:phone_number]
     
     @user = User.new(
-      phone_number: session[:phone_number], 
-      email: 'aaa@gmail.com',
-      password: '12345678'
+      nickname: session[:nickname], 
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      family_name: session[:family_name],
+      first_name: session[:first_name],
+      family_name_kana: session[:family_name_kana],
+      first_name_kana: session[:first_name_kana],
+      birthday_year: session[:birthday_year],
+      phone_number: session[:phone_number]
     )
     render "/signup/step2" unless @user.valid?(:validates_step2)    #sessionに対してのバリデーション
   end
