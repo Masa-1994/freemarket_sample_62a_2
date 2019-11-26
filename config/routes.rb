@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root "products#index"
 
   #商品関連情報
@@ -41,10 +41,5 @@ Rails.application.routes.draw do
 
   #クレジットカード登録
   resources :cards, only: [:new,:create]
-
-
-
-
-
 
 end
