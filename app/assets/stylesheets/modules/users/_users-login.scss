@@ -104,14 +104,9 @@
   margin-left: auto;
   margin-right: auto;
   &__inner {
-    width: 328px;
-    height: 358px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 24px 64px 32px;
     &__group {
       margin-top: 24px;
-      width: 328px;
-      height: 48;
       margin-left: auto;
       margin-right: auto;
       &__text {
@@ -120,7 +115,6 @@
         align-items: center;
         margin: 0 auto;
         width: 328px;
-        height: 48px;
         padding: 10px 16px 8px;
         border-radius: 4px;
         border: 1px solid #ccc;
@@ -143,12 +137,10 @@
       }
       &__img {
         width: 304px;
-        height: 78px;
       }
     }
   }
 } 
-
 .k-password-link {
   display: block;
   margin: 40px 0 0;
