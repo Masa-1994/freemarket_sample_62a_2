@@ -35,7 +35,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(1)
+    @images = Image.includes(:product)
+    @product = Product.find(params[:id])
     @seller = User.find(@product.seller_id)
   end
 
