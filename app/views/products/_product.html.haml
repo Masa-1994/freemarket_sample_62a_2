@@ -28,17 +28,19 @@
 
         .o-contents__menu
           -@products.each do |product|
-            %ul.o-contents__menu__items
-              %li.o-contents__menu__item
-                %figure.o-contents__menu__box
-                  -@images.each do |image|
-                    = image_tag image.image.url,class: "o-contents__menu__image"
-                  .span.o-price
-                    ¥
-                    =product.price
-                  %figcaption.o-contents__menu__texts
-                    %span.o-contents__menu__text
-                      =product.name
+            = link_to product_path(product) do
+              %ul.o-contents__menu__items
+                %li.o-contents__menu__item
+                  %figure.o-contents__menu__box
+                    -@images.each do |image|
+                      -if image.product_id == product.id
+                        =image_tag image.image.url,class: "o-contents__menu__image"
+                    .span.o-price
+                      ¥
+                      =product.price
+                    %figcaption.o-contents__menu__texts
+                      %span.o-contents__menu__text
+                        =product.name
 
             -# %li.o-contents__menu__item
             -#   %figure.o-contents__menu__box
