@@ -10,11 +10,11 @@
           新規会員登録
     .k-login-panel__form-inner
       .k-login-panel__form-inner__facebook
-        = link_to '' ,class: 'k-a' do
+        = link_to user_facebook_omniauth_authorize_path, class: 'k-a' do
           %i.k-f.fa.fa-facebook-square
           Facebookでログイン
       .k-login-panel__form-inner__google
-        = link_to '' ,class: 'k-ag' do
+        = link_to user_google_oauth2_omniauth_authorize_path, class: 'k-ag' do
           = image_tag 'google.png', height: '', width: '', class: 'k-login-panel__form-inner__google__i'
           Googleでログイン
 

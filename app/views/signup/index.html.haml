@@ -13,11 +13,11 @@
               %i.k-i.fa.fa-envelope-o
               メースアドレスで登録する
           .k-single-main__container__form__menu__facebook
-            = link_to '' ,class: 'k-a' do
+            = link_to user_facebook_omniauth_authorize_path, class: 'k-a' do
               %i.k-i2.fa.fa-facebook-square
               Facebookで登録する
           .k-single-main__container__form__menu__google
-            = link_to '' ,class: 'k-a2' do
+            = link_to user_google_oauth2_omniauth_authorize_path, class: 'k-a2' do
               = image_tag 'google.png', height: '', width: '', class: 'k-single-main__container__form__menu__google__i'
               Googleで登録する
 = render "signup/signup-footer"
