@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all.order("created_at DESC")
-    @images = Image.all.includes(:product)
+    @images = Image.includes(:product)
   end
 
   def new
@@ -35,7 +35,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(1)
+    @images = Image.includes(:product)
+    @product = Product.find(params[:id])
     @seller = User.find(@product.seller_id)
   end
 
@@ -45,7 +46,18 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description,:condition, :shipping_charge,:shipping_area,:shipping_charge,:shipping_area,:shipping_date,:shipping_method,:price,images_attributes: [:image,:product_id]).merge(seller_id:"1",category_id:"1")
+    params.require(:product).permit(
+      :name, 
+      :description,
+      :condition, 
+      :shipping_charge,
+      :shipping_area,
+      :shipping_charge,
+      :shipping_area,
+      :shipping_date,
+      :shipping_method,
+      :price,
+      images_attributes: [:image,:product_id]).merge(seller_id: current_user.id,category_id:"1")
   end
 
 end
