@@ -4,6 +4,7 @@ class SignupController < ApplicationController
   before_action :validates_step2, only: :step3   # step2のバリデーション
   before_action :validates_step3, only: :create  # step2のバリデーション
 
+  # 新規会員登録-email-FaceBook-Google-
   def index
   end
 
@@ -22,13 +23,12 @@ class SignupController < ApplicationController
     @user = User.new # 新規インスタンス作成
   end
 
-  # 支払い方法(クレジットカード)
-  def step4
-    @user = User.new
+  # 登録完了
+  def done
   end
 
+# 会員情報入力(STEP1)--------------------------------------------------------------------------------------------------
 
-  # 会員情報入力(STEP1)sessionに対してのバリデーション
   def validates_step1
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
@@ -51,11 +51,11 @@ class SignupController < ApplicationController
       first_name_kana: session[:first_name_kana],
       birthday_year: session[:birthday_year],
     )
-    render "/signup/step1" unless @user.valid?(:validates_step1)
+    render "/signup/step1" unless @user.valid?(:validates_step1)    #sessionに対してのバリデーション
   end
 
+# 電話番号の確認(STEP2)-----------------------------------------------------------------------------------------------
 
-  # 電話番号の確認(STEP2)sessionに対してのバリデーション
   def validates_step2
     session[:phone_number] = user_params[:phone_number]
     
@@ -64,11 +64,11 @@ class SignupController < ApplicationController
       email: 'aaa@gmail.com',
       password: '12345678'
     )
-    render "/signup/step2" unless @user.valid?(:validates_step2)
+    render "/signup/step2" unless @user.valid?(:validates_step2)    #sessionに対してのバリデーション
   end
 
+# 発送元・お届け先住所入力(STEP3)----------------------------------------------------------------------------------------
 
-  # 発送元・お届け先住所入力(STEP3)sessionに対してのバリデーション
   def validates_step3
     session[:user_id] = user_params[:address_attributes][:id]
     session[:address_family_name] = user_params[:address_attributes][:family_name]
@@ -94,12 +94,13 @@ class SignupController < ApplicationController
       municipalities: session[:address_municipalities],
       house_number: session[:address_house_number],
     )
-    render "/signup/step3" unless @address.valid?(:validates_step3)
+    render "/signup/step3" unless @address.valid?(:validates_step3)    #sessionに対してのバリデーション
   end
 
+# sessionのデータをデータベースに保存する----------------------------------------------------------------------------------
 
-  # sessionのデータをデータベースに保存する
-  def create 
+  def create
+    # usersテーブルに値を入れる
     @user = User.new(
       nickname: session[:nickname], 
       email: session[:email],
@@ -111,7 +112,8 @@ class SignupController < ApplicationController
       first_name_kana: session[:first_name_kana],
       birthday_year: session[:birthday_year],
       phone_number: session[:phone_number],
-    )   
+    )
+    # addressテーブルに値を入れる
     @user.build_address(
       family_name: session[:address_family_name],
       first_name: session[:address_first_name],
@@ -122,28 +124,19 @@ class SignupController < ApplicationController
       municipalities: session[:address_municipalities],
       house_number: session[:address_house_number],
     )
-    if @user.save
+    if @user.save   #データベースへの保存
       session[:id] = @user.id
-
-      redirect_to "/signup/done"
-
-      # redirect_to step4_signup_index_path
+      sign_in User.find(session[:id]) unless user_signed_in? # 自動ログイン
+      redirect_to "/cards/new" #データベースに保存されれば、クレジットカード登録ページに移動する
     else
-      render '/signup/step1'
+      render '/signup/step1'   #データベースに保存されなければ,会員情報入力(STEP1)からやり直し
     end
-
   end
 
-
-    #登録完了自動ログイン
-    def done
-      sign_in User.find(session[:id]) unless user_signed_in?
-    end
-
+  #新規登録ページのformデータを取得--------------------------------------------------------------------------------------
 
   private
 
-  #新規登録ページのformデータを取得
   def user_params
     params.require(:user).permit(
       :nickname,
@@ -159,8 +152,8 @@ class SignupController < ApplicationController
       "birthday_year(3i)",
       :phone_number,
       address_attributes: [:id, :family_name, :first_name, :family_name_kana, :first_name_kana, :postal_code, :prefecture_id, :municipalities, :house_number, :building_name, :phone_number]
-      # credit_card_attributes: [:customer_id, :card_id]
     )
   end
+
 
 end

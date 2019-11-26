@@ -91,6 +91,7 @@
               
               }
             }
+
           }
 
         
@@ -105,6 +106,7 @@
 
           .h-input-default.h-half {
             width: calc(50% - 6px);
+            display: inline-block;
           }
           .h-input-default.h-half:first-of-type {
             margin-right: 8px;
@@ -159,8 +161,9 @@
 
 
 
-          .h-birthday-select-wrap .h-select-wrap+span {
+          .h-birthday-select-wrap.h-select-wrap+span {
             margin: 0 2px;
+            display: inline-blok;
           }
 
           .h-recaptcha {
@@ -252,3 +255,7 @@
   text-decoration: none;
 }
 
+
+.field_with_errors {
+  display: contents;
+}

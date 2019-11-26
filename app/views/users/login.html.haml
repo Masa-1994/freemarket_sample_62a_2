@@ -17,12 +17,16 @@
         = link_to '' ,class: 'k-ag' do
           = image_tag 'google.png', height: '', width: '', class: 'k-login-panel__form-inner__google__i'
           Googleでログイン
-    %form.k-login-form
+
+    -# %form.k-login-form
+    = form_for resource, url: user_session_path, method: :post do |f|
       .k-login-form__inner
         .k-login-form__inner__group
-          %input.k-login-form__inner__group__text{placeholder:'メールアドレス', type: "email", name: "email", value: ""}
+          -# %input.k-login-form__inner__group__text{placeholder:'メールアドレス', type: "email", name: "email", value: ""}
+          = f.email_field :email, placeholder: 'メールアドレス', class: "k-login-form__inner__group__text" 
         .k-login-form__inner__group
-          %input.k-login-form__inner__group__text{placeholder:'パスワード', type: "password", name: "password"}
+          -# %input.k-login-form__inner__group__text{placeholder:'パスワード', type: "password", name: "password"}
+          = f.password_field :password, placeholder: 'パスワード', class: "k-login-form__inner__group__text"
         .k-login-form__inner__group
           .k-login-form__inner__group__button
             ログイン

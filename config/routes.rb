@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   end
   
   #ユーザー新規登録
-  resources :signup, onry: [:index] do
+  resources :signup do
     collection do
       get 'step1'           #会員情報入力
       get 'step2'           #電話番号の確認
@@ -38,4 +38,13 @@ Rails.application.routes.draw do
       get 'done'            #登録完了後のページ
     end
   end
+
+  #クレジットカード登録
+  resources :cards, only: [:new,:create]
+
+
+
+
+
+
 end
