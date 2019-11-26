@@ -9,20 +9,8 @@ class SignupController < ApplicationController
   end
 
   # 会員情報入力
-  #omniauth_callbacks_controllerからリダイレクトされたアクション
   def step1
-    #sns認証を使った場合は情報利用してインスタンスを作成.
-    #viewで条件分岐などを利用してパスワードフォームを表示させない
-    if session[:password_confirmation]
-      @user = User.new(
-        #omniauth_callbacks_controllerで定義したsession
-        nickname: session[:nickname],
-        email: session[:email],
-        password: session[:password_confirmation]
-      )
-    else
-      @user = User.new
-    end
+    @user = User.new # 新規インスタンス作成
   end
 
   # 電話番号の確認
@@ -112,7 +100,6 @@ class SignupController < ApplicationController
 # sessionのデータをデータベースに保存する----------------------------------------------------------------------------------
 
   def create
-
     # usersテーブルに値を入れる
     @user = User.new(
       nickname: session[:nickname], 
@@ -125,11 +112,6 @@ class SignupController < ApplicationController
       first_name_kana: session[:first_name_kana],
       birthday_year: session[:birthday_year],
       phone_number: session[:phone_number],
-    )
-    SnsCredential.create(
-      uid: session[:uid],
-      provider: session[:provider],
-      user_id: @user.id
     )
     # addressテーブルに値を入れる
     @user.build_address(
