@@ -1,0 +1,39 @@
+.k-login
+  .k-login-header
+    .k-login-header__img
+      = link_to image_tag( '/images/fmarket_logo_red.svg',  class: 'k-login-header__img' ), '/'
+  .k-login-panel
+    .k-login-panel__no-account
+      アカウントをお持ちでない方はこちら
+      = link_to '/signup' ,class: 'k-a' do
+        .k-login-panel__no-account__new
+          新規会員登録
+    .k-login-panel__form-inner
+      .k-login-panel__form-inner__facebook
+        = link_to '' ,class: 'k-a' do
+          %i.k-f.fa.fa-facebook-square
+          Facebookでログイン
+      .k-login-panel__form-inner__google
+        = link_to '' ,class: 'k-ag' do
+          = image_tag 'google.png', height: '', width: '', class: 'k-login-panel__form-inner__google__i'
+          Googleでログイン
+
+    = form_for(resource, as: resource_name, url: session_path(resource_name, class: "k-login-form")) do |f|
+      .k-login-form__inner
+        .k-login-form__inner__group
+          = f.email_field :email, placeholder: 'メールアドレス', class: "k-login-form__inner__group__text" 
+
+        .k-login-form__inner__group
+          = f.password_field :password, placeholder: 'パスワード', class: "k-login-form__inner__group__text"
+
+        .k-login-form__inner__group
+
+        .k-login-form__inner__group
+          = image_tag 'google-reCAPTCHA.png', height: '78', width: '304', class: 'k-login-panel__form-inner__google__img'
+
+        = f.submit "ログイン", class: "h-btn-default h-btn-red"
+
+        .k-password-link
+          = link_to '' ,class: 'k-password-link-a' do
+            パスワードをお忘れの方
+= render "signup/signup-footer"
