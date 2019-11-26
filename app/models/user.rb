@@ -20,7 +20,7 @@ class User < ApplicationRecord
   # associate
   has_one                       :address,     inverse_of: :user
   accepts_nested_attributes_for :address
-  has_one                       :credit_card, inverse_of: :user
+  has_many                      :credit_card
   has_many                      :products
   has_many                      :comments,    dependent: :destroy
   has_many                      :nices,       dependent: :destroy
