@@ -25,7 +25,9 @@
         %table.k-product-details__contents__content__left__picture
           %tr
             %td{cellpadding: "0", align: "center"}
-              = image_tag '/images/google.png', height: '300', width: '300', name: 'myBigImage', class: 'k-product-details__contents__content__left__picture__img'
+              -@images.each do |image|
+                - if image.product_id == @product[:id]
+                  = image_tag image.image.url, height: '300', width: '300', name: 'myBigImage', class: 'k-product-details__contents__content__left__picture__img'
         %table.k-product-details__contents__content__left__pictures
           %tr
             %td
