@@ -83,6 +83,7 @@
             background: #fff;
             line-height: 1.5;
             font-size: 16px;
+            white-space: nowrap;
             
 
             .h-form-password-revelation-toggle {
@@ -118,8 +119,10 @@
             display: inline-block;
             width: 76px;
             position: relative;
+            white-space: nowrap;
           }
 
+        
           .h-select-wrap {
             position: relative;
             display: inline;
@@ -177,7 +180,7 @@
 
 
 
-          .h-birthday-select-wrap.h-select-wrap+span {
+          .h-birthday-select-wrap,.h-select-wrap+span {
             margin: 0 2px;
             display: inline-blok;
           }
@@ -273,5 +276,6 @@
 
 
 .field_with_errors {
-  display: contents;
+
+  border: 1px solid red;
 }
