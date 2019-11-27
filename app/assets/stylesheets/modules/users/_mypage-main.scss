@@ -1,27 +1,5 @@
 body{
   background-color: #f5f5f5;
-  .m-mypage-nav{
-        position: relative;
-        border-top: 1px solid #eee;
-        background: #f5f5f5;
-        -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-        box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-        background: #fff;
-        .m-mypage-ul{
-          overflow: visible;
-          width: 1020px;
-          margin: 0 auto;
-          padding: 16px 0;
-          white-space: normal;
-          .m-mypage-list{
-            font-size: 14px;
-            display: inline-block;
-            .m-mypage-active{
-              font-weight: bold
-            }
-          }
-        }
-      }
     .m-mypage-wrapper{
       .m-mypage-container{
         margin: 0 auto;
