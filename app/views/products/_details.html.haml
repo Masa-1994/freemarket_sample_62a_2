@@ -125,7 +125,7 @@
     .k-product-details__contents__price-box
       %span.k-product-details__contents__price-box__price
         ¥
-        = @product.price
+        = @product.price.to_s(:delimited)
         %span.k-product-details__contents__price-box__text
           (税込)
         %span.k-product-details__contents__price-box__shipping-fee

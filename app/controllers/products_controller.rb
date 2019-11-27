@@ -25,7 +25,23 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product= Product.create(product_params)
+    @product= Product.new(
+      category_id: params[:category_id].to_i,
+      name: product_params[:name],
+      description: product_params[:description],
+      condition: product_params[:condition],
+      shipping_charge: product_params[:shipping_charge],
+      shipping_area: product_params[:shipping_area],
+      shipping_date: product_params[:shipping_date],
+      shipping_method: product_params[:shipping_method],
+      price: product_params[:price],
+      size_id: product_params[:size_id],
+      brand_id: product_params[:bland_id],
+      seller_id: current_user.id
+    )
+    @product.images.build(
+      image: product_params[:images_attributes]["0"]["image"]
+    )
     if @product.save
       redirect_to root_path
     else
@@ -52,12 +68,11 @@ class ProductsController < ApplicationController
       :condition, 
       :shipping_charge,
       :shipping_area,
-      :shipping_charge,
-      :shipping_area,
       :shipping_date,
       :shipping_method,
+      :category_id,
       :price,
-      images_attributes: [:image,:product_id]).merge(seller_id: current_user.id,category_id:"1")
+      images_attributes: [:image]).merge(seller_id: current_user.id)
   end
 
 end
