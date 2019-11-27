@@ -37,7 +37,7 @@
                         =image_tag image.image.url,class: "o-contents__menu__image"
                     .span.o-price
                       ¥
-                      =product.price
+                      =product.price.to_s(:delimited)
                     %figcaption.o-contents__menu__texts
                       %span.o-contents__menu__text
                         =product.name

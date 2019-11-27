@@ -3,6 +3,7 @@
     %h2.o-proexhibit__headerimage
       = link_to root_path do
         = image_tag( '/images/fmarket_logo_red.svg',  class: 'o-proexhibit__headerimg' )
+
   .o-proexhibit__main
     %section.o-proexhibit__inner
       .o-proexhibit__title
@@ -11,10 +12,8 @@
       .o-proexhibit__inner__form
         = f.fields_for :images do |i|
           .o-proexhibit__imageuploads
-            %h3.o-proexhibit__imageuploads__title
-              出品画像
-            %span.o-proexhibit__required
-              必須
+            = f.label '出品画像', class: 'o-proexhibit__imageuploads__title'
+            %span.o-proexhibit__required 必須
             %p.o-proexhibit__imageuploads__text
               最大10枚までアップロードできます
             =i.label :image do
@@ -33,22 +32,17 @@
 
           .o-proexhibit__productname
             .o-proexhibit__productname__formgroup
-              %h3.o-proexhibit__productname__title
-                商品名
-              %span.o-proexhibit__required
-                必須
+              = f.label '商品名', class: 'o-proexhibit__productname__title'
+              %span.o-proexhibit__required 必須
               = f.text_field :name, class: "o-inputproductname", placeholder:'商品名（必須 40文字まで）'
 
             .o-proexhibit__productname__formgroup
-              %h3.o-proexhibit__productname__title
-                商品の説明
-              %span.o-proexhibit__required
-                必須
+              = f.label '商品の説明', class: 'o-proexhibit__productname__title'
+              %span.o-proexhibit__required 必須
               = f.text_field :description, class: "o-inputproducttext", placeholder:'商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
 
           .o-proexhibit__explain
-            %h3.o-proexhibit__explain__title
-              商品の詳細
+            = f.label '商品の詳細', class: 'o-proexhibit__explain__title'
             .o-proexhibit__explain__formbox
               .o-proexhibit__explain__fformgroup
                 = f.label 'カテゴリー', class: 'o-proexhibit__productname__title'
@@ -56,20 +50,17 @@
                 .o-proexhibit__explain__from
                   = f.select :category,@category_parent_array, {}, {class: 'o-select', id: 'parent_category'}
                   %i.fa.fa-chevron-down.icon-bottom
-                  
+              
               .o-proexhibit__explain__formgroup
-                %h3.o-proexhibit__productname__title
-                  商品の状態
-                %span.o-proexhibit__required
-                  必須
+                = f.label '商品の状態', class: 'o-proexhibit__productname__title'
+                %span.o-proexhibit__required 必須
                 .o-proexhibit__explain__from
                   %i.o-icon-bottom
                     =f.select :condition, Product.conditions.keys.to_a,{},{class:'o-select'}
                     %i.fa.fa-chevron-down.icon-bottom
 
           .o-proexhibit__explain
-            %h3.o-proexhibit__deivery__title
-              配送について
+            = f.label '配送について', class: 'o-proexhibit__deivery__title'
             .o-proexhibit__explain__formbox
               .o-proexhibit__explain__formmgroup
                 = f.label '配送料の負担', class: 'o-proexhibit__productname__title'
@@ -100,14 +91,12 @@
                   %i.fa.fa-chevron-down.icon-bottom
 
           .o-proexhibit__price
-            %h3.o-proexhibit__price__title
-              販売価格(300~9,999,999)
+            = f.label '販売価格(300~9,999,999)', class: 'o-proexhibit__price__title'
             %ul.o-proexhibit__price__formbox
               %li.o-proexhibit__price__formgroup
                 %label.o-proexhibit__productnamee__title
                   価格
-                  %span.o-proexhibit__required
-                    必須
+                  %span.o-proexhibit__required 必須
                 %label.o-proexhibit__price__yen
                   ¥
                 .o-proexhibit__price__from
