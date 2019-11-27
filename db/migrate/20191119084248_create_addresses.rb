@@ -17,3 +17,5 @@ class CreateAddresses < ActiveRecord::Migration[5.0]
     end
   end
 end
+
+%input.m-identification-form-group-default{placeholder:'例) 柳ビル103', :value => current_user.address.building_name}
