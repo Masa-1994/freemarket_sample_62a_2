@@ -33,31 +33,31 @@
                 = @product.price.to_s(:delimited)
         %button.o-buyprice__btn
           購入する
+        .o-payjp-btn
+          = form_for(@product,url: purchase_product_path) do
+            :plain
+              <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_2489a8be63710a3ea5c21172"></script>
 
       %section.o-buyusers
         .o-buyuser
           %h3.o-buyuser__title
             配送先
           %address.o-buyuser__text
-            〒468-0000 
+            〒
+            = current_user.address.postal_code.to_s(:phone)
             %br
-            愛知県 名古屋市 中区 栄3-13-2
+              = current_user.address.prefecture.name + current_user.address.municipalities + current_user.address.house_number
             %br
-            
-            .o-buyuser__link
-              = link_to "変更する", root_path, class: "h-text-link"
-              .o-buyuser__icon
-                = link_to (image_tag '/images/yazirushi.svg',class: "o-buyuser__icon"), root_path
+              = current_user.family_name + current_user.first_name 
+
       %section.o-buyusers
         .o-buyuser
           %h3.o-buyuser__title
             支払い方法
           .o-buyuser__text
-            aaaa
-            .o-buyuser__link
-              = link_to "変更する", root_path, class: "h-text-link"
-              .o-buyuser__icon
-                = link_to (image_tag '/images/yazirushi.svg',class: "o-buyuser__icon"), root_path
+            クレジットカード
+            .content__credit-cards__list--pay-num
+              = "**** **** **** ****" 
 
   = render "signup/signup-footer"
           

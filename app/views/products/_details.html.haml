@@ -56,16 +56,18 @@
               %td{bgcolor: "#fafafa"}  カテゴリー
               %td
                 %p
-                -# = link_to '' ,class: 'k-password-link-a' do
-                -#   レディース
-                -# %p
-                -# = link_to '' ,class: 'k-password-link-a' do
-                -#   .fa.fa-angle-right
-                -#   バック
-                -# %p
-                -# = link_to '' ,class: 'k-password-link-a' do
-                -#   .fa.fa-angle-right
-                -#   トートバック
+
+                = link_to '' ,class: 'k-password-link-a' do
+                  = @product.category.root.name
+                %p
+                = link_to '' ,class: 'k-password-link-a' do
+                  .fa.fa-angle-right
+                  = @product.category.parent.name
+                %p
+                = link_to '' ,class: 'k-password-link-a' do
+                  .fa.fa-angle-right
+                  = @product.category.name
+
             %tr
               %td{bgcolor: "#fafafa"}  ブランド
               %td

@@ -1,10 +1,12 @@
 .o-exhibit
-  = link_to new_product_path, class: "" do
-    .o-exhibit__image
-      .o-exhibit__text
-        出品
-      .o-exhibit__icon
-        = fa_icon 'camera', class: 'o-cameraicon', type:'submit'
+  -if user_signed_in?
+    = link_to new_product_path do
+      .o-exhibit__image
+        .o-exhibit__text
+          出品
+        .o-exhibit__icon
+          = fa_icon 'camera', class: 'o-cameraicon', type:'submit'
+          
 .o-banner
   = image_tag '/images/footer.jpg', class: "o-footer-photo"
 .o-footer
