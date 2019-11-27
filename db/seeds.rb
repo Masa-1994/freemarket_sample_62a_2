@@ -335,3 +335,59 @@ others_8 = others.children.create(name: "事務/店舗用品")
 others_8.children.create([{name: "オフィス用品一般"},{name: "オフィス家具"},{name: "店舗用品"},{name: "OA機器"},{name: "ラッピング/包装"},{name: "その他"}])
 others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
+
+
+#ブランド
+Brand.seed do |s|
+  s.id = 1
+  s.name = "シャネル"
+end
+Brand.seed do |s|
+  s.id = 2
+  s.name = "ルイヴィトン"
+end
+Brand.seed do |s|
+  s.id = 3
+  s.name = "シュプリーム"
+end
+Brand.seed do |s|
+  s.id = 4
+  s.name = "ナイキ"
+end
+Brand.seed do |s|
+  s.id = 5
+  s.name = "アディダス"
+end
+Brand.seed do |s|
+  s.id = 6
+  s.name = "ユニクロ"
+end
+Brand.seed do |s|
+  s.id = 7
+  s.name = "ポールスミス"
+end
+Brand.seed do |s|
+  s.id = 8
+  s.name = "ケイトスペード"
+end
+Brand.seed do |s|
+  s.id = 9
+  s.name = "クロエ"
+end
+Brand.seed do |s|
+  s.id = 10
+  s.name = "コーチ"
+end
+
+
+#洋服サイズ
+cloth = Size.create(name: "洋服サイズ")
+cloth_1 = cloth.children.create([{name: "XXS以下"},{name: "XS(SS)"},{name: "S"},{name: "M"},{name: "L"},{name: "XL(LL)"},{name: "2XL(3L)"},{name: "3XL(4L)"},{name: "4XL(5L)以上"},{name: "FREESIZE"}])
+
+#メンズ靴
+men_shoe = Size.create(name: "メンズ靴")
+men_shoe_1 = men_shoe.children.create([{name: "23.5cm以下"},{name: "24cm"},{name: "24.5cm"},{name: "25cm"},{name: "25.5cm"},{name: "26cm"},{name: "26.5cm"},{name: "27cm"},{name: "27.5cm"},{name: "28cm"},{name: "28.5cm"},{name: "29cm"},{name: "29.5cm"},{name: "30cm"},{name: "30.5cm"},{name: "31cm以上"}])
+
+#レディース靴
+lady_shoe = Size.create(name: "レディース靴")
+lady_shoe_1 = lady_shoe.children.create([{name: "20cm以下"},{name: "20.5cm"},{name: "21cm"},{name: "21.5cm以上"},{name: "22cm"},{name: "22.5cm"},{name: "23cm"},{name: "23.5cm"},{name: "24cm"},{name: "24.5cm"},{name: "25cm"},{name: "25.5cm"},{name: "26cm"},{name: "26.5cm"},{name: "27cm"},{name: "27.5cm以上"}])
