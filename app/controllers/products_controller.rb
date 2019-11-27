@@ -60,6 +60,19 @@ class ProductsController < ApplicationController
   def buy
     @images = Image.includes(:product)
     @product = Product.find(params[:id])
+    @buyer = Address.includes(:user)
+  end
+
+  require 'payjp'
+
+  #payjp購入ページ
+  def purchase
+    Payjp.api_key = "sk_test_96c344952e792691d9fc840e"
+    Payjp::Charge.create(
+      amount: @product.price, # 決済する値段
+      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      currency: 'jpy'
+    )
   end
 
   private

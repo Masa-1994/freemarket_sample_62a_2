@@ -84,15 +84,15 @@
               %td
                 %p
                 = link_to '' ,class: 'k-password-link-a' do
-                  レディース
+                  = @product.category.root.name
                 %p
                 = link_to '' ,class: 'k-password-link-a' do
                   .fa.fa-angle-right
-                  バック
+                  = @product.category.parent.name
                 %p
                 = link_to '' ,class: 'k-password-link-a' do
                   .fa.fa-angle-right
-                  トートバック
+                  = @product.category.name
             %tr
               %td{bgcolor: "#fafafa"}  ブランド
               %td
