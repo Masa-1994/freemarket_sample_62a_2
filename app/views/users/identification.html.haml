@@ -29,26 +29,29 @@
               %label.m-identification-form-group-text
                 お名前
               %p.m-identification-form-group-text2
-                フグ田 タラオ
+                = current_user.family_name
+                = current_user.first_name
 
             .m-identification-form-group
               %label.m-identification-form-group-text
                 お名前カナ
               %p.m-identification-form-group-text2
-                フグタ タラオ
+                = current_user.family_name_kana
+                = current_user.first_name_kana
 
             .m-identification-form-group
               %label.m-identification-form-group-text
                 生年月日
               %p.m-identification-form-group-text2
-                1947/1/1
+                = current_user.birthday_year
 
             .m-identification-form-group
               %label.m-identification-form-group-text
                 郵便番号
               %span.m-identification-form-group-any
                 任意
-              %input.m-identification-form-group-default{placeholder:'例) 1234567', type: 'text', name: 'phone_number'}
+              %input.m-identification-form-group-default{placeholder:'例) 1234567', type: 'text', :value => current_user.address.postal_code.to_s(:phone)}
+                
 
             .m-identification-form-group
               %label.m-identification-form-group-text{for: "prefectures"}
@@ -58,75 +61,28 @@
               .m-identification-select-wrap
                 %i.m-icon-arrow-bottom
                   = image_tag '/images/yazirushibottom.svg' ,class: 'm-identification-icon-bottom'
-                %select.m-identification-select-default{name: "prefectures"}
-                  %option{value: "1"} 北海道
-                  %option{value: "2"} 青森県
-                  %option{value: "3"} 岩手県
-                  %option{value: "4"} 宮城県
-                  %option{value: "5"} 秋田県
-                  %option{value: "6"} 山形県
-                  %option{value: "7"} 福島県
-                  %option{value: "8"} 茨城県
-                  %option{value: "9"} 栃木県
-                  %option{value: "10"} 群馬県
-                  %option{value: "11"} 埼玉県
-                  %option{value: "12"} 千葉県
-                  %option{value: "13"} 東京都
-                  %option{value: "14"} 神奈川県
-                  %option{value: "15"} 新潟県
-                  %option{value: "16"} 富山県
-                  %option{value: "17"} 石川県
-                  %option{value: "18"} 福井県
-                  %option{value: "19"} 山梨県
-                  %option{value: "20"} 長野県
-                  %option{value: "21"} 岐阜県
-                  %option{value: "22"} 静岡県
-                  %option{value: "23"} 愛知県
-                  %option{value: "24"} 三重県
-                  %option{value: "25"} 滋賀県
-                  %option{value: "26"} 京都府
-                  %option{value: "27"} 大阪府
-                  %option{value: "28"} 兵庫県
-                  %option{value: "29"} 奈良県
-                  %option{value: "30"} 和歌山県
-                  %option{value: "31"} 鳥取県
-                  %option{value: "32"} 島根県
-                  %option{value: "33"} 岡山県
-                  %option{value: "34"} 広島県
-                  %option{value: "35"} 山口県
-                  %option{value: "36"} 徳島県
-                  %option{value: "37"} 香川県
-                  %option{value: "38"} 愛媛県
-                  %option{value: "39"} 高知県
-                  %option{value: "40"} 福岡県
-                  %option{value: "41"} 佐賀県
-                  %option{value: "42"} 長崎県
-                  %option{value: "43"} 熊本県
-                  %option{value: "44"} 大分県
-                  %option{value: "45"} 宮崎県
-                  %option{value: "46"} 鹿児島県
-                  %option{value: "47"} 沖縄県
+                %input.m-identification-form-group-default{name: "prefectures", :value =>current_user.address.prefecture.name}
 
             .m-identification-form-group
               %label.m-identification-form-group-text
                 市町区村
               %span.m-identification-form-group-any
                 任意
-              %input.m-identification-form-group-default{placeholder:'例) 横浜市緑区'}
+              %input.m-identification-form-group-default{placeholder:'例) 横浜市緑区', :value => current_user.address.municipalities}
 
             .m-identification-form-group
               %label.m-identification-form-group-text
                 番地
               %span.m-identification-form-group-any
                 任意
-              %input.m-identification-form-group-default{placeholder:'例) 青山1-1-1'}
+              %input.m-identification-form-group-default{placeholder:'例) 青山1-1-1', :value => current_user.address.house_number}
 
             .m-identification-form-group
               %label.m-identification-form-group-text
                 建物名
               %span.m-identification-form-group-any
                 任意
-              %input.m-identification-form-group-default{placeholder:'例) 柳ビル103'}
+              %input.m-identification-form-group-default{placeholder:'例) 柳ビル103', :value => current_user.address.building_name}
 
               %button.m-btn-default.m-btn-red{type: "submit"}                
                 登録する
