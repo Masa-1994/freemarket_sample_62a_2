@@ -39,6 +39,7 @@ class ProductsController < ApplicationController
       brand_id: product_params[:bland_id],
       seller_id: current_user.id
     )
+    #imageテーブルへ保存
     @product.images.build(
       image: product_params[:images_attributes]["0"]["image"]
     )
@@ -57,6 +58,8 @@ class ProductsController < ApplicationController
   end
 
   def buy
+    @images = Image.includes(:product)
+    @product = Product.find(params[:id])
   end
 
   private

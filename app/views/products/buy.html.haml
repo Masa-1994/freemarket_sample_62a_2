@@ -10,12 +10,15 @@
       %section.o-buycontents
         .o-buycontent
           %h3.o-buycontent
-            = image_tag('/images/sampleimage.jpg',class: 'o-buycontent__image')
+            -@images.each do |image|
+              - if image.product_id == @product[:id]
+                = image_tag image.image.url,class: 'o-buycontent__image'
           %p.o-buycontent__name
-            ZARA ブラウス Sサイズ 
+            = @product.name
         .o-buyform
           %p.o-buyform__sabprice
-            ¥15,500
+            ¥
+            = @product.price.to_s(:delimited)
             %span.o-buyform__sabfee
               送料込み
         %ul.o-buypoints
@@ -26,7 +29,8 @@
             %p
               支払い金額
               %span.o-buyprice__cell
-                ¥15,500
+                ¥
+                = @product.price.to_s(:delimited)
         %button.o-buyprice__btn
           購入する
 
@@ -39,7 +43,7 @@
             %br
             愛知県 名古屋市 中区 栄3-13-2
             %br
-            山田 太郎
+            
             .o-buyuser__link
               = link_to "変更する", root_path, class: "h-text-link"
               .o-buyuser__icon
