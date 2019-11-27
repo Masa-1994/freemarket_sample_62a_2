@@ -1,25 +1,19 @@
-:javascript
-  <!--
-  function myChgPic(myPicURL){
-    document.images["myBigImage"].src = myPicURL;
-  }
-  // -->
-
 .k-product-details
   .k-product-details__contents
     %h2.k-product-details__contents__title
       = @product.name
     -# 下記の説明は、ログインしていない場合のみ表示される文章
     %h2.k-product-details__contents__explanation
-    『
-    = @product.name
-    』は、53回の取引実績を持つ
-    = @seller.nickname
-    さんから出品されました。プラダ（トートバッグ/レディース）の商品で、
-    = @product.shipping_area
-    から
-    = @product.shipping_date
-    されます。
+    - unless user_signed_in?
+      『
+      = @product.name
+      』は、53回の取引実績を持つ
+      = @seller.nickname
+      さんから出品されました。
+      = @product.shipping_area
+      から
+      = @product.shipping_date
+      されます。
     .k-product-details__contents__content
       .k-product-details__contents__content__left
         %table.k-product-details__contents__content__left__picture
@@ -27,41 +21,20 @@
             %td{cellpadding: "0", align: "center"}
               -@images.each do |image|
                 - if image.product_id == @product[:id]
-                  = image_tag image.image.url, height: '300', width: '300', name: 'myBigImage', class: 'k-product-details__contents__content__left__picture__img'
-        %table.k-product-details__contents__content__left__pictures
-          %tr
-            %td
-              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/google.png' )" do
-                = image_tag '/images/google.png', class: 'k-product-details__contents__content__left__pictures__imgs'
-            %td
-              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main2.jpg' )" do
-                = image_tag '/images/main2.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
-            %td
-              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main.jpg' )" do
-                = image_tag '/images/main.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
-            %td
-              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/footer.jpg' )" do
-                = image_tag '/images/footer.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
-            %td
-              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/mercari_icon.png' )" do
-                = image_tag '/images/mercari_icon.png', class: 'k-product-details__contents__content__left__pictures__imgs'
-          %tr
-            %td
-              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main2.jpg' )" do
-                = image_tag '/images/main2.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
-            %td
-              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/main.jpg' )" do
-                = image_tag '/images/main.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
-            %td
-              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/footer.jpg' )" do
-                = image_tag '/images/footer.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
-            %td
-              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/mercari_icon.png' )" do
-                = image_tag '/images/mercari_icon.png', class: 'k-product-details__contents__content__left__pictures__imgs'
-            %td
-              = link_to 'javascript:void(0)' , onmouseover: "myChgPic( '/images/google.png' )" do
-                = image_tag '/images/google.png', class: 'k-product-details__contents__content__left__pictures__imgs'
-
+                  = image_tag image.image.url, height: '300', width: '300', alt: 'img2', class: 'k-product-details__contents__content__left__picture__img'
+        .k-product-details__contents__content__left__pictures
+          -@images.each do |image|
+            - if image.product_id == @product[:id]
+              = image_tag image.image.url, class: 'k-product-details__contents__content__left__pictures__imgs'
+              -# = image_tag '/images/main2.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+              -# = image_tag '/images/main.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+              -# = image_tag '/images/footer.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+              -# = image_tag '/images/mercari_icon.png', class: 'k-product-details__contents__content__left__pictures__imgs'
+              -# = image_tag '/images/main2.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+              -# = image_tag '/images/main.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+              -# = image_tag '/images/footer.jpg', class: 'k-product-details__contents__content__left__pictures__imgs'
+              -# = image_tag '/images/mercari_icon.png', class: 'k-product-details__contents__content__left__pictures__imgs'
+              -# = image_tag '/images/google.png', class: 'k-product-details__contents__content__left__pictures__imgs'
 
       .k-product-details__contents__content__right
         %table.k-table
@@ -83,21 +56,21 @@
               %td{bgcolor: "#fafafa"}  カテゴリー
               %td
                 %p
-                = link_to '' ,class: 'k-password-link-a' do
-                  レディース
-                %p
-                = link_to '' ,class: 'k-password-link-a' do
-                  .fa.fa-angle-right
-                  バック
-                %p
-                = link_to '' ,class: 'k-password-link-a' do
-                  .fa.fa-angle-right
-                  トートバック
+                -# = link_to '' ,class: 'k-password-link-a' do
+                -#   レディース
+                -# %p
+                -# = link_to '' ,class: 'k-password-link-a' do
+                -#   .fa.fa-angle-right
+                -#   バック
+                -# %p
+                -# = link_to '' ,class: 'k-password-link-a' do
+                -#   .fa.fa-angle-right
+                -#   トートバック
             %tr
               %td{bgcolor: "#fafafa"}  ブランド
               %td
                 = link_to '' ,class: 'k-password-link-a' do
-                  プラダ
+                  &nbsp;
             %tr
               %td{bgcolor: "#fafafa"}  商品の状態
               %td
@@ -160,12 +133,13 @@
           %span.k-product-details__contents__container__right__text
             = link_to '' ,class: 'k-relief' do
               あんしん・あんぜんへの取り組み
-    = link_to '' ,class: 'k-buy-a' do
-      .k-product-details__contents__buy
-        商品の編集
-    = link_to '' ,class: 'k-buy-a' do
-      .k-product-details__contents__buy-not
-        商品の削除
+    - if user_signed_in? && @product.seller_id == current_user.id
+      = link_to '' ,class: 'k-buy-a' do
+        .k-product-details__contents__buy
+          商品の編集
+      = link_to "/products/#{@product.id}", method: :delete do
+        .k-product-details__contents__buy-not
+          商品の削除
 
   .k-product-details__comment
     .k-product-details__comment__posted
