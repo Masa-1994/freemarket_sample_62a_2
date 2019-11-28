@@ -33,6 +33,15 @@ ja:
         first_name: 名
         family_name_kana: 姓カナ
         first_name_kana: 名カナ
+        birthday_year: 生年月日
+        phone_number: 携帯番号の番号
+      
+      address:
+        family_name: 姓
+        first_name: 名
+        family_name_kana: 姓カナ
+        first_name_kana: 名カナ
+        postal_code: 郵便番号
 
 
 
@@ -153,7 +162,7 @@ ja:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
       taken: "は既に使用されています。"
-      blank: "が入力されていません。"
+      blank: "を入力してください"
       too_short: "は%{count}文字以上128文字以下で入力してください"
       too_long: "は%{count}文字以下に設定して下さい。"
       invalid: "は有効でありません。"

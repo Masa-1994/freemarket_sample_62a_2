@@ -83,3 +83,5 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'rails-i18n'
+
+gem 'recaptcha', require: "recaptcha/rails"
