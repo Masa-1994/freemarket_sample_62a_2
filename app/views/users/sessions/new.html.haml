@@ -21,15 +21,15 @@
     = form_for(resource, as: resource_name, url: session_path(resource_name, class: "k-login-form")) do |f|
       .k-login-form__inner
         .k-login-form__inner__group
-          = f.email_field :email, placeholder: 'メールアドレス', class: "k-login-form__inner__group__text" 
+          = f.email_field :email, placeholder: 'メールアドレス', class: "k-login-form__inner__group__text"
 
         .k-login-form__inner__group
           = f.password_field :password, placeholder: 'パスワード', class: "k-login-form__inner__group__text"
 
-        -# .k-login-form__inner__group
-        -#   -# Google reCAPTCHA---------------
-        -#   = recaptcha_tags
-        -#   -# -------------------------------
+        .k-login-form__inner__group.recaptcha
+          -# Google reCAPTCHA---------------
+          = recaptcha_tags
+          -# -------------------------------
 
         = f.submit "ログイン", class: "h-btn-default h-btn-red"
 
