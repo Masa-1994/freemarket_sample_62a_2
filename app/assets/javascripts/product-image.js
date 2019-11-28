@@ -49,6 +49,8 @@ $(document).on('turbolinks:load',function() {
         }
 
         // リサイズ画像
+        $('.o-proexhibit__imageuploads__file').css('width', '494px');
+        $('.o-image-move').show();
         $('.o-image-move__image').html($('<canvas>').attr({
           'id': 'canvas',
           'width': new_w,
@@ -64,7 +66,8 @@ $(document).on('turbolinks:load',function() {
   });
   
     $(".o-image-move__up__choice").on("click", function(){
-      $(".o-image-move").remove();
+      $('.o-image-move').hide();
+      $('.o-proexhibit__imageuploads__file').css('width', '620px');
     });
 
 });
