@@ -52,7 +52,7 @@ class SignupController < ApplicationController
       birthday_year: session[:birthday_year],
       phone_number: '09012345678'
     )
-    render "/signup/step1" unless @user.valid?(:validates_step1)    #sessionに対してのバリデーション
+    render "/signup/step1" unless @user.valid?(:validates_step1) && verify_recaptcha(model: @user)   #sessionに対してのバリデーション
   end
 
 # 電話番号の確認(STEP2)-----------------------------------------------------------------------------------------------
