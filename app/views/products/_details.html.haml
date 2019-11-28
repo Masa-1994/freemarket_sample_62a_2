@@ -105,12 +105,14 @@
           (税込)
         %span.k-product-details__contents__price-box__shipping-fee
           送料込み
-
-    = link_to buy_product_path ,class: 'k-buy-a' do
-      .k-product-details__contents__buy
-        購入画面に進む
-    -# .k-product-details__contents__buy-not
-    -#   売り切れました
+  
+    -if @product.buyer_id.present?
+      .k-product-details__contents__buy-not
+        売り切れました
+    - else
+      = link_to buy_product_path ,class: 'k-buy-a' do
+        .k-product-details__contents__buy
+          購入画面に進む
     -#   ↑売り切れの場合
     -#   ↓ゆうゆうメルカリ便のみ表示
     %p.k-product-details__contents__message

@@ -63,7 +63,6 @@ class ProductsController < ApplicationController
     @images = Image.includes(:product)
     @product = Product.find(params[:id])
     @product.update(buyer_id: current_user.id)      #productテーブルにbuyer_idを入れる
-
     #payjpでの購入
     card = CreditCard.where(user_id: current_user.id).first
     if card.blank?
