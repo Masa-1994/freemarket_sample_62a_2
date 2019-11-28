@@ -139,7 +139,7 @@
       = link_to '' ,class: 'k-buy-a' do
         .k-product-details__contents__buy
           商品の編集
-      = link_to "/products/#{@product.id}", method: :delete do
+      = link_to "/products/#{@product.id}", class: "k-destoy", method: :delete do
         .k-product-details__contents__buy-not
           商品の削除
 
