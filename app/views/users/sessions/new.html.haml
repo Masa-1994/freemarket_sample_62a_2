@@ -26,10 +26,10 @@
         .k-login-form__inner__group
           = f.password_field :password, placeholder: 'パスワード', class: "k-login-form__inner__group__text"
 
-        .k-login-form__inner__group
-          -# Google reCAPTCHA---------------
-          = recaptcha_tags
-          -# -------------------------------
+        -# .k-login-form__inner__group
+        -#   -# Google reCAPTCHA---------------
+        -#   = recaptcha_tags
+        -#   -# -------------------------------
 
         = f.submit "ログイン", class: "h-btn-default h-btn-red"
 
