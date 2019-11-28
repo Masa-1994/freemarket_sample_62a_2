@@ -57,22 +57,37 @@ class ProductsController < ApplicationController
     @seller = User.find(@product.seller_id)
   end
 
+  require 'payjp'
+
   def buy
     @images = Image.includes(:product)
     @product = Product.find(params[:id])
-    @buyer = Address.includes(:user)
+    @product.update(buyer_id: current_user.id)      #productテーブルにbuyer_idを入れる
+
+    #payjpでの購入
+    card = CreditCard.where(user_id: current_user.id).first
+    if card.blank?
+      redirect_to controller: "cards", action: "new"                     #登録された情報がない場合にカード登録画面に移動
+    else
+      Payjp.api_key = "sk_test_96c344952e792691d9fc840e"
+      customer = Payjp::Customer.retrieve(card.customer_id)              #保管した顧客IDでpayjpから情報取得
+      @default_card_information = customer.cards.retrieve(card.card_id)  #カード情報表示のためインスタンス変数に代入
+    end
   end
 
-  require 'payjp'
-
-  #payjp購入ページ
   def purchase
+    @product = Product.find(params[:id])
+    card = CreditCard.where(user_id: current_user.id).first
     Payjp.api_key = "sk_test_96c344952e792691d9fc840e"
     Payjp::Charge.create(
-      amount: @product.price, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      amount: @product.price,      #決済する値段
+      card: params['payjp-token'],
       currency: 'jpy'
     )
+    redirect_to action: 'complete'
+  end
+
+  def complete
   end
 
   
@@ -100,6 +115,7 @@ class ProductsController < ApplicationController
       :shipping_date,
       :shipping_method,
       :category_id,
+      :buyer_id,
       :price,
       images_attributes: [:image]).merge(seller_id: current_user.id)
   end

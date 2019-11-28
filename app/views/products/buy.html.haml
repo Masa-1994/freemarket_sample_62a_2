@@ -31,8 +31,10 @@
               %span.o-buyprice__cell
                 ¥
                 = @product.price.to_s(:delimited)
-        %button.o-buyprice__btn
-          購入する
+        = link_to complete_product_path ,class: "o-buyprice__redbtn" do
+          %button.o-buyprice__btn
+            購入する
+            
         .o-payjp-btn
           = form_for(@product,url: purchase_product_path) do
             :plain
@@ -57,7 +59,10 @@
           .o-buyuser__text
             クレジットカード
             .content__credit-cards__list--pay-num
-              = "**** **** **** ****" 
+              = "**** **** ****" + @default_card_information.last4
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
 
   = render "signup/signup-footer"
           

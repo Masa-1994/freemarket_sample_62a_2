@@ -1,0 +1,25 @@
+.o-buycomplete{
+  width: 700px;
+  height: 320px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.o-buyformm{
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: center;
+  color: #333;
+  padding-top: 50px;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  &__sabfee{
+    font-size: 16px;
+    display: inline-block;
+    margin: 8px 8px 0;
+    font-weight: 200;
+  }
+}
+.o-complete-root{
+  text-decoration: none;
+  color:#333;
+}

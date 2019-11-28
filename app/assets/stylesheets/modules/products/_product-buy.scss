@@ -92,13 +92,16 @@
   &__btn{
     display: block;
     background: #ea352d;
-    color: #fff;
     margin: 10px auto;
     cursor: pointer;
     width: 320px;
     font-size: 14px;
     line-height: 48px;
     border: 1px solid #ea352d;
+    color: #fff;
+  }
+  &__redbtn{
+    text-decoration: none;
   }
 }
 .o-payjp-btn{

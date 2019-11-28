@@ -1,0 +1,17 @@
+.o-buycontainer
+  %header.o-proexhibit__header
+    %h2.o-proexhibit__headerimage
+      = link_to root_path do
+        = image_tag( '/images/fmarket_logo_red.svg',  class: 'o-proexhibit__headerimg' )
+  
+  .o-buymain
+    %section.o-buycomplete
+      %section.o-buycontents
+        .o-buyformm
+          %span.o-buyformm__sabfee
+            購入が完了しました
+        %ul.o-buypoints
+          %li.o-pointtext 
+            = link_to "トップページに戻る",root_path,class:"o-complete-root"
+
+  = render "signup/signup-footer"

@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :products, only: [:index,:new,:create,:show,:destroy] do
     member do
       get :buy              #商品購入
-      get :purchase
+      patch :purchase         #payjp
+      get :complete         #購入完了
     end
     collection do
       get 'category_children',defaults: { format: 'json' }             #子カテゴリー選択
