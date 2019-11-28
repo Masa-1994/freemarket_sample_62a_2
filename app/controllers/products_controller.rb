@@ -80,9 +80,12 @@ class ProductsController < ApplicationController
   
     @product = Product.find(params[:id])
 
-    # if user_signed_in? && product.seller_id == current_user.id
-    @product.destroy
-    redirect_to root_path
+    if user_signed_in? && @product.seller_id == current_user.id
+      @product.destroy
+      redirect_to root_path
+    else
+      render acction: :show
+    end
   end
 
   private
