@@ -12,6 +12,7 @@
               %label.h-label
                 携帯電話の番号
               = f.text_field :phone_number, placeholder: '携帯電話の番号を入力', class: "h-input-default", maxlength: "11"
+              = render partial: '/signup/error-messages', locals: {user: @user, column: "phone_number"}
 
             %p
               本人確認のため、携帯電話のSMS(ショートカットメッセージサービス)を利用して認証を行います。

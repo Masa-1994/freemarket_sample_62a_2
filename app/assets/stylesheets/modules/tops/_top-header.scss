@@ -160,6 +160,8 @@
 }
 
 .k-user-signed {
+  a{text-decoration: none;}
+
   &__i {
     max-width: 100%;
     max-height: 100%;
@@ -183,6 +185,16 @@
   &__text {
     display: inline-block;
     vertical-align: 5px;
+    color: rgb(34, 34, 34);
   }
 
+}
+
+.k-user-signed__text:hover {
+  cursor: pointer;
+  color: rgb(0, 174, 255);
+}
+.fa.k-user-signed__i:hover {
+  cursor: pointer;
+  color: rgb(0, 174, 255);
 }

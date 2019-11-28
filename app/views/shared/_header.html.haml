@@ -22,12 +22,15 @@
       .k-top__list__list
         - if user_signed_in?
           .k-user-signed
-            .fa.k-user-signed__i.fa-heart-o
-            %span.k-user-signed__text いいね!一覧
-            .fa.k-user-signed__i.fa-bell-o
-            %span.k-user-signed__text お知らせ
-            .fa.k-user-signed__i.fa-check
-            %span.k-user-signed__text やることリスト
+            = link_to "/" do
+              .fa.k-user-signed__i.fa-heart-o
+              %span.k-user-signed__text いいね!一覧
+            = link_to "/" do
+              .fa.k-user-signed__i.fa-bell-o
+              %span.k-user-signed__text お知らせ
+            = link_to "/" do
+              .fa.k-user-signed__i.fa-check
+              %span.k-user-signed__text やることリスト
             = link_to user_path(current_user.id), class: "" do
               = image_tag '/images/member.png', height: '', width: '', class: 'k-user-signed__img'
               %span.k-user-signed__text 

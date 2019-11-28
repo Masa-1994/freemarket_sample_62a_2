@@ -27,9 +27,9 @@
           = f.password_field :password, placeholder: 'パスワード', class: "k-login-form__inner__group__text"
 
         .k-login-form__inner__group
-
-        .k-login-form__inner__group
-          = image_tag 'google-reCAPTCHA.png', height: '78', width: '304', class: 'k-login-panel__form-inner__google__img'
+          -# Google reCAPTCHA---------------
+          = recaptcha_tags
+          -# -------------------------------
 
         = f.submit "ログイン", class: "h-btn-default h-btn-red"
 
