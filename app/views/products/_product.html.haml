@@ -34,7 +34,10 @@
                   %figure.o-contents__menu__box
                     -@images.each do |image|
                       -if image.product_id == product.id
-                        =image_tag image.image.url,class: "o-contents__menu__image"
+                        =image_tag image.image.url,class: "o-contents__menu__image" 
+                        -if product.buyer_id.present?
+                          %p.o-contents__menu__sold
+                            SOLD
                     .span.o-price
                       ¥
                       =product.price.to_s(:delimited)

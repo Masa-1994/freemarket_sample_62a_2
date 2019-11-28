@@ -82,6 +82,7 @@
 .o-contents__menu{
   width: 100%;
   height: 300px;
+  position: relative;
   &__item{
     height: 200px;
     width: 20%;
@@ -94,6 +95,22 @@
     vertical-align: bottom;
     object-fit: cover;
     box-shadow: 0 2px 4px rgba(0,0,0,.18);
+  }
+  &__sold{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    font-size: 25px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    background:#ea352d;
+    height: 50px;
+    line-height: 50px;
+    width: 80px;
+    text-align: center;
   }
   &__box{
     position: relative;
