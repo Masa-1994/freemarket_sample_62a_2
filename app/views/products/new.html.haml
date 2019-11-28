@@ -16,11 +16,12 @@
             %span.o-proexhibit__required 必須
             %p.o-proexhibit__imageuploads__text
               最大10枚までアップロードできます
-              .o-image-move
-                .o-image-move__image
-                .o-image-move__up
-                  .o-image-move__up__edit 編集
-                  .o-image-move__up__choice 削除
+          .k-imgup
+            .o-image-move
+              .o-image-move__image
+              .o-image-move__up
+                .o-image-move__up__edit 編集
+                .o-image-move__up__choice 削除
             =i.label :image do
               .o-proexhibit__imageuploads__file
                 = i.file_field :image, type: 'file', class: "o-proexhibit__imageuploads__fileimage, o-hidden"
