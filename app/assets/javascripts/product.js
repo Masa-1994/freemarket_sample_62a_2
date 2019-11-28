@@ -7,24 +7,24 @@ $(document).on('turbolinks:load', function(){
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='o-proexhibit__explain__from' id= 'children_wrapper'>
-                                        <select class="o-select" id="child_category" name="category_id">
-                                          <option value="---" data-category="---">---</option>
-                                          ${insertHTML}
-                                        <select>
-                                        <i class='fa fa-chevron-down.icon-bottom'></i>
-                                    </div>`
+                          <select class="o-select" id="child_category" name="category_id">
+                            <option value="---" data-category="---">---</option>
+                            ${insertHTML}
+                          <select>
+                          <i class='fa fa-chevron-down.icon-bottom'></i>
+                      </div>`
     $('.o-proexhibit__explain__fformgroup').append(childSelectHtml);
   }
   // 孫カテゴリーの表示作成
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='o-proexhibit__explain__from' id= 'grandchildren_wrapper'>
-                                                  <select class="o-select" id="grandchild_category" name="category_id">
-                                                    <option value="---" data-category="---">---</option>
-                                                    ${insertHTML}
-                                                  <select>
-                                                  <i class='fa fa-chevron-down.icon-bottom'></i>
-                                              </div>`
+                                <select class="o-select" id="grandchild_category" name="category_id">
+                                  <option value="---" data-category="---">---</option>
+                                  ${insertHTML}
+                                <select>
+                                <i class='fa fa-chevron-down.icon-bottom'></i>
+                            </div>`
     $('.o-proexhibit__explain__fformgroup').append(grandchildSelectHtml);
   }
   // 親カテゴリー選択後のイベント

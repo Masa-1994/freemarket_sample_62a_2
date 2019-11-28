@@ -39,7 +39,7 @@
             .o-proexhibit__productname__formgroup
               = f.label '商品の説明', class: 'o-proexhibit__productname__title'
               %span.o-proexhibit__required 必須
-              = f.text_field :description, class: "o-inputproducttext", placeholder:'商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+              = f.text_area :description, class: "o-inputproducttext", placeholder:'商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
 
           .o-proexhibit__explain
             = f.label '商品の詳細', class: 'o-proexhibit__explain__title'
