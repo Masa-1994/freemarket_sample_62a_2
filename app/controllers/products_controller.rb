@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
+
   end
 
   def category_children
@@ -62,7 +63,7 @@ class ProductsController < ApplicationController
   def buy
     @images = Image.includes(:product)
     @product = Product.find(params[:id])
-    @product.update(buyer_id: current_user.id)      #productテーブルにbuyer_idを入れる
+    
     #payjpでの購入
     card = CreditCard.where(user_id: current_user.id).first
     if card.blank?
@@ -76,6 +77,7 @@ class ProductsController < ApplicationController
 
   def purchase
     @product = Product.find(params[:id])
+    @product.update(buyer_id: current_user.id)      #productテーブルにbuyer_idを入れる
     card = CreditCard.where(user_id: current_user.id).first
     Payjp.api_key = "sk_test_96c344952e792691d9fc840e"
     Payjp::Charge.create(
