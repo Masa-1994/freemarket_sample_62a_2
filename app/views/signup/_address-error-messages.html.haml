@@ -1,0 +1,12 @@
+- if address.errors.any?
+  - unless address.valid?
+    - if errors = address.errors.full_messages_for(column.to_sym)
+      %ul
+        - errors.each do |error|
+          %li.address-error-messages-signup=error
+
+:css
+  .address-error-messages-signup{
+    color: #ea352d;
+    margin-top: 8px;
+  }

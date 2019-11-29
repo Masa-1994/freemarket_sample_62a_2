@@ -14,7 +14,7 @@
               %span.h-form-require
                 必須
               = f.text_field :nickname, placeholder: '例) メルカリ太郎', class: "h-input-default" 
-              = render partial: '/signup/error-messages', locals: {user: @user, column: "nickname"}
+              = render partial: '/signup/user-error-messages', locals: {user: @user, column: "nickname"}
               
             .h-form-group 
               %label.h-label
@@ -22,7 +22,7 @@
               %span.h-form-require
                 必須
               = f.email_field :email, placeholder: 'PC・携帯どちらでも可', class: "h-input-default" 
-              = render partial: '/signup/error-messages', locals: {user: @user, column: "email"}
+              = render partial: '/signup/user-error-messages', locals: {user: @user, column: "email"}
 
             .h-form-group 
               %label.h-label
@@ -30,7 +30,7 @@
               %span.h-form-require
                 必須
               = f.password_field :password, placeholder: '7文字以上', class: "h-input-default"
-              = render partial: '/signup/error-messages', locals: {user: @user, column: "password"}
+              = render partial: '/signup/user-error-messages', locals: {user: @user, column: "password"}
 
             .h-form-group 
               %label.h-label
@@ -38,7 +38,7 @@
               %span.h-form-require
                 必須
               = f.password_field :password_confirmation, placeholder: '7文字以上', class: "h-input-default"
-              = render partial: '/signup/error-messages', locals: {user: @user, column: "password_confirmation"}
+              = render partial: '/signup/user-error-messages', locals: {user: @user, column: "password_confirmation"}
 
             .h-form-group
               %h3.h-text
@@ -54,8 +54,8 @@
                   必須
               = f.text_field :family_name, placeholder: '例) 山田', class: "h-input-default h-half"
               = f.text_field :first_name, placeholder: '例) 彩', class: "h-input-default h-half"
-              = render partial: '/signup/error-messages', locals: {user: @user, column: "family_name"}
-              = render partial: '/signup/error-messages', locals: {user: @user, column: "first_name"}
+              = render partial: '/signup/user-error-messages', locals: {user: @user, column: "family_name"}
+              = render partial: '/signup/user-error-messages', locals: {user: @user, column: "first_name"}
 
             .h-form-group
               %div
@@ -65,8 +65,8 @@
                   必須
               = f.text_field :family_name_kana, placeholder: '例) ヤマダ', class: "h-input-default h-half"
               = f.text_field :first_name_kana, placeholder: '例) アヤ', class: "h-input-default h-half"
-              = render partial: '/signup/error-messages', locals: {user: @user, column: "family_name_kana"}
-              = render partial: '/signup/error-messages', locals: {user: @user, column: "first_name_kana"}
+              = render partial: '/signup/user-error-messages', locals: {user: @user, column: "family_name_kana"}
+              = render partial: '/signup/user-error-messages', locals: {user: @user, column: "first_name_kana"}
 
             .h-form-group
               %label.h-label{for: "birthday_year"}
@@ -77,7 +77,7 @@
               .h-birthday-select-wrap
                 .h-select-wrap
                   != sprintf(f.date_select(:birthday_year, with_css_classes:'h-select-default', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
-                  = render partial: '/signup/error-messages', locals: {user: @user, column: "birthday_year"}
+                  = render partial: '/signup/user-error-messages', locals: {user: @user, column: "birthday_year"}
 
             %p.h-form-info-text
               ※本情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。

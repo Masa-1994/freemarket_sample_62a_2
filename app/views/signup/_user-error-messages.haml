@@ -3,11 +3,10 @@
     - if errors = user.errors.full_messages_for(column.to_sym)
       %ul
         - errors.each do |error|
-          %li.error-messages-signup=error
-
+          %li.user-error-messages-signup=error
 
 :css
-  .error-messages-signup{
+  .user-error-messages-signup{
     color: #ea352d;
     margin-top: 8px;
   }

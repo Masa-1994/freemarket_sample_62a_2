@@ -6,7 +6,7 @@
         発送元・お届け先住所入力
       .h-user-content
         = form_for @user, url: "/signup", method: :post, html: {class: 'h-user-form'} do |f|
-          = f.fields_for :address, @user.build_address do |a|
+          = f.fields_for :address, @address do |a|
             .h-user-form-box
 
               .h-form-group
@@ -17,6 +17,8 @@
                     必須
                 = a.text_field :family_name, placeholder: '例) 山田', class: "h-input-default h-half", value: session[:family_name]
                 = a.text_field :first_name, placeholder: '例) 彩', class: "h-input-default h-half", value: session[:first_name]
+                = render partial: '/signup/address-error-messages', locals: {address: @address, column: "family_name"}
+                = render partial: '/signup/address-error-messages', locals: {address: @address, column: "first_name"}
 
               .h-form-group
                 %div
@@ -26,8 +28,8 @@
                     必須
                 = a.text_field :family_name_kana, placeholder: '例) ヤマダ', class: "h-input-default h-half", value: session[:family_name_kana]
                 = a.text_field :first_name_kana, placeholder: '例) アヤ', class: "h-input-default h-half", value: session[:first_name_kana]
-                = render partial: '/signup/error-messages', locals: {user: @user.address, column: "family_name"}
-                = render partial: '/signup/error-messages', locals: {user: @user.address, column: "first_name"}
+                = render partial: '/signup/address-error-messages', locals: {address: @address, column: "family_name_kana"}
+                = render partial: '/signup/address-error-messages', locals: {address: @address, column: "first_name_kana"}
 
               .h-form-group
                 %label.h-label
@@ -35,6 +37,7 @@
                 %span.h-form-require
                   必須
                 = a.text_field :postal_code, placeholder: '例) 123-4567', class: "h-input-default"
+                = render partial: '/signup/address-error-messages', locals: {address: @address, column: "postal_code"}
 
               .h-form-group
                 %label.h-label
@@ -45,6 +48,7 @@
                   %i.h-icon-arrow-bottom
                     = image_tag '/images/yazirushibottom.svg' ,class: 'h-icon-bottom'
                   = a.collection_select :prefecture_id, Prefecture.all, :id, :name
+                  = render partial: '/signup/address-error-messages', locals: {address: @address, column: "prefecture_id"}
 
               .h-form-group
                 %label.h-label
@@ -52,6 +56,7 @@
                 %span.h-form-require
                   必須
                 = a.text_field :municipalities, placeholder: '例) 横浜市緑区', class: "h-input-default"
+                = render partial: '/signup/address-error-messages', locals: {address: @address, column: "municipalities"}
 
               .h-form-group
                 %label.h-label
@@ -59,6 +64,7 @@
                 %span.h-form-require
                   必須
                 = a.text_field :house_number, placeholder: '例) 青山1-1-1', class: "h-input-default"
+                = render partial: '/signup/address-error-messages', locals: {address: @address, column: "house_number"}
 
               .h-form-group
                 %label.h-label
