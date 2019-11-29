@@ -42,7 +42,8 @@ ja:
         family_name_kana: 姓カナ
         first_name_kana: 名カナ
         postal_code: 郵便番号
-
+        municipalities: 市区町村
+        house_number: 番地
 
 
 

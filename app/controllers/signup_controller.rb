@@ -21,6 +21,8 @@ class SignupController < ApplicationController
   # 発送元・お届け先住所入力
   def step3
     @user = User.new # 新規インスタンス作成
+    @user.build_address
+    @address = Address.new
   end
 
   # 登録完了
@@ -52,7 +54,7 @@ class SignupController < ApplicationController
       birthday_year: session[:birthday_year],
       phone_number: '09012345678'
     )
-    render "/signup/step1" unless @user.valid?(:validates_step1) && verify_recaptcha(model: @user)   #sessionに対してのバリデーション
+    render "/signup/step1" unless @user.valid? && verify_recaptcha(model: @user)   #sessionに対してのバリデーション
   end
 
 # 電話番号の確認(STEP2)-----------------------------------------------------------------------------------------------
@@ -72,7 +74,7 @@ class SignupController < ApplicationController
       birthday_year: session[:birthday_year],
       phone_number: session[:phone_number]
     )
-    render "/signup/step2" unless @user.valid?(:validates_step2)    #sessionに対してのバリデーション
+    render "/signup/step2" unless @user.valid?    #sessionに対してのバリデーション
   end
 
 # 発送元・お届け先住所入力(STEP3)----------------------------------------------------------------------------------------
@@ -102,7 +104,7 @@ class SignupController < ApplicationController
       municipalities: session[:address_municipalities],
       house_number: session[:address_house_number],
     )
-    render "/signup/step3" unless @address.valid?(:validates_step3)    #sessionに対してのバリデーション
+    render "/signup/step3" unless @address.valid?    #sessionに対してのバリデーション
   end
 
 # sessionのデータをデータベースに保存する----------------------------------------------------------------------------------
@@ -132,13 +134,12 @@ class SignupController < ApplicationController
       municipalities: session[:address_municipalities],
       house_number: session[:address_house_number],
     )
-
     if @user.save   #データベースへの保存
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in? # 自動ログイン
       redirect_to "/cards/new" #データベースに保存されれば、クレジットカード登録ページに移動する
     else
-      render '/signup/step3'   #データベースに保存されなければ,会員情報入力(STEP1)からやり直し
+      render '/signup/step3'   #データベースに保存されなければ,会員情報入力(STEP3)からやり直し
     end
   end
 

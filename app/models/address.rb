@@ -5,7 +5,7 @@ class Address < ApplicationRecord
   validates :first_name,              presence: true
   validates :family_name_kana,        presence: true
   validates :first_name_kana,         presence: true
-  validates :postal_code,             presence: true, length: {maximum: 8}
+  validates :postal_code,             presence: true, length: {maximum: 7}
   validates :prefecture_id,           presence: true
   validates :municipalities,          presence: true
   validates :house_number,            presence: true
@@ -13,6 +13,6 @@ class Address < ApplicationRecord
 
 
   belongs_to_active_hash :prefecture
-  belongs_to :user
+  belongs_to :user, optional: true
 
 end

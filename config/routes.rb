@@ -7,13 +7,13 @@ Rails.application.routes.draw do
   resources :products, only: [:index,:new,:create,:show,:destroy] do
     member do
       get :buy              #商品購入
-      patch :purchase         #payjp
+      patch :purchase       #payjp
       get :complete         #購入完了
     end
     collection do
       get 'category_children',defaults: { format: 'json' }             #子カテゴリー選択
-      get 'category_grandchildren',defaults: { format: 'json' }    #孫カテゴリー選択
-      # get 'get_size', defaults: { format: 'json' }                             #サイズ選択
+      get 'category_grandchildren',defaults: { format: 'json' }        #孫カテゴリー選択
+      # get 'get_size', defaults: { format: 'json' }                   #サイズ選択
     end
   end
 
@@ -36,12 +36,11 @@ Rails.application.routes.draw do
       get 'step2'           #電話番号の確認
       get 'step2_5'         #電話番号認証
       get 'step3'           #発送元・お届け先住所入力
-      get 'step4'           #支払い方法
       get 'done'            #登録完了後のページ
     end
   end
 
-  #クレジットカード登録
+  #クレジットカード登録 *payjp*
   resources :cards, only: [:new,:create]
 
 end
