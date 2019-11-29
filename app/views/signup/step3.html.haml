@@ -26,6 +26,8 @@
                     必須
                 = a.text_field :family_name_kana, placeholder: '例) ヤマダ', class: "h-input-default h-half", value: session[:family_name_kana]
                 = a.text_field :first_name_kana, placeholder: '例) アヤ', class: "h-input-default h-half", value: session[:first_name_kana]
+                = render partial: '/signup/error-messages', locals: {user: @user.address, column: "family_name"}
+                = render partial: '/signup/error-messages', locals: {user: @user.address, column: "first_name"}
 
               .h-form-group
                 %label.h-label

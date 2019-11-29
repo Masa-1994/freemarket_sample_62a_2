@@ -132,12 +132,13 @@ class SignupController < ApplicationController
       municipalities: session[:address_municipalities],
       house_number: session[:address_house_number],
     )
+
     if @user.save   #データベースへの保存
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in? # 自動ログイン
       redirect_to "/cards/new" #データベースに保存されれば、クレジットカード登録ページに移動する
     else
-      render '/signup/step1'   #データベースに保存されなければ,会員情報入力(STEP1)からやり直し
+      render '/signup/step3'   #データベースに保存されなければ,会員情報入力(STEP1)からやり直し
     end
   end
 
