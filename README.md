@@ -4,7 +4,7 @@
 |-------------------|-------|-----------------------------------|
 |nickname           |string |null: false                        |
 |email              |string |null: false, unique: true          |
-|encrypted_password |string |null: false                        |
+|encrypted_password |string |null: false, default: ""           |
 |family_name        |string |null: false                        |
 |first_name         |string |null: false                        |
 |family_name_kana   |string |null: false                        |
@@ -16,9 +16,10 @@
 - has_one  :address
 - has_one  :credit_card
 - has_many :products
-- has_many :comments, dependent: :destroy
-- has_many :nices, dependent: :destroy
-- has_many :evaluations, dependent: :destroy
+- has_many :comments,        dependent: :destroy
+- has_many :nices,           dependent: :destroy
+- has_many :evaluations,     dependent: :destroy
+- has_many :sns_credentials, dependent: :destroy
 
 ## addressesテーブル
 |Column          |Type      |Options                       |
@@ -53,7 +54,7 @@
 |seller_id      |references|null: false, foreign_key: {to_table: :users}|
 |buyer_id       |references|foreign_key: { to_table: :users }           |
 |description    |text      |null: false                                 |
-|categories_id  |references|null: false                                 |
+|category_id    |references|null: false, foreign_key: true              |
 |size_id        |references|foreign_key: true                           |
 |brand_id       |references|foreign_key: true                           |
 |condition      |string    |null: false                                 |
@@ -73,9 +74,10 @@
 - has_many :images, dependent: :destroy
 
 ## categoriesテーブル
-|Column|Type  |Options    |
-|------|------|-----------|
-|name  |string|null: false|
+|Column  |Type  |Options    |
+|--------|------|-----------|
+|name    |string|null: false|
+|ancestry|string|           |
 ### Association
 - has_many :products
 - has_many :sizes, through: :categories_sizes
@@ -93,9 +95,10 @@
 - belong_to :size
 
 ## sizesテーブル
-|Column|Type  |Options    |
-|------|------|-----------|
-|name  |string|null: false|
+|Column  |Type  |Options    |
+|--------|------|-----------|
+|name    |string|null: false|
+|ancestry|string|           |
 ### Association
 - has_many :products
 - has_many :categories, through: :categories_sizes
@@ -105,7 +108,7 @@
 |Column     |Type      |Options                       |
 |-----------|----------|------------------------------|
 |category_id|references|null: false, foreign_key: true|
-|brand_id   |references|null: false, foreign_key: true|
+|brand_id   |references|foreign_key: true             |
 ### Association
 - belong_to :category
 - belong_to :brand
@@ -154,3 +157,12 @@
 |image     |string    |null: false                   |
 ### Association
 - belong_to :product 
+
+## sns_credentialsテーブル
+|Column  |Type      |Options          |
+|--------|----------|-----------------|
+|uid     |string    |                 |
+|provider|string    |                 |
+|user_id |references|foreign_key: true|
+### Association
+- belong_to :user
