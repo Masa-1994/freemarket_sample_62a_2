@@ -22,6 +22,10 @@
               -@images.each do |image|
                 - if image.product_id == @product[:id]
                   = image_tag image.image.url, height: '300', width: '300', alt: 'img2', class: 'k-product-details__contents__content__left__picture__img'
+                  -if @product.buyer_id.present?
+                    .k-product-details__contents__content__sold
+                      .k-product-details__contents__content__sold__inner
+                        SOLD
         .k-product-details__contents__content__left__pictures
           -@images.each do |image|
             - if image.product_id == @product[:id]
