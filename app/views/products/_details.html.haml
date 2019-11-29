@@ -109,14 +109,16 @@
     -if @product.buyer_id.present?
       .k-product-details__contents__buy-not
         売り切れました
-    - else
+    -elsif user_signed_in? && current_user.id == @product.seller.id
+
+    - else 
       = link_to buy_product_path ,class: 'k-buy-a' do
         .k-product-details__contents__buy
           購入画面に進む
-    -#   ↑売り切れの場合
-    -#   ↓ゆうゆうメルカリ便のみ表示
-    %p.k-product-details__contents__message
-      この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+      -# ↑売り切れの場合
+      -# ↓ゆうゆうメルカリ便のみ表示
+      %p.k-product-details__contents__message
+        この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .k-product-details__contents__details
       = @product['description']
     .k-product-details__contents__container
