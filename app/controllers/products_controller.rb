@@ -52,6 +52,20 @@ class ProductsController < ApplicationController
     
   end
 
+  def edit
+    @product= Product.find(params[:id])
+    @images = @product.images.order(id: "DESC")
+    #親カテゴリーを呼び出す
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+  end
+
+  def update
+    
+  end
+
   def show
     @images = Image.includes(:product)
     @product = Product.find(params[:id])

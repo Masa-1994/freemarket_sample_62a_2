@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "products#index"
 
   #商品関連情報
-  resources :products, only: [:index,:new,:create,:show,:destroy] do
+  resources :products, only: [:index,:new,:create,:edit,:update,:show,:destroy] do
     member do
       get :buy              #商品購入
       patch :purchase       #payjp
