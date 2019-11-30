@@ -144,7 +144,7 @@
             = link_to '' ,class: 'k-relief' do
               あんしん・あんぜんへの取り組み
     - if user_signed_in? && @product.seller_id == current_user.id
-      = link_to '' ,class: 'k-buy-a' do
+      = link_to edit_product_path ,class: 'k-buy-a' do
         .k-product-details__contents__buy
           商品の編集
       = link_to "/products/#{@product.id}", class: "k-destoy", method: :delete do
