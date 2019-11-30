@@ -40,6 +40,9 @@ class ProductsController < ApplicationController
       brand_id: product_params[:bland_id],
       seller_id: current_user.id
     )
+
+    render "/products/new" unless @product.valid?    #sessionに対してのバリデーション
+
     #imageテーブルへ保存
     @product.images.build(
       image: product_params[:images_attributes]["0"]["image"]
