@@ -18,8 +18,6 @@
           メンズ
         %li.o-category__list__details
           家電・スマホ・カメラ
-        %li.o-category__list__details
-          おもちゃ・ホビー・グッズ
 
   .o-contents 
     .o-contents__content
@@ -29,7 +27,7 @@
             レディース新着アイテム
         .o-contents__menu
           -@products.each do |product|
-            -if  product.category_id < 200
+            -if  (product.category_id < 200)
               = link_to product_path(product) do
                 %ul.o-contents__menu__items
                   %li.o-contents__menu__item
@@ -55,7 +53,7 @@
             メンズ新着アイテム
         .o-contents__menu
           -@products.each do |product|
-            -if product.category_id >= 200 && product.category_id < 346
+            -if (product.category_id >= 200 && product.category_id < 346)
               = link_to product_path(product) do
                 %ul.o-contents__menu__items
                   %li.o-contents__menu__item
@@ -82,7 +80,7 @@
             家電・スマホ・カメラ新着アイテム
         .o-contents__menu
           -@products.each do |product|
-            -if product.category_id >= 898 && product.category_id < 983
+            -if (product.category_id >= 898 && product.category_id < 984)
               = link_to product_path(product) do
                 %ul.o-contents__menu__items
                   %li.o-contents__menu__item
@@ -106,10 +104,10 @@
       .o-contents__content-main
         .o-contents__text
           %h3.o-contents__name
-            おもちゃ・ホビー・グッズ新着アイテム
+            その他新着アイテム
         .o-contents__menu
           -@products.each do |product|
-            -if product.category_id >= 685 && product.category_id < 797
+            -if (product.category_id >= 346 && product.category_id < 898) || (product.category_id >= 984) 
               = link_to product_path(product) do
                 %ul.o-contents__menu__items
                   %li.o-contents__menu__item
