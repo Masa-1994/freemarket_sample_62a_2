@@ -29,4 +29,12 @@ class Product < ApplicationRecord
 
   enum shipping_method:[:"---",:"未定",:"らくらくメルカリ便",:"ゆうメール",:"レターパック",:"普通郵便(定形、定形外)",:"クロネコヤマト",:"ゆうパック",:"クリックポスト",:"ゆうパケット"], _prefix: true
 
+  # def previous
+  #   Product.where("id < ?", self.id).order("id DESC").first
+  # end
+
+  # def next
+  #   Product.where("id > ?", self.id).order("id ASC").first
+  # end
+
 end
