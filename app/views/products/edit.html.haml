@@ -16,14 +16,17 @@
             %span.o-proexhibit__required 必須
             %p.o-proexhibit__imageuploads__text
               最大10枚までアップロードできます
-          .k-imgup
-            .o-image-move
-              .o-image-move__image
-              .o-image-move__up
-                .o-image-move__up__edit 編集
-                .o-image-move__up__choice 削除
+          .k-edit-imgup
+            .o-edit-image-move
+              .o-edit-image-move__image
+                -@images.each do |image|
+                  - if image.product_id == @product[:id]
+                    = image_tag image.image.url, class: 'o-edit-image-move__image__img'
+              .o-edit-image-move__up
+                .o-edit-image-move__up__edit 編集
+                .o-edit-image-move__up__choice 削除
             =i.label :image do
-              .o-proexhibit__imageuploads__file
+              .o-edit-proexhibit__imageuploads__file
                 = i.file_field :image, type: 'file', class: "o-proexhibit__imageuploads__fileimage, o-hidden"
                 %pre.o-proexhibit__imageuploads__filetext
                   ドラックアンドドロップ
@@ -44,12 +47,12 @@
           .o-proexhibit__explain
             = f.label '商品の詳細', class: 'o-proexhibit__explain__title'
             .o-proexhibit__explain__formbox
-              .o-proexhibit__explain__fformgroup
-                = f.label 'カテゴリー', class: 'o-proexhibit__productname__title'
-                %span.o-proexhibit__required 必須
-                .o-proexhibit__explain__from
-                  = f.select :category,@category_parent_array, {}, {class: 'o-select', id: 'parent_category'}
-                  %i.fa.fa-chevron-down.icon-bottom
+              -# .o-proexhibit__explain__fformgroup
+              -#   = f.label 'カテゴリー', class: 'o-proexhibit__productname__title'
+              -#   %span.o-proexhibit__required 必須
+              -#   .o-proexhibit__explain__from
+              -#     = f.select :category,@category_parent_array, {}, {class: 'o-select', id: 'parent_category'}
+              -#     %i.fa.fa-chevron-down.icon-bottom
               
               .o-proexhibit__explain__formgroup
                 = f.label '商品の状態', class: 'o-proexhibit__productname__title'
