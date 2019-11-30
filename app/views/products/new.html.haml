@@ -12,7 +12,8 @@
       .o-proexhibit__inner__form
         = f.fields_for :images do |i|
           .o-proexhibit__imageuploads
-            = f.label '出品画像', class: 'o-proexhibit__imageuploads__title'
+            %label.o-proexhibit__imageuploads__title
+              出品画像
             %span.o-proexhibit__required 必須
             %p.o-proexhibit__imageuploads__text
               最大10枚までアップロードできます
@@ -32,32 +33,45 @@
 
           .o-proexhibit__productname
             .o-proexhibit__productname__formgroup
-              = f.label '商品名', class: 'o-proexhibit__productname__title'
+              %label.o-proexhibit__productname__title
+                商品名
               %span.o-proexhibit__required 必須
               = f.text_field :name, class: "o-inputproductname", placeholder:'商品名（必須 40文字まで）'
+              = render partial: '/products/product-error-messages', locals: {product: @product, column: "name"}
 
             .o-proexhibit__productname__formgroup
               = f.label '商品の説明', class: 'o-proexhibit__productname__title'
               %span.o-proexhibit__required 必須
               = f.text_area :description, class: "o-inputproducttext", placeholder:'商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+              = render partial: '/products/product-error-messages', locals: {product: @product, column: "description"}
 
           .o-proexhibit__explain
-            = f.label '商品の詳細', class: 'o-proexhibit__explain__title'
+            %label.o-proexhibit__explain__title
+              商品の詳細
             .o-proexhibit__explain__formbox
               .o-proexhibit__explain__fformgroup
-                = f.label 'カテゴリー', class: 'o-proexhibit__productname__title'
+                %label.o-proexhibit__productname__title
+                  カテゴリー
                 %span.o-proexhibit__required 必須
                 .o-proexhibit__explain__from
+
+                  -# 親カテゴリーを呼び出す
+                  - @category_parent_array = [""]
+                  - Category.where(ancestry: nil).each do |parent|
+                    - @category_parent_array << parent.name
                   = f.select :category,options_for_select(@category_parent_array.map{|c|[c, {'data-category'=>c}]}), {}, {class: 'o-select', id: 'parent_category'}
                   %i.fa.fa-chevron-down.icon-bottom
-                                    
+                  = render partial: '/products/product-error-messages', locals: {product: @product, column: "category"}
+
               .o-proexhibit__explain__formgroup
-                = f.label '商品の状態', class: 'o-proexhibit__productname__title'
+                %label.o-proexhibit__productname__title
+                  商品の状態
                 %span.o-proexhibit__required 必須
                 .o-proexhibit__explain__from
                   %i.o-icon-bottom
-                    =f.select :condition, Product.conditions.keys.to_a,{},{class:'o-select'}
+                    =f.select :condition, Product.conditions.keys.to_a,{},{class:'o-select', prompt: '選択してください'}
                     %i.fa.fa-chevron-down.icon-bottom
+                    = render partial: '/products/product-error-messages', locals: {product: @product, column: "condition"}
 
           .o-proexhibit__explain
             = f.label '配送について', class: 'o-proexhibit__deivery__title'
@@ -66,8 +80,9 @@
                 = f.label '配送料の負担', class: 'o-proexhibit__productname__title'
                 %span.o-proexhibit__required 必須
                 .o-proexhibit__deivery__from
-                  =f.select :shipping_charge,  Product.shipping_charges.keys.to_a, {},{class:'o-select'}
+                  =f.select :shipping_charge,  Product.shipping_charges.keys.to_a, {},{class:'o-select', placeholder:'商品名（必須 40文字まで）'}
                   %i.fa.fa-chevron-down.icon-bottom
+                = render partial: '/products/product-error-messages', locals: {product: @product, column: "shipping_charge"}
               
               .o-proexhibit__deivery__formgroup
                 = f.label '配送の方法', class: 'o-proexhibit__productname__title'
@@ -75,6 +90,7 @@
                 .o-proexhibit__deivery__from
                   =f.select :shipping_method, Product.shipping_methods.keys,{},{class:'o-select'}
                   %i.fa.fa-chevron-down.icon-bottom
+                = render partial: '/products/product-error-messages', locals: {product: @product, column: "shipping_method"}
 
               .o-proexhibit__deivery__formgroup
                 = f.label '発送元の地域', class: 'o-proexhibit__productname__title'
@@ -82,6 +98,7 @@
                 .o-proexhibit__deivery__from
                   =f.select :shipping_area, Product.shipping_areas.keys,{},{class:'o-select'}
                   %i.fa.fa-chevron-down.icon-bottom
+                = render partial: '/products/product-error-messages', locals: {product: @product, column: "shipping_area"}
 
               .o-proexhibit__deivery__formgroup
                 = f.label '発送までの日数', class: 'o-proexhibit__productname__title'
@@ -89,6 +106,8 @@
                 .o-proexhibit__deivery__from
                   =f.select :shipping_date, Product.shipping_dates.keys,{},{class:'o-select'}
                   %i.fa.fa-chevron-down.icon-bottom
+                = render partial: '/products/product-error-messages', locals: {product: @product, column: "shipping_date"}
+
 
           .o-proexhibit__price
             = f.label '販売価格(300~9,999,999)', class: 'o-proexhibit__price__title'
@@ -101,6 +120,8 @@
                   ¥
                 .o-proexhibit__price__from
                   = f.number_field :price, class: "o-priceselect", placeholder:'例）300'
+              = render partial: '/products/product-error-messages', locals: {product: @product, column: "price"}
+
               %li.o-fee
                 .o-fee__left
                   販売手数料(10%)
@@ -111,6 +132,7 @@
                   販売利益
                 .o-profit-calculation
                   .o-profit__right
+              
                   
           .o-proexhibit__btn
             .o-proexhibit__notes
