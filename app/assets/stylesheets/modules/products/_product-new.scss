@@ -433,3 +433,68 @@
     }
   }
 }
+
+
+
+
+
+
+// 編集ページの画像表示
+
+.k-edit-imgup{
+  display: flex;
+  margin:  0 auto;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.o-edit-image-move {
+  width: 114px;
+  height: 160px;
+  border: 1px solid #eee;
+  background: #f5f5f5;
+  padding-top: 15px;
+  margin-right: 12px;
+  &__image {
+    width: 114px;
+    height: 116px;
+    object-fit: cover;
+    &__img {
+      width: 114px;
+      height: 116px;
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__up {
+    width: 114px;
+    height: 116px;
+    display: flex;
+    padding: 0 10px;
+    &__edit {
+      color: #0099e8;
+      text-decoration: none;
+      width: 57px;
+      height: 44px;
+    }
+    &__choice {
+      color: #0099e8;
+      text-decoration: none;
+      width: 57px;
+      height: 44px;
+      text-align: right;
+    }
+  }
+}
+
+.o-edit-proexhibit__imageuploads__file {
+  margin: 16px auto 0;
+  width: 494px;
+  min-height: 162px;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  cursor: pointer;
+  position: relative;
+  margin:  0 auto;
+}
