@@ -30,7 +30,7 @@ $(document).on('turbolinks:load', function(){
     var parentCategory = document.getElementById('parent_category').value; 
     if (parentCategory != ''){ 
       $.ajax({
-        url: 'category_children',
+        url: '/products/category_children',
         type: 'GET',
         data: { parent_name: parentCategory },
         dataType: 'json'
@@ -57,7 +57,7 @@ $(document).on('turbolinks:load', function(){
     var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
     if (childId != "---"){ //子カテゴリーが初期値でないことを確認
       $.ajax({
-        url: 'category_grandchildren',
+        url: '/products/category_grandchildren',
         type: 'GET',
         data: { child_id: childId },
         dataType: 'json'
