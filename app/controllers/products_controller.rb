@@ -8,13 +8,6 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.build
-
-    #親カテゴリーを呼び出す
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
-
   end
 
   def category_children
@@ -41,7 +34,7 @@ class ProductsController < ApplicationController
       seller_id: current_user.id
     )
 
-    render "/products/new" unless @product.valid?    #sessionに対してのバリデーション
+    # render "/products/new" unless @product.valid?    #sessionに対してのバリデーション
 
     #imageテーブルへ保存
     @product.images.build(
@@ -50,7 +43,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new
+      render "/products/new"
     end
     
   end

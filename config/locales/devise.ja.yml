@@ -45,6 +45,17 @@ ja:
         municipalities: 市区町村
         house_number: 番地
 
+      product:
+        name: 商品名
+        description: 商品の説明
+        condition: 商品の状態
+        shipping_charge: 配送料の負担
+        shipping_method: 配送の方法
+        shipping_area: 発送元の地域
+        shipping_date: 発送までの日数
+        price: 価格
+
+
 
 
     models:
@@ -164,7 +175,7 @@ ja:
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
       taken: "は既に使用されています。"
       blank: "を入力してください"
-      too_short: "は%{count}文字以上128文字以下で入力してください"
+      too_short: "は%{count}文字以上に設定して下さい。"
       too_long: "は%{count}文字以下に設定して下さい。"
       invalid: "は有効でありません。"
       confirmation: "が内容とあっていません。"

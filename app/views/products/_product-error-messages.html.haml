@@ -1,0 +1,13 @@
+- if product.errors.any?
+  - unless product.valid?
+    - if errors = product.errors.full_messages_for(column.to_sym)
+      %ul
+        - errors.each do |error|
+          %li.product-error-messages-signup=error
+
+:css
+  .product-error-messages-signup{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    color: #ea352d;
+    margin-top: 8px;
+  }

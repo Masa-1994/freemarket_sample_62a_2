@@ -47,12 +47,12 @@
           .o-proexhibit__explain
             = f.label '商品の詳細', class: 'o-proexhibit__explain__title'
             .o-proexhibit__explain__formbox
-              -# .o-proexhibit__explain__fformgroup
-              -#   = f.label 'カテゴリー', class: 'o-proexhibit__productname__title'
-              -#   %span.o-proexhibit__required 必須
-              -#   .o-proexhibit__explain__from
-              -#     = f.select :category,@category_parent_array, {}, {class: 'o-select', id: 'parent_category'}
-              -#     %i.fa.fa-chevron-down.icon-bottom
+              .o-proexhibit__explain__fformgroup
+                = f.label 'カテゴリー', class: 'o-proexhibit__productname__title'
+                %span.o-proexhibit__required 必須
+                .o-proexhibit__explain__from
+                  = f.select :category,@category_parent_array, {}, {class: 'o-select', id: 'parent_category'}
+                  %i.fa.fa-chevron-down.icon-bottom
               
               .o-proexhibit__explain__formgroup
                 = f.label '商品の状態', class: 'o-proexhibit__productname__title'
