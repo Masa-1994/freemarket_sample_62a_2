@@ -32,19 +32,29 @@ class ProductsController < ApplicationController
       seller_id: current_user.id
     )
 
-    # render "/products/new" unless @product.valid?    #sessionに対してのバリデーション
-
-    #imageテーブルへ保存
-    @product.images.build(
-      image: product_params[:images_attributes]["0"]["image"]
-    )
-    if @product.save
+      if @product.save
+        params[:images][:image].each do |image|
+          @product.images.create(image: image, product_id: @product.id)
+        end
       redirect_to root_path
     else
-      render "/products/new"
+      @product.product_images.build
+      render action: 'new'
     end
-    
   end
+
+  #   #imageテーブルへ保存
+  #   @product.images.build(
+  #     # image: product_params[:images_attributes]["0"]["image"]
+  #     image: product_params["image"]
+  #   )
+  #   if @product.save
+  #     redirect_to root_path
+  #   else
+  #     render "/products/new"
+  #   end
+    
+  # end
 
   def edit
     @product= Product.find(params[:id])
