@@ -1,73 +1,129 @@
-$(document).on('turbolinks:load',function() {
-  $('input[type=file]');
+$(document).on('turbolinks:load', function(){
+  var dropzone = $('.dropzone-area');
+  var dropzone2 = $('.dropzone-area2');
+  var dropzone_box = $('.dropzone-box');
+  var images = [];
+  var inputs  =[];
+  var input_area = $('.input_area');
+  var preview = $('#preview');
+  var preview2 = $('#preview2');
 
-  // アップロードするファイルを選択
-  $('input[type=file]').change(function() {
+  $(document).on('change', 'input[type= "file"].upload-image',function(event) {
     var file = $(this).prop('files')[0];
-
-    // 画像以外は処理を停止
-    if (! file.type.match('image.*')) {
-      // クリア
-      $(this).val('');
-      $('.o-image-move__image').html('');
-      return;
-    }
-
-    // 新幅・高さ
-    var new_w = 114;
-    var new_h = 116;    
-
-    // 画像表示
     var reader = new FileReader();
-    reader.onload = function() {
-      var img_src = $('<img>').attr('src', reader.result);
-
-      var org_img = new Image();
-      org_img.src = reader.result;
-      org_img.onload = function() {
-        // 元幅・高さ
-        var org_w = this.width;
-        var org_h = this.height;
-        // 幅 ＜ 規定幅 && 高さ ＜ 規定高さ
-        if (org_w < new_w && org_h < new_h) {
-          // 幅・高さは変更しない
-          new_w = org_w;
-          new_h = org_h;
-        } else {
-          // 幅 ＞ 規定幅 || 高さ ＞ 規定高さ
-          if (org_w > org_h) {
-            // 幅 ＞ 高さ
-            var percent_w = new_w / org_w;
-            // 幅を規定幅、高さを計算
-            new_h = Math.ceil(org_h * percent_w);
-          } else if (org_w < org_h) {
-            // 幅 ＜高さ
-            var percent_h = new_h / org_h;
-            // 高さを規定幅、幅を計算
-            new_w = Math.ceil(org_w * percent_h);
-          }
-        }
-
-        // リサイズ画像
-        $('.o-proexhibit__imageuploads__file').css('width', '494px');
-        $('.o-image-move').show();
-        $('.o-image-move__image').html($('<canvas>').attr({
-          'id': 'canvas',
-          'width': new_w,
-          'height': new_h
-        }));
-        var ctx = $('#canvas')[0].getContext('2d');
-        var resize_img = new Image(); 
-        resize_img.src = reader.result;
-        ctx.drawImage(resize_img, 0, 0, new_w, new_h);
-      };
+    inputs.push($(this));
+    var img = $(`<div class= "img_view"><img></div>`);
+    reader.onload = function(e) {
+      var btn_wrapper = $('<div class="btn_wrapper"><div class="btn edit">編集</div><div class="btn delete">削除</div></div>');
+      img.append(btn_wrapper);
+      img.find('img').attr({
+        src: e.target.result
+      })
     }
     reader.readAsDataURL(file);
-  });
-  
-    $(".o-image-move__up__choice").on("click", function(){
-      $('.o-image-move').hide();
-      $('.o-proexhibit__imageuploads__file').css('width', '620px');
-    });
+    images.push(img);
 
+    if(images.length >= 5) {
+      dropzone2.css({
+        'display': 'block'
+      })
+      dropzone.css({
+        'display': 'none'
+      })
+      $.each(images, function(index, image) {
+        image.attr('data-image', index);
+        preview2.append(image);
+        dropzone2.css({
+          'width': `calc(100% - (135px * ${images.length - 5}))`
+        })
+      })
+      if(images.length == 9) {
+        dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
+      }
+    } else {
+        $('#preview').empty();
+        $.each(images, function(index, image) {
+          image.attr('data-image', index);
+          preview.append(image);
+        })
+        dropzone.css({
+          'width': `calc(100% - (135px * ${images.length}))`
+        })
+      }
+      if(images.length == 4) {
+        dropzone.find('p').replaceWith('<i class="fa fa-camera"></i>')
+      }
+    if(images.length == 10) {
+      dropzone2.css({
+        'display': 'none'
+      })
+      return;
+    }
+    var new_image = $(`<input multiple= "multiple" name="images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
+    input_area.prepend(new_image);
+  });
+  $(document).on('click', '.delete', function() {
+    var target_image = $(this).parent().parent();
+    $.each(inputs, function(index, input){
+      if ($(this).data('image') == target_image.data('image')){
+        $(this).remove();
+        target_image.remove();
+        var num = $(this).data('image');
+        images.splice(num, 1);
+        inputs.splice(num, 1);
+        if(inputs.length == 0) {
+          $('input[type= "file"].upload-image').attr({
+            'data-image': 0
+          })
+        }
+      }
+    })
+    $('input[type= "file"].upload-image:first').attr({
+      'data-image': inputs.length
+    })
+    $.each(inputs, function(index, input) {
+      var input = $(this)
+      input.attr({
+        'data-image': index
+      })
+      $('input[type= "file"].upload-image:first').after(input)
+    })
+    if (images.length >= 5) {
+      dropzone2.css({
+        'display': 'block'
+      })
+      $.each(images, function(index, image) {
+        image.attr('data-image', index);
+        preview2.append(image);
+      })
+      dropzone2.css({
+        'width': `calc(100% - (135px * ${images.length - 5}))`
+      })
+      if(images.length == 9) {
+        dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
+      }
+      if(images.length == 8) {
+        dropzone2.find('i').replaceWith('<pre>またはクリックしてファイルをアップロード</pre>')
+      }
+    } else {
+      dropzone.css({
+        'display': 'block'
+      })
+      $.each(images, function(index, image) {
+        image.attr('data-image', index);
+        preview.append(image);
+      })
+      dropzone.css({
+        'width': `calc(100% - (135px * ${images.length}))`
+      })
+    }
+    if(images.length == 4) {
+      dropzone2.css({
+        'display': 'none'
+      })
+    }
+    if(images.length == 3) {
+      dropzone.find('i').replaceWith('<pre>またはクリックしてファイルをアップロード</pre>')
+    }
+  })
 });
