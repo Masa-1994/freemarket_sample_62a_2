@@ -70,7 +70,10 @@ class ProductsController < ApplicationController
       price: product_params[:price],
       seller_id: current_user.id
     )
-    redirect_to root_path   
+    product.images.update(
+      image: product_params[:images_attributes]["0"]["image"]
+    )
+    redirect_to root_path
   end
 
   def show
