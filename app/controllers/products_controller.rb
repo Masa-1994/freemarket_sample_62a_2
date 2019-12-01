@@ -29,8 +29,6 @@ class ProductsController < ApplicationController
       shipping_date: product_params[:shipping_date],
       shipping_method: product_params[:shipping_method],
       price: product_params[:price],
-      size_id: product_params[:size_id],
-      brand_id: product_params[:bland_id],
       seller_id: current_user.id
     )
 
@@ -50,7 +48,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product= Product.find(params[:id])
-    @images = @product.images.order(id: "DESC")
+    @images = @product.images
     #親カテゴリーを呼び出す
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
@@ -59,7 +57,20 @@ class ProductsController < ApplicationController
   end
 
   def update
-    
+    product= Product.find(params[:id])
+    product.update(
+      category_id: params[:category_id].to_i,
+      name: product_params[:name],
+      description: product_params[:description],
+      condition: product_params[:condition],
+      shipping_charge: product_params[:shipping_charge],
+      shipping_area: product_params[:shipping_area],
+      shipping_date: product_params[:shipping_date],
+      shipping_method: product_params[:shipping_method],
+      price: product_params[:price],
+      seller_id: current_user.id
+    )
+    redirect_to root_path   
   end
 
   def show
@@ -127,6 +138,8 @@ class ProductsController < ApplicationController
       :shipping_method,
       :category_id,
       :buyer_id,
+      :size_id,
+      :brand_id,
       :price,
       images_attributes: [:image]).merge(seller_id: current_user.id)
   end
