@@ -10,8 +10,8 @@
         .o-buyformm
           %span.o-buyformm__sabfee
             購入が完了しました
-        %ul.o-buypoints
-          %li.o-pointtext 
-            = link_to "トップページに戻る",root_path,class:"o-complete-root"
+          = link_to root_path,class:"o-complete-root" do
+            .o-proexhibit__linkgray
+              トップページに戻る
 
   = render "signup/signup-footer"

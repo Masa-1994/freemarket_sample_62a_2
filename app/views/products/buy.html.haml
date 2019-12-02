@@ -31,15 +31,11 @@
               %span.o-buyprice__cell
                 ¥
                 = @product.price.to_s(:delimited)
-        = link_to complete_product_path ,class: "o-buyprice__redbtn" do
-          %button.o-buyprice__btn
-            購入する
-            
         .o-payjp-btn
           = form_for(@product,url: purchase_product_path) do
-            :plain
-              <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_2489a8be63710a3ea5c21172"></script>
-
+            %button.o-buyprice__btn
+              購入する
+            
       %section.o-buyusers
         .o-buyuser
           %h3.o-buyuser__title

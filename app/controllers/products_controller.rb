@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_card, only:[:buy,:purchase]
 
   def index
     @products = Product.order("created_at DESC")
@@ -98,25 +99,25 @@ class ProductsController < ApplicationController
     @images = Image.includes(:product)
     @product = Product.find(params[:id])
     
-    #payjpでの購入
-    card = CreditCard.where(user_id: current_user.id).first
-    if card.blank?
+    if @creditcard.blank?
       redirect_to controller: "cards", action: "new"                     #登録された情報がない場合にカード登録画面に移動
     else
       Payjp.api_key = "sk_test_96c344952e792691d9fc840e"
-      customer = Payjp::Customer.retrieve(card.customer_id)              #保管した顧客IDでpayjpから情報取得
-      @default_card_information = customer.cards.retrieve(card.card_id)  #カード情報表示のためインスタンス変数に代入
+      customer = Payjp::Customer.retrieve(@creditcard.customer_id)              #保管した顧客IDでpayjpから情報取得
+      @default_card_information = customer.cards.retrieve(@creditcard.card_id)  #カード情報表示のためインスタンス変数に代入
     end
   end
 
   def purchase
     @product = Product.find(params[:id])
     @product.update(buyer_id: current_user.id)      #productテーブルにbuyer_idを入れる
-    card = CreditCard.where(user_id: current_user.id).first
+
+    card_token = @creditcard.customer_id if @creditcard.present?
+
     Payjp.api_key = "sk_test_96c344952e792691d9fc840e"
     Payjp::Charge.create(
       amount: @product.price,      #決済する値段
-      card: params['payjp-token'],
+      customer: card_token,
       currency: 'jpy'
     )
     redirect_to action: 'complete'
@@ -155,6 +156,14 @@ class ProductsController < ApplicationController
       :brand_id,
       :price,
       images_attributes: [:image]).merge(seller_id: current_user.id)
+  end
+
+  def set_card
+    if user_signed_in?
+      @creditcard = CreditCard.where(user_id: current_user.id).first if CreditCard.where(user_id: current_user.id).present?
+    else
+      @creditcard = 'nill'
+    end
   end
 
 end
