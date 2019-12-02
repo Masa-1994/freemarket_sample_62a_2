@@ -16,6 +16,9 @@
           %span.o-proexhibit__required 必須
           %p.o-proexhibit__imageuploads__text
             最大10枚までアップロードできます
+
+        -# 長谷川 記述⬇︎　写真の投稿------------------------------------------------------------------------------------------ーー
+
         = f.fields_for :images do |image|
           .dropzone-container.clearfix
             #preview
@@ -26,35 +29,16 @@
                 %pre
                   ドラックアンドドロップ
                   またはクリックしてファイルをアップロード
+          .dropzone-container.clearfix
             #preview2
-              = image.label :image, class: "dropzone-area2", for: "upload-image" do
-                .dropzone-box
-                  %pre
-                    ドラックアンドドロップ
-                    またはクリックしてファイルをアップロード
+            = image.label :image, class: "dropzone-area2", for: "upload-image" do
+              .dropzone-box
+                %pre
+                  ドラックアンドドロップ
+                  またはクリックしてファイルをアップロード
+          
+          -#-------------------------------------------------------------------------------------------------------------------
         
-
-          -# .o-proexhibit__imageuploads
-          -#   %label.o-proexhibit__imageuploads__title
-          -#     出品画像
-          -#   %span.o-proexhibit__required 必須
-          -#   %p.o-proexhibit__imageuploads__text
-          -#     最大10枚までアップロードできます
-          -# .k-imgup
-          -#   .o-image-move
-          -#     .o-image-move__image
-          -#     .o-image-move__up
-          -#       .o-image-move__up__edit 編集
-          -#       .o-image-move__up__choice 削除
-          -#   =image.label :image, class: "dropzone-box", for: "upload-image" do
-          -#     .o-proexhibit__imageuploads__file
-          -#       = i.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "o-proexhibit__imageuploads__fileimage, o-hidden", 'data-image': 0
-          -#       -# = i.file_field :image, class: "o-proexhibit__imageuploads__fileimage, o-hidden"
-          -#       %pre.o-proexhibit__imageuploads__filetext
-          -#         ドラックアンドドロップ
-          -#         またはクリックしてファイルをアップロード
-
-
           .o-proexhibit__productname
             .o-proexhibit__productname__formgroup
               %label.o-proexhibit__productname__title
