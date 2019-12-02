@@ -19,13 +19,11 @@
         %table.k-product-details__contents__content__left__picture
           %tr
             %td{cellpadding: "0", align: "center"}
-              -@images.each do |image|
-                - if image.product_id == @product[:id]
-                  = image_tag image.image.url, height: '300', width: '300', alt: 'img2', class: 'k-product-details__contents__content__left__picture__img'
-                  -if @product.buyer_id.present?
-                    .k-product-details__contents__content__sold
-                      .k-product-details__contents__content__sold__inner
-                        SOLD
+              = image_tag @product.images.last.image.url, height: '300', width: '300', alt: 'img2', class: 'k-product-details__contents__content__left__picture__img'
+              -if @product.buyer_id.present?
+                .k-product-details__contents__content__sold
+                  .k-product-details__contents__content__sold__inner
+                    SOLD
         .k-product-details__contents__content__left__pictures
           -@images.each do |image|
             - if image.product_id == @product[:id]
@@ -147,15 +145,18 @@
         .k-product-details__comment__post__form__textarea__button
         %button.k-product-details__comment__post__form__button コメントする
 
-  -# %ul.k-product-details__itemlink
-  -#   %li.k-product-details__itemlink__prev
-  -#     = link_to '' ,class: 'k-password-link-a' do
-  -#       .fa.fa-angle-left
-  -#       = @product.id.previous
-  -#   %li.k-product-details__itemlink__next
-  -#     = link_to '' ,class: 'k-password-link-a' do
-  -#       = @puroduct.id.next
-  -#       .fa.fa-angle-right
+  %ul.k-product-details__itemlink
+    %li.k-product-details__itemlink__prev
+      - if @product.previous.present?
+        = link_to product_path(@product.previous.id), class: 'k-password-link-a' do
+          .fa.fa-angle-left
+          = @product.previous.name
+    %li.k-product-details__itemlink__next
+      - if @product.next.present?
+        = link_to product_path(@product.next), class: 'k-password-link-a' do
+          = @product.next.name
+          .fa.fa-angle-right
+
 
   .k-product-details__supply
     .k-product-details__supply__margin
@@ -171,6 +172,112 @@
       %li.k-product-details__supply__contents__box
         .k-product-details__supply__contents__box__pinterest
           .fa.fa-pinterest
+
+
+
+
+
+
+
+
+
+
+
+
+  .k-product-details__item-box
+    .k-product-details__item-box__main
+      %h2.k-product-details__item-box__main__head
+        = link_to '' ,class: 'k-password-link-a' do
+          = @seller.nickname
+          さんのその他の出品
+      .k-product-details__item-box__main__products
+
+
+        %section.k-product-details__item-box__main__products__items-box
+          = image_tag '/images/footer.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
+          .k-product-details__item-box__main__products__items-box__item
+            .k-product-details__item-box__main__products__items-box__item__name
+              EMODAセット売り
+            .k-product-details__item-box__main__products__items-box__item__price
+              .k-product-details__item-box__main__products__items-box__item__price__text
+                ¥2,700
+              .k-product-details__item-box__main__products__items-box__item__price__love
+                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
+                1
+
+          
+        %section.k-product-details__item-box__main__products__items-box
+          = image_tag '/images/sampleimage.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
+          .k-product-details__item-box__main__products__items-box__item
+            .k-product-details__item-box__main__products__items-box__item__name
+              EMODAセット売り
+            .k-product-details__item-box__main__products__items-box__item__price
+              .k-product-details__item-box__main__products__items-box__item__price__text
+                ¥2,700
+              .k-product-details__item-box__main__products__items-box__item__price__love
+                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
+                1
+
+        %section.k-product-details__item-box__main__products__items-box
+          = image_tag '/images/sampleimage.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
+          .k-product-details__item-box__main__products__items-box__item
+            .k-product-details__item-box__main__products__items-box__item__name
+              EMODAセット売り
+            .k-product-details__item-box__main__products__items-box__item__price
+              .k-product-details__item-box__main__products__items-box__item__price__text
+                ¥2,700
+              .k-product-details__item-box__main__products__items-box__item__price__love
+                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
+                1
+
+          
+        %section.k-product-details__item-box__main__products__items-box
+          = image_tag '/images/sampleimage.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
+          .k-product-details__item-box__main__products__items-box__item
+            .k-product-details__item-box__main__products__items-box__item__name
+              EMODAセット売り
+            .k-product-details__item-box__main__products__items-box__item__price
+              .k-product-details__item-box__main__products__items-box__item__price__text
+                ¥2,700
+              .k-product-details__item-box__main__products__items-box__item__price__love
+                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
+                1
+
+        %section.k-product-details__item-box__main__products__items-box
+          = image_tag '/images/sampleimage.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
+          .k-product-details__item-box__main__products__items-box__item
+            .k-product-details__item-box__main__products__items-box__item__name
+              EMODAセット売り
+            .k-product-details__item-box__main__products__items-box__item__price
+              .k-product-details__item-box__main__products__items-box__item__price__text
+                ¥2,700
+              .k-product-details__item-box__main__products__items-box__item__price__love
+                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
+                1
+
+        %section.k-product-details__item-box__main__products__items-box
+          = image_tag '/images/sampleimage.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
+          .k-product-details__item-box__main__products__items-box__item
+            .k-product-details__item-box__main__products__items-box__item__name
+              EMODAセット売り
+            .k-product-details__item-box__main__products__items-box__item__price
+              .k-product-details__item-box__main__products__items-box__item__price__text
+                ¥2,700
+              .k-product-details__item-box__main__products__items-box__item__price__love
+                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
+                1
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   %nav.k-product-details__footer
