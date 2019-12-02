@@ -103,7 +103,7 @@ $(document).on('turbolinks:load', function(){
         dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
       }
       if(images.length == 8) {
-        dropzone2.find('i').replaceWith('<pre>またはクリックしてファイルをアップロード</pre>')
+        dropzone2.find('i').replaceWith('<p>またはクリックしてファイルをアップロード</p>')
       }
     } else {
       dropzone.css({
@@ -123,7 +123,7 @@ $(document).on('turbolinks:load', function(){
       })
     }
     if(images.length == 3) {
-      dropzone.find('i').replaceWith('<pre>またはクリックしてファイルをアップロード</pre>')
+      dropzone.find('i').replaceWith('<p>またはクリックしてファイルをアップロード</p>')
     }
   })
 });
