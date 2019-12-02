@@ -10,9 +10,7 @@
       %section.o-buycontents
         .o-buycontent
           %h3.o-buycontent
-            -@images.each do |image|
-              - if image.product_id == @product[:id]
-                = image_tag image.image.url,class: 'o-buycontent__image'
+            = image_tag @product.images.last.image.url,class: "o-buycontent__image" 
           %p.o-buycontent__name
             = @product.name
         .o-buyform
