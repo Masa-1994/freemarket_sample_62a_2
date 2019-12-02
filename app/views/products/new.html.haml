@@ -19,19 +19,19 @@
         = f.fields_for :images do |image|
           .dropzone-container.clearfix
             #preview
-            .dropzone-area
-              = image.label :image, class: "dropzone-box", for: "upload-image" do
+            = image.label :image, class: "dropzone-area", for: "upload-image" do
+              .dropzone-box
                 .input_area
                   = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
                 %pre
                   ドラックアンドドロップ
                   またはクリックしてファイルをアップロード
             #preview2
-            .dropzone-area2
-              = image.label :image, class: "dropzone-box", for: "upload-image" do
-                %pre
-                  ドラックアンドドロップ
-                  またはクリックしてファイルをアップロード
+              = image.label :image, class: "dropzone-area2", for: "upload-image" do
+                .dropzone-box
+                  %pre
+                    ドラックアンドドロップ
+                    またはクリックしてファイルをアップロード
         
 
           -# .o-proexhibit__imageuploads
