@@ -87,7 +87,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @images = Image.includes(:product).order('created_at desc')
+    @images = Image.includes(:product).order('id desc')
     @product = Product.find(params[:id])
     @seller = User.find(@product.seller_id)
   end
