@@ -32,13 +32,11 @@
                 %ul.o-contents__menu__items
                   %li.o-contents__menu__item
                     %figure.o-contents__menu__box
-                      -@images.each do |image|
-                        -if image.product_id == product.id
-                          =image_tag image.image.url,class: "o-contents__menu__image" 
-                          -if product.buyer_id.present?
-                            .o-contents__menu__sold
-                              .o-contents__menu__sold__inner
-                                SOLD
+                      =image_tag product.images.last.image.url,class: "o-contents__menu__image" 
+                      -if product.buyer_id.present?
+                        .o-contents__menu__sold
+                          .o-contents__menu__sold__inner
+                            SOLD
                       .span.o-price
                         ¥
                         =product.price.to_s(:delimited)
@@ -58,13 +56,11 @@
                 %ul.o-contents__menu__items
                   %li.o-contents__menu__item
                     %figure.o-contents__menu__box
-                      -@images.each do |image|
-                        -if image.product_id == product.id
-                          =image_tag image.image.url,class: "o-contents__menu__image" 
-                          -if product.buyer_id.present?
-                            .o-contents__menu__sold
-                              .o-contents__menu__sold__inner
-                                SOLD
+                      =image_tag product.images.last.image.url,class: "o-contents__menu__image" 
+                      -if product.buyer_id.present?
+                        .o-contents__menu__sold
+                          .o-contents__menu__sold__inner
+                            SOLD
                       .span.o-price
                         ¥
                         =product.price.to_s(:delimited)
@@ -85,13 +81,11 @@
                 %ul.o-contents__menu__items
                   %li.o-contents__menu__item
                     %figure.o-contents__menu__box
-                      -@images.each do |image|
-                        -if image.product_id == product.id
-                          =image_tag image.image.url,class: "o-contents__menu__image" 
-                          -if product.buyer_id.present?
-                            .o-contents__menu__sold
-                              .o-contents__menu__sold__inner
-                                SOLD
+                      =image_tag product.images.last.image.url,class: "o-contents__menu__image" 
+                      -if product.buyer_id.present?
+                        .o-contents__menu__sold
+                          .o-contents__menu__sold__inner
+                            SOLD
                       .span.o-price
                         ¥
                         =product.price.to_s(:delimited)
@@ -112,13 +106,11 @@
                 %ul.o-contents__menu__items
                   %li.o-contents__menu__item
                     %figure.o-contents__menu__box
-                      -@images.each do |image|
-                        -if image.product_id == product.id
-                          =image_tag image.image.url,class: "o-contents__menu__image" 
-                          -if product.buyer_id.present?
-                            .o-contents__menu__sold
-                              .o-contents__menu__sold__inner
-                                SOLD
+                      =image_tag product.images.last.image.url,class: "o-contents__menu__image" 
+                      -if product.buyer_id.present?
+                        .o-contents__menu__sold
+                          .o-contents__menu__sold__inner
+                            SOLD
                       .span.o-price
                         ¥
                         =product.price.to_s(:delimited)
