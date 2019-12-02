@@ -10,24 +10,23 @@
         %h2.o-proexhibit__titlename
           商品の情報を入力
       .o-proexhibit__inner__form
+        .o-proexhibit__imageuploads
+          = f.label '出品画像', class: 'o-proexhibit__imageuploads__title'
+          %span.o-proexhibit__required 必須
+          %p.o-proexhibit__imageuploads__text
+            最大10枚までアップロードできます
+            
         = f.fields_for :images do |i|
-          .o-proexhibit__imageuploads
-            = f.label '出品画像', class: 'o-proexhibit__imageuploads__title'
-            %span.o-proexhibit__required 必須
-            %p.o-proexhibit__imageuploads__text
-              最大10枚までアップロードできます
           .k-edit-imgup
             .o-edit-image-move
               .o-edit-image-move__image
-                -@images.each do |image|
-                  - if image.product_id == @product[:id]
-                    = image_tag image.image.url, class: 'o-edit-image-move__image__img'
+                = image_tag i.object.image.url, class: 'o-edit-image-move__image__img'
               .o-edit-image-move__up
                 .o-edit-image-move__up__edit 編集
                 .o-edit-image-move__up__choice 削除
             =i.label :image do
               .o-edit-proexhibit__imageuploads__file
-                = i.file_field :image, type: 'file', class: "o-proexhibit__imageuploads__fileimage, o-hidden"
+                = i.file_field :image, multiple: true, name: "images_attributes[0][image][]"  ,class: "o-proexhibit__imageuploads__fileimage, o-hidden"
                 %pre.o-proexhibit__imageuploads__filetext
                   ドラックアンドドロップ
                   またはクリックしてファイルをアップロード
