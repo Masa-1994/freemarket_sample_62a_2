@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all.order("created_at DESC")
+    @products = Product.order("created_at DESC")
     @images = Image.includes(:product)
   end
 
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
         end
       redirect_to root_path
     else
-      @product.product_images.build
+      @product.images.build
       render action: 'new'
     end
   end
