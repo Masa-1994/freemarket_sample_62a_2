@@ -197,88 +197,15 @@
           = image_tag '/images/footer.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
           .k-product-details__item-box__main__products__items-box__item
             .k-product-details__item-box__main__products__items-box__item__name
-              EMODAセット売り
+              = @product.name
             .k-product-details__item-box__main__products__items-box__item__price
               .k-product-details__item-box__main__products__items-box__item__price__text
-                ¥2,700
+                ￥
+                = @product.price.to_s(:delimited)
+                円
               .k-product-details__item-box__main__products__items-box__item__price__love
                 .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
                 1
-
-          
-        %section.k-product-details__item-box__main__products__items-box
-          = image_tag '/images/sampleimage.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
-          .k-product-details__item-box__main__products__items-box__item
-            .k-product-details__item-box__main__products__items-box__item__name
-              EMODAセット売り
-            .k-product-details__item-box__main__products__items-box__item__price
-              .k-product-details__item-box__main__products__items-box__item__price__text
-                ¥2,700
-              .k-product-details__item-box__main__products__items-box__item__price__love
-                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
-                1
-
-        %section.k-product-details__item-box__main__products__items-box
-          = image_tag '/images/sampleimage.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
-          .k-product-details__item-box__main__products__items-box__item
-            .k-product-details__item-box__main__products__items-box__item__name
-              EMODAセット売り
-            .k-product-details__item-box__main__products__items-box__item__price
-              .k-product-details__item-box__main__products__items-box__item__price__text
-                ¥2,700
-              .k-product-details__item-box__main__products__items-box__item__price__love
-                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
-                1
-
-          
-        %section.k-product-details__item-box__main__products__items-box
-          = image_tag '/images/sampleimage.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
-          .k-product-details__item-box__main__products__items-box__item
-            .k-product-details__item-box__main__products__items-box__item__name
-              EMODAセット売り
-            .k-product-details__item-box__main__products__items-box__item__price
-              .k-product-details__item-box__main__products__items-box__item__price__text
-                ¥2,700
-              .k-product-details__item-box__main__products__items-box__item__price__love
-                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
-                1
-
-        %section.k-product-details__item-box__main__products__items-box
-          = image_tag '/images/sampleimage.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
-          .k-product-details__item-box__main__products__items-box__item
-            .k-product-details__item-box__main__products__items-box__item__name
-              EMODAセット売り
-            .k-product-details__item-box__main__products__items-box__item__price
-              .k-product-details__item-box__main__products__items-box__item__price__text
-                ¥2,700
-              .k-product-details__item-box__main__products__items-box__item__price__love
-                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
-                1
-
-        %section.k-product-details__item-box__main__products__items-box
-          = image_tag '/images/sampleimage.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
-          .k-product-details__item-box__main__products__items-box__item
-            .k-product-details__item-box__main__products__items-box__item__name
-              EMODAセット売り
-            .k-product-details__item-box__main__products__items-box__item__price
-              .k-product-details__item-box__main__products__items-box__item__price__text
-                ¥2,700
-              .k-product-details__item-box__main__products__items-box__item__price__love
-                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
-                1
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   %nav.k-product-details__footer
     %ul.k-product-details__footer__ul
@@ -290,5 +217,9 @@
         %span.k-product-details__footer__title
           = @product.name
 
+
+
+
+-# -if @product.seller_id == seller_id
 
 
