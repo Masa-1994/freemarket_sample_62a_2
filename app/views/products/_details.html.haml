@@ -105,9 +105,14 @@
     -elsif user_signed_in? && current_user.id == @product.seller.id
 
     - else 
-      = link_to buy_product_path ,class: 'k-buy-a' do
-        .k-product-details__contents__buy
-          購入画面に進む
+      -if user_signed_in?
+        = link_to buy_product_path ,class: 'k-buy-a' do
+          .k-product-details__contents__buy
+            購入画面に進む
+      - else
+        = link_to new_user_session_path ,class: 'k-buy-a' do
+          .k-product-details__contents__buy
+            購入画面に進む
 
     .k-product-details__contents__details
       = @product['description']
