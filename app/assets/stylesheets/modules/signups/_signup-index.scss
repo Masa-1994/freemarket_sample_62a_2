@@ -18,7 +18,7 @@
   .k-single-main {
     background-color: #f5f5f5;
     &__container {      
-      background-color: #fff;
+      background-color: $white;
       width: 700px;
       height: 384px;
       margin: 0 auto;
@@ -36,7 +36,7 @@
           display: block;
           font-weight: bold;
           font-family: sans-serif;
-          color: #333;
+          color: $black-letters;
         }
         }
         &__form {
@@ -51,13 +51,13 @@
             margin: 0 auto;
             font-size: 14px;
             &__mail {
-              background-color: #ea352d;
+              background-color: $button-red;
               width: 341px;
               height: 48px;
               order: 1px solid transparent;
               text-align: center;
               line-height: 48px;
-              color: #fff;
+              color: $white;
               position: relative;
               border-radius: 4px;
               -webkit-transition: all 0.3s ease;
@@ -79,7 +79,7 @@
             }
             &__facebook {
               margin: 16px 0 0;
-              color: #fff;
+              color: $white;
               background-color: #385185;
               border-radius: 4px;
               width: 341px;
@@ -101,8 +101,8 @@
             }
             &__google {
               margin: 16px 0 0;
-              color: #333;
-              background-color: #FFF;
+              color: $black-letters;
+              background-color: $white;
               border: #979797 solid 1px;
               border-radius: 4px;
               width: 341px;
@@ -114,7 +114,7 @@
               border-radius: 4px;
               .k-a2 {
                 text-decoration: none;
-                color: #333;
+                color: $black-letters;
               }
               &__i {
                 position: absolute;
@@ -140,10 +140,9 @@
   left: 0;
 }  
 
-
 .k-a {
   text-decoration: none;
-  color: #FFF;
+  color: $white;
 }
 
 .h-btn-default {
@@ -160,13 +159,13 @@
 }
 
 .h-btn-red {
-  background: #ea352d;
-  color: #fff;
+  background: $button-red;
+  color: $white;
   text-decoration: none;
-  color: #fff;
+  color: $white;
 }
 
 .h-btn-red:active {
   background: gray;
-  color: #fff;
+  color: $white;
 }
