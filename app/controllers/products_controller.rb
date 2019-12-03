@@ -155,7 +155,7 @@ class ProductsController < ApplicationController
       :size_id,
       :brand_id,
       :price,
-      images_attributes: [:image]).merge(seller_id: current_user.id)
+      images_attributes: [:image,:product_id]).merge(seller_id: current_user.id)
   end
 
   def set_card
