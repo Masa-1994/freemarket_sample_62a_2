@@ -36,7 +36,7 @@
                   郵便番号
                 %span.h-form-require
                   必須
-                = a.text_field :postal_code, placeholder: '例) 123-4567', class: "h-input-default"
+                = a.text_field :postal_code, placeholder: '例) 1234567', class: "h-input-default"
                 = render partial: '/signup/address-error-messages', locals: {address: @address, column: "postal_code"}
 
               .h-form-group
@@ -46,7 +46,6 @@
                   必須
                 .h-select-wrap
                   %i.h-icon-arrow-bottom
-                    = image_tag '/images/yazirushibottom.svg' ,class: 'h-icon-bottom'
                   = a.collection_select :prefecture_id, Prefecture.all, :id, :name
                   = render partial: '/signup/address-error-messages', locals: {address: @address, column: "prefecture_id"}
 
