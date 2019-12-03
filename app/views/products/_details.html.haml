@@ -15,19 +15,32 @@
       = @product.shipping_date
       されます。
     .k-product-details__contents__content
-      .k-product-details__contents__content__left
-        %table.k-product-details__contents__content__left__picture
-          %tr
-            %td{cellpadding: "0", align: "center"}
-              = image_tag @product.images.last.image.url, height: '300', width: '300', alt: 'img2', class: 'k-product-details__contents__content__left__picture__img'
-              -if @product.buyer_id.present?
+
+      -if @product.buyer_id.present?
+        .k-product-details__contents__content__left-sold
+          %table.k-product-details__contents__content__left-sold__picture
+            %tr
+              %td{cellpadding: "0", align: "center"}
+                = image_tag @product.images.last.image.url, height: '300', width: '300', alt: 'img1', class: 'k-product-details__contents__content__left-sold__picture__img'
                 .k-product-details__contents__content__sold
                   .k-product-details__contents__content__sold__inner
                     SOLD
-        .k-product-details__contents__content__left__pictures
-          -@images.each do |image|
-            - if image.product_id == @product[:id]
-              = image_tag image.image.url, class: 'k-product-details__contents__content__left__pictures__imgs'
+          .k-product-details__contents__content__left-sold__pictures
+            -@images.each do |image|
+              - if image.product_id == @product[:id]
+                = image_tag image.image.url, class: 'k-product-details__contents__content__left-sold__pictures__imgs'
+
+      -else
+        .k-product-details__contents__content__left
+          %table.k-product-details__contents__content__left__picture
+            %tr
+              %td{cellpadding: "0", align: "center"}
+                = image_tag @product.images.last.image.url, height: '300', width: '300', alt: 'img2', class: 'k-product-details__contents__content__left__picture__img'
+          .k-product-details__contents__content__left__pictures
+            -@images.each do |image|
+              - if image.product_id == @product[:id]
+                = image_tag image.image.url, class: 'k-product-details__contents__content__left__pictures__imgs'
+
 
       .k-product-details__contents__content__right
         %table.k-table
@@ -40,11 +53,11 @@
                   = @seller.nickname
                 %p 
                 .fa.fa-smile-o.k-face__pink
-                54
+                ××
                 .fa.fa-meh-o.k-face__yellow
-                3
+                ×
                 .fa.fa-frown-o.k-face__blue
-                1
+                ×
             %tr
               %td{bgcolor: "#fafafa"}  カテゴリー
               %td
@@ -87,8 +100,6 @@
               %td{bgcolor: "#fafafa"}  発送日の目安
               %td
                 = @product.shipping_date
-
-
 
     .k-product-details__contents__price-box
       %span.k-product-details__contents__price-box__price
@@ -162,7 +173,6 @@
           = @product.next.name
           .fa.fa-angle-right
 
-
   .k-product-details__supply
     .k-product-details__supply__margin
     %ul.k-product-details__supply__contents
@@ -181,37 +191,6 @@
 
 
 
-
-
-
-
-
-
-
-
-  .k-product-details__item-box
-    .k-product-details__item-box__main
-      %h2.k-product-details__item-box__main__head
-        = link_to '' ,class: 'k-password-link-a' do
-          = @seller.nickname
-          さんのその他の出品
-      .k-product-details__item-box__main__products
-
-
-        %section.k-product-details__item-box__main__products__items-box
-          = image_tag '/images/footer.jpg', height: '220px', width: '220px', class: 'k-product-details__item-box__main__products__items-box__img'
-          .k-product-details__item-box__main__products__items-box__item
-            .k-product-details__item-box__main__products__items-box__item__name
-              = @product.name
-            .k-product-details__item-box__main__products__items-box__item__price
-              .k-product-details__item-box__main__products__items-box__item__price__text
-                ￥
-                = @product.price.to_s(:delimited)
-                円
-              .k-product-details__item-box__main__products__items-box__item__price__love
-                .fa.k-product-details__item-box__main__products__items-box__item__price__love__i.fa-heart-o
-                1
-
   %nav.k-product-details__footer
     %ul.k-product-details__footer__ul
       %li
@@ -221,10 +200,4 @@
       %li
         %span.k-product-details__footer__title
           = @product.name
-
-
-
-
--# -if @product.seller_id == seller_id
-
 

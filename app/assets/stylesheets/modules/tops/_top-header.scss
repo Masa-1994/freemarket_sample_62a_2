@@ -3,11 +3,11 @@
 }
 
 .k-header {
-  background-color: #FFF;
+  background-color: $white;
   width: 100%;
   height: 100px;
   .k-top {
-    background-color: #FFF;
+    background-color: $white;
     margin: 0 auto;
     width: 1020px;
     height: 100px;
@@ -18,14 +18,14 @@
       display: flex;
       border: none;
         &__logo {
-          background-color: #FFF;
+          background-color: $white;
           height: 40px;
           margin-right: 40px;
           display: flex;
           justify-content: center;
           align-items: center;
           &__img {
-            background-color: #FFF;
+            background-color: $white;
             height: 43px;
             object-fit: cover;
           }
@@ -33,7 +33,7 @@
       }
 
     &__list {
-      background-color: #FFF;
+      background-color: $white;
       width: 1020px;
       height: 44px;
       display: flex;
@@ -44,7 +44,7 @@
         font-size: 14px;
         margin-top: 8px;
         font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
-        color: rgb(51, 51, 51);
+        color: $black-letters;
         float: left;
         line-height: 36px;
         font-weight: 600;
@@ -61,20 +61,21 @@
             height: 15px;
           }
           .fa-tag{
-            color: red;
+            color: $button-red;
             margin-left: 4px;
           }
         }
       }
-.k-top__list__menu__link:hover {
-  cursor: pointer;
-  color: rgb(0, 174, 255);
-}
-.k-top__list__list__login:hover{
-  cursor: pointer;
-  background-color:rgb(0, 143, 238);
-  color: rgb(255, 255, 255);
-} 
+
+    .k-top__list__menu__link:hover {
+      cursor: pointer;
+      color: rgb(0, 174, 255);
+    }
+    .k-top__list__list__login:hover{
+      cursor: pointer;
+      background-color:rgb(0, 143, 238);
+      color: rgb(255, 255, 255);
+    } 
 
       &__list {
         font-size: 14px;
@@ -84,12 +85,12 @@
         float: right;
         margin:0 0 0 auto;
         &__signup {
-          background-color: rgb(234, 53, 45);
+          background-color: $button-red;
           display: block;
           font-size: 14px;
           border-width: 1px;
           border-style: solid;
-          border-color: rgb(234, 53, 45);
+          border-color: $button-red;
           border-image: initial;
           border-radius: 4px;
           padding: 8px 10px;
