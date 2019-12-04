@@ -13,28 +13,26 @@
   &__inner{
     width: 700px;
     margin: 0 auto;
-    background: #fff;
+    background: $white;
   }
   &__titlename{
-    color: #333;
+    color: $black-letters;
     line-height: 1.5;
     padding: 32px 16px;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $border-gray;
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   }
   &__imageuploads{
-    color: #333;
-    width: 620px;
-    padding: 40px;
+    color: $black-letters;
+    padding: 40px 40px 0px;
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     &__title{
       font-size: 16px;
-      color: rgb(51, 51, 51);
+      color: $black-letters;
       font-weight: bold;
-      float: left;
     }
     &__text{
       font-size: 14px;
@@ -44,8 +42,8 @@
       margin: 16px auto 0;
       width: 620px;
       min-height: 162px;
-      background: #f5f5f5;
-      border: 1px dashed #ccc;
+      background: $border-gray;
+      border: 1px dashed $light-gray;
       cursor: pointer;
       position: relative;
       margin:  0 auto;  
@@ -56,7 +54,7 @@
       font-size: 14px;
       font-weight: bold;
       line-height: 1.5;
-      color: #333;
+      color: $black-letters;
       top: 35%;
       left: 16px;
       right: 16px;
@@ -64,22 +62,21 @@
   }
   &__productname{
     clear: both;
-    border-top: 1px solid #eee;
+    border-top: 1px solid $border-gray;
     padding: 0 40px 40px;
     &__formgroup{
       margin: 40px 0 0;
     }
     &__title{
       font-size: 14px;
-      color: rgb(51, 51, 51);
+      color: $black-letters;
       font-weight: bold;
-      float: left;
     }
   }
   &__required{
-    background: #ea352d;
+    background:$button-red;
     font-weight: bold;
-    color: #fff;
+    color: $white;
     margin: 0 0 0 8px;
     padding: 2px 4px;
     border-radius: 2px;
@@ -90,7 +87,7 @@
   &__explain{
     padding: 40px;
     display: flex;
-    border-top: 1px solid #eee;
+    border-top: 1px solid $border-gray;
     &__formbox{
       width: 400px;
     }
@@ -98,7 +95,7 @@
       margin: 40px 0 0;
     }
     &__title{
-      color: #888;
+      color: $gray;
       font-weight: bold;
       font-size: 14px;
       margin-right: 130px;
@@ -122,7 +119,7 @@
       height: 48px;
       padding: 0 16px;
       border-radius: 4px;
-      border: 1px solid #ccc;
+      border: 1px solid $light-gray;
       background: 0;
       font-size: 16px;
       line-height: 1.5;
@@ -133,7 +130,7 @@
   &__deivery{
     display: flex;
     padding: 0 40px 40px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid $border-gray;
     &__formbox{
       margin-left: 150px;
       width: 400px;
@@ -142,7 +139,7 @@
       margin: 40px 0 0;
     }
     &__title{
-      color: #888;
+      color: $gray;
       font-weight: bold;
       font-size: 14px;
       margin-right: 115px;
@@ -166,7 +163,7 @@
       height: 48px;
       padding: 0 16px;
       border-radius: 4px;
-      border: 1px solid #ccc;
+      border: 1px solid $light-gray;
       background: 0;
       font-size: 16px;
       line-height: 1.5;
@@ -177,15 +174,15 @@
   &__price{
     height: 300px;
     padding: 40px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid $border-gray;
+    border-bottom: 1px solid $border-gray;
     &__formbox{
       float: right;
       width: 400px;
     }
     &__title{
       float: left;
-      color: #888;
+      color: $gray;
       font-weight: bold;
       font-size: 13px;
     }
@@ -200,16 +197,13 @@
       font-size: 13px;
       padding-left: 140px;
     }
-    
     .o-select{
       margin: 8px 0 0;
       width: 100%;
-      position: relative;
       z-index: 2;
       height: 48px;
-      padding: 0 16px;
       border-radius: 4px;
-      border: 1px solid #ccc;
+      border: 1px solid $light-gray;
       background: 0;
       font-size: 16px;
       line-height: 1.5;
@@ -220,8 +214,8 @@
       float: left;
       width: 100%;
       height: 48px;
-      border: 1px solid #ccc;
-      background: #fff;
+      border: 1px solid $light-gray;
+      background: $white;
       padding: 0 16px;
       font-size: 14px;
       border-radius: 2px;
@@ -231,13 +225,13 @@
     }
   }
   &__productnamee{
-    border-top: 1px solid #eee;
+    border-top: 1px solid $border-gray;
     width: 700px;
     height: 400px;
     padding-left: 40px;
     &__title{
       font-size: 14px;
-      color: rgb(51, 51, 51);
+      color: $black-letters;
       font-weight: bold;
       line-height: 48px;
     }
@@ -248,26 +242,26 @@
   &__note{
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     font-size: 14px;
-    color: #333;
+    color: $black-letters;
     line-height: 1.5;
   }
   &__linkred{
     display: block;
-    background: #ea352d;
-    color: #fff;
+    background: $button-red;
+    color: $white;
     margin: 40px 0 0;
     cursor: pointer;
     width: 100%;
     font-size: 14px;
     line-height: 48px;
-    border: 1px solid #ea352d;
+    border: 1px solid $button-red;
   }
   &__linkgray{
     display: block;
     margin: 24px auto 0;
     width: 50%;
-    background: #aaa;
-    border: 1px solid #aaa;
+    background: $light-gray;
+    border: 1px solid $light-gray;
     cursor: pointer;
     line-height: 48px;
     font-size: 14px;
@@ -275,14 +269,8 @@
   }
   &__return{
     text-decoration: none;
-    color: #fff;
+    color: $white;
   }
-}
-.o-proexhibit__linkgray:hover{
-  transition: background-color 0.7s;
-  background: rgb(200, 200, 200);
-  border: 1px solid rgb(200, 200, 200);
-  outline: 0;
 }
 .o-inputproductname{
   display: block;
@@ -292,43 +280,42 @@
   font-size: 16px;
   border-radius: 4px;
   margin: 8px 0 0;
-  border: 1px solid #ccc;
+  border: 1px solid $light-gray;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 .o-inputproductname:focus{
-  border: 1px solid #008cff;
+  border: 1px solid $border-blue;
   outline: 0;
 }
 .o-inputproducttext{
   min-height: 142px;
   width: 620px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid $light-gray;
   margin: 8px 0 0;
   font-size: 16px;
   padding: 10px;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 .o-inputproducttext:focus{
-  border: 1px solid #008cff;
+  border: 1px solid $border-blue;
   outline: 0;
 }
 .o-select:focus{
-  border: 1px solid #008cff;
+  border: 1px solid $border-blue;
   outline: 0;
 }
 .o-priceselect:focus{
-  border: 1px solid #008cff;
+  border: 1px solid $border-blue;
   outline: 0;
 }
 .o-fee{
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $light-gray;
   padding: 30px 0;
-  height: 66px;
   display: flex;
   &__left{
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-    color: #333;
+    color: $black-letters;
     font-size: 14px;
     float: left;
     &__right{
@@ -337,12 +324,12 @@
   }
 }
 .o-profit{
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $light-gray;
   padding: 24px 0;
   display: flex;
   &__left{
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-    color: #333;
+    color: $black-letters;
     font-weight: bold;
     font-size: 16px;
     float: left;
@@ -351,29 +338,26 @@
     }
   }
 }
-
 .o-fee-calculation {
   font-size: 14px;
-  color: #333;
+  color: $black-letters;
   margin:0 0 0 auto
 }
-
 .o-profit-calculation {
   font-weight: bold;
   font-size: 27px;
-  color: #333;
+  color: $black-letters;
   margin:0 0 0 auto
 }
-
 .h-text-link {
-  color: #0099e8;
+  color: $link-blue;
   text-decoration: none;
   .h-icon-arrow-right {
     height: 15px;
   }
 }
 .h-text-link:hover {
-  color: #32ADEC;
+  color: $link-blue-hover;
   text-decoration: underline;
 }
 .o-hidden{
@@ -384,10 +368,6 @@
   display: block;
   clear: both;
 }
-
-
-
-
 .k-imgup{
   display: flex;
   margin:  0 auto;
@@ -395,12 +375,11 @@
   margin-right: 40px;
   margin-bottom: 40px;
 }
-
 .o-image-move {
   width: 114px;
   height: 160px;
-  border: 1px solid #eee;
-  background: #f5f5f5;
+  border: 1px solid $border-gray;
+  background: $border-gray;
   padding-top: 15px;
   display: none;
   margin-right: 12px;
@@ -420,13 +399,13 @@
     display: flex;
     padding: 0 10px;
     &__edit {
-      color: #0099e8;
+      color: $link-blue;
       text-decoration: none;
       width: 57px;
       height: 44px;
     }
     &__choice {
-      color: #0099e8;
+      color: $link-blue;
       text-decoration: none;
       width: 57px;
       height: 44px;
@@ -434,9 +413,6 @@
     }
   }
 }
-
-
-
 
 
 
@@ -449,12 +425,11 @@
   margin-right: 40px;
   margin-bottom: 40px;
 }
-
 .o-edit-image-move {
   width: 114px;
   height: 160px;
-  border: 1px solid #eee;
-  background: #f5f5f5;
+  border: 1px solid $border-gray;
+  background: $border-gray;
   padding-top: 15px;
   margin-right: 12px;
   &__image {
@@ -473,13 +448,13 @@
     display: flex;
     padding: 0 10px;
     &__edit {
-      color: #0099e8;
+      color: $link-blue;
       text-decoration: none;
       width: 57px;
       height: 44px;
     }
     &__choice {
-      color: #0099e8;
+      color: $link-blue;
       text-decoration: none;
       width: 57px;
       height: 44px;
@@ -487,13 +462,12 @@
     }
   }
 }
-
 .o-edit-proexhibit__imageuploads__file {
   margin: 16px auto 0;
   width: 494px;
   min-height: 162px;
-  background: #f5f5f5;
-  border: 1px dashed #ccc;
+  background: $border-gray;
+  border: 1px dashed $light-gray;
   cursor: pointer;
   position: relative;
   margin:  0 auto;
@@ -513,15 +487,15 @@
   }
 
   .dropzone-area,.dropzone-area2 {
-    color: #333;
+    color: $black-letters;
     float: right;
     width: 650px;
     padding: 40px;
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     margin: 10px auto 0;
     min-height: 162px;
-    background: #f5f5f5;
-    border: 1px dashed #ccc;
+    background: $border-gray;
+    border: 1px dashed $light-gray;
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -539,14 +513,14 @@ pre {
   font-size: 14px;
   font-weight: bold;
   line-height: auto;
-  color: #333;
+  color: $black-letters;
   top: 35%;
   left: 16px;
   right: 16px;
 }
 
 .img_view {
-  background: #f5f5f5;
+  background: $border-gray;
   display: inline-block;
   width: 116px;
   margin: 0 0 10px 10px;
@@ -558,26 +532,26 @@ pre {
   }
 
   .btn {
-    border: 1px solid #ccc;
+    border: 1px solid $light-gray;
     font-size: 14px;
     display: inline-block;
     width: 50%;
-    background: #f5f5f5;
+    background: $border-gray;
     line-height: 44px;
     text-align: center;
-    color: #0099e8;
+    color: $link-blue;
     cursor: pointer;
   }
 
   .edit:hover {
-    background: #ffffff;
-    color: #32ADEC;
+    background: $white;
+    color: $link-blue-hover;
     text-decoration: underline;
   }
 
   .delete:hover {
-    background: #ffffff;
-    color: #32ADEC;
+    background: $white;
+    color: $link-blue-hover;
     text-decoration: underline;
   }  
 }

@@ -5,19 +5,19 @@
   &-chapter{
     max-width: 700px;
     margin: 0 auto;
-    background: #fff;
+    background: $white;
     &-head{
       height: 50px;
       font-weight: bold;
       font-size: 24px;
       padding: 8px 24px;
-      border-bottom: 1px solid #f5f5f5;
+      border-bottom: 1px solid $border-gray;
       text-align: center;
       line-height: 1.5;
     }
     &-main{
       padding: 64px;
-      border-top: 1px solid #f5f5f5;
+      border-top: 1px solid $border-gray;
       height: 1140px;
       .m-identification-text{
         background-repeat: no-repeat;
@@ -31,7 +31,7 @@
           text-align: right;
           margin: 8px 0 0;
           line-height: 1.5;
-          color: #0099e8;
+          color: $link-blue;
           .m-identification.fa.fa-angle-right.icon{
             font-size: 20px;
             font-weight: bold;
@@ -41,7 +41,7 @@
       .m-identification-form-group{
         margin: 40px 0 0;
         font-size: 14px;
-        color: #333;
+        color: $black-letters;
         line-height: 1;
         &-text{
           font-weight: 600;
@@ -51,11 +51,11 @@
           margin: 8px 0 0;
         }
         &-any {
-          background: rgb(195,195,195);
+          background: $light-gray;
           margin: 0 0 0 8px;
           padding: 2px 4px;
           border-radius: 2px;
-          color: #fff;
+          color: $white;
           font-size: 12px;
           vertical-align: top;
         }
@@ -65,8 +65,8 @@
           height: 48px;
           padding: 10px 16px 8px;
           border-radius: 4px;
-          border: 1px solid #ccc;
-          background: #fff;
+          border: 1px solid $light-gray;
+          background: $white;
           line-height: 1.5;
           font-size: 16px;
         }
@@ -83,7 +83,6 @@
           position: absolute;
         }
         
-
         .m-identification-select-default {
           margin: 8px 0 0;
           width: 100%;
@@ -92,7 +91,7 @@
           height: 48px;
           padding: 0 16px;
           border-radius: 4px;
-          border: 1px solid #ccc;
+          border: 1px solid $light-gray;
           background: 0;
           font-size: 16px;
           line-height: 1.5;
@@ -112,10 +111,9 @@
           text-decoration: none;
         }
         .m-btn-red {
-          background: #ea352d;
-          color: #fff;
+          background: $button-red;
+          color: $white;
           text-decoration: none;
-          color: #fff;
         }
       }
       .m-identification-text-right{
