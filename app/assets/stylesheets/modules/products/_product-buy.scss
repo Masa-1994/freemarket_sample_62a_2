@@ -2,7 +2,7 @@
   width: 700px;
   height: 740px;
   margin: 0 auto;
-  background: #fff;
+  background: $white;
 }
 .o-buytitle{
   padding: 16px;
@@ -10,14 +10,13 @@
   line-height: 1.5;
   text-align: center;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  color: #333;
+  color: $black-letters;
   font-weight: bold;
 }
-
 .o-buycontents{
   height: 350px;
   padding: 30px 12.5% 0;
-  border-top: 1px solid #f5f5f5;
+  border-top: 1px solid $border-gray;
 }
 .o-buycontent{
   max-width: 320px;
@@ -44,7 +43,7 @@
   margin: 0 auto;
   text-align: center;
   display: flex;
-  color: #333;
+  color: $black-letters;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   &__sabprice{
     margin: 8px 0 0;
@@ -62,20 +61,19 @@
 .o-buypoints{
   max-width: 320px;
   margin: 0 auto;
-  background: #ccc;
+  background: $light-gray;
   padding: 16px;
   margin-top: 16px;
-  color: #333;
+  color: $black-letters;
   font-size: 14px;
   display: flex;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 .o-buyprices{
   width: 320px;
-  height: 60px;
   margin: 0 auto;
   font-weight: bold;
-  color: #333;
+  color: $black-letters;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 .o-pointtext{
@@ -83,7 +81,6 @@
 } 
 .o-buyprice{
   width: 320px;
-  height: 65px;
   line-height: 65px;
   &__cell{
     font-size: 26px;
@@ -91,26 +88,23 @@
   }
   &__btn{
     display: block;
-    background: #ea352d;
+    background: $button-red;
     margin: 10px auto;
     cursor: pointer;
     width: 320px;
     font-size: 14px;
     line-height: 48px;
-    border: 1px solid #ea352d;
-    color: #fff;
+    border: 1px solid $button-red;
+    color: $white;
   }
   &__redbtn{
     text-decoration: none;
   }
 }
-.o-payjp-btn{
-  margin: 0 auto;
-  text-align: center;
-}
+
 .o-buyusers{
   margin: 40px 0 0;
-  border-top: 1px solid #f5f5f5;
+  border-top: 1px solid $border-gray;
   padding: 24px 12.5% 0;
   .o-buyuser{
     max-width: 320px;
@@ -124,7 +118,7 @@
       margin: 8px 0 0;
       font-size: 14px;
       line-height: 1.4;
-      color: #333;
+      color: $black-letters;
     }
     &__link{
       float:right;
@@ -132,7 +126,6 @@
     }
     &__icon{
       float:right;
-      
       width: 11px ;
       height: 11px;
       margin: 2px 0 0 8px;

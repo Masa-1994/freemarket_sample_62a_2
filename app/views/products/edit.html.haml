@@ -50,6 +50,10 @@
                 = f.label 'カテゴリー', class: 'o-proexhibit__productname__title'
                 %span.o-proexhibit__required 必須
                 .o-proexhibit__explain__from
+                  -#親カテゴリーを呼び出す
+                  -@category_parent_array = ["---"]
+                  -Category.where(ancestry: nil).each do |parent|
+                    -@category_parent_array << parent.name
                   = f.select :category,@category_parent_array, {}, {class: 'o-select', id: 'parent_category'}
                   %i.fa.fa-chevron-down.icon-bottom
               
