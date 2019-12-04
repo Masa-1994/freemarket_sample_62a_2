@@ -9,7 +9,7 @@
 }
 .o-category{
   padding: 56px 0px 30px;
-  color: rgb(51, 51, 51);
+  color: $black-letters;
   font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
   font-weight: 600;
   &__title{
@@ -52,11 +52,11 @@
     font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     font-weight: 600;
     line-height: 1.4em;
-    color: rgb(51, 51, 51);
+    color: $black-letters;
     float: left;
   }
   &__link{
-    color: rgb(0, 149, 238);
+    color: $link-blue;
     font-size: 14px;
     right: 0;
     padding:  15px 20px 5px 5px;
@@ -86,10 +86,10 @@
   &__sold{
     width: 0;
     height: 0;
-    border-top: 60px solid #ea352d ;
+    border-top: 60px solid $button-red;
     border-right: 60px solid transparent;
     border-bottom: 60px solid transparent;
-    border-left: 60px solid #ea352d ;
+    border-left: 60px solid $button-red;
     z-index:100;
     position: absolute;
     top:0;
@@ -97,7 +97,7 @@
       transform: rotate(-45deg);
       font-size: 24px;
       margin:-25px 0px 0px -55px;
-      color: #fff;
+      color: $white;
       letter-spacing: 2px;
       font-weight: 600;
     }
@@ -114,7 +114,7 @@
     height: 28px;
     padding: 0 12px;
     line-height: 28px;
-    color: #fff;
+    color: $white;
     top: 62%;
   }
   &___box{
@@ -122,11 +122,11 @@
   }
   &__texts{
     height: 64px;
-    background-color: white;
+    background-color: $white;
     font-size: 14px;
     line-height: 1.4em;
     padding:12px;
-    color: #222;
+    color: $dark-black;
     box-shadow: 0 2px 4px rgba(0,0,0,.18);
   }
   &__text{
@@ -135,6 +135,6 @@
 }
 
 .o-contents__menu__box:hover{
-  outline:1px solid rgb(0, 149, 238);
+  outline:1px solid $border-blue;
 }
 

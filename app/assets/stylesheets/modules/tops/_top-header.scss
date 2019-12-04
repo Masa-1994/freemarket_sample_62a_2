@@ -69,12 +69,12 @@
 
     .k-top__list__menu__link:hover {
       cursor: pointer;
-      color: rgb(0, 174, 255);
+      color: $link-blue;
     }
     .k-top__list__list__login:hover{
       cursor: pointer;
-      background-color:rgb(0, 143, 238);
-      color: rgb(255, 255, 255);
+      background-color:$link-blue;
+      color: $white;
     } 
 
       &__list {
@@ -98,13 +98,13 @@
         }
         &__login {
           a{text-decoration: none;}
-          background-color: rgb(255, 255, 255);
-          color: rgb(0, 149, 238);
+          background-color: $white;
+          color: $link-blue;
           display: block;
           font-size: 14px;
           border-width: 1px;
           border-style: solid;
-          border-color: rgb(0, 149, 238);
+          border-color: $border-blue;
           border-image: initial;
           border-radius: 4px;
           padding: 8px 10px;
@@ -113,7 +113,7 @@
 
       }
       .signupbtn{
-        color: rgb(255, 255, 255);
+        color: $white;
         text-decoration: none;
       }
     }
@@ -130,20 +130,20 @@
       float: left;
       width: 100%;
       height: 38px;
-      background-color: rgb(245, 245, 245);
+      background-color: $border-gray;
       height: 40px;
       font-size: 16px;
       line-height: 1.4em;
       border-radius: 4px;
       border-width: 1px;
       border-style: solid
-      border-color rgb(204, 204, 204);
+      border-color $light-gray;
       padding: 0px 50px 0px 10px;
       font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
       position: relative;
     }
     .k-input:focus{
-      border: 1px solid #008cff;
+      border: 1px solid $border-blue;
       outline: 0;
     }
 
@@ -155,7 +155,7 @@
       position: absolute;
       text-align: center;
       font: 14px system-ui;
-      color: rgb(34, 34, 34);
+      color: $dark-black;
     }
   }
 }
@@ -166,7 +166,7 @@
   &__i {
     max-width: 100%;
     max-height: 100%;
-    color: rgb(204, 204, 204);
+    color: $light-gray;
     margin-right: 10px;
     margin-left: 25px;
     width: 19px;
@@ -186,16 +186,16 @@
   &__text {
     display: inline-block;
     vertical-align: 5px;
-    color: rgb(34, 34, 34);
+    color: $dark-black;
   }
 
 }
 
 .k-user-signed__text:hover {
   cursor: pointer;
-  color: rgb(0, 174, 255);
+  color: $link-blue-hover;
 }
 .fa.k-user-signed__i:hover {
   cursor: pointer;
-  color: rgb(0, 174, 255);
+  color: $link-blue-hover;
 }

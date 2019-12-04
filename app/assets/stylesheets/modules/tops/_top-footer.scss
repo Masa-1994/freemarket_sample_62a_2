@@ -7,9 +7,9 @@
     bottom: 32px;
     height: 160px;
     width: 160px;
-    background-color: rgb(234, 53, 45);
+    background-color: $button-red;
     border-radius: 50%;
-    color: rgb(255, 255, 255);
+    color: $white;
     font-size: 22px;
     position: fixed;
     text-align: center;
@@ -35,8 +35,8 @@
 .o-footer{
   width: 100%;
   height: 390px;
-  background-color: rgb(34, 34, 34);
-  color: rgb(255, 255, 255);
+  background-color: $dark-black;
+  color: $white;
   &__menu{
     width: 1020px;
     height: 300px;
