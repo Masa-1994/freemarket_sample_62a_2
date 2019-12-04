@@ -2,14 +2,13 @@
   width: 700px;
   height: 320px;
   margin: 0 auto;
-  background: #fff;
+  background: $white;
 }
-
 .o-buyformm{
   max-width: 320px;
   margin: 0 auto;
   text-align: center;
-  color: #333;
+  color: $black-letters;
   padding-top: 50px;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   &__sabfee{
@@ -21,5 +20,5 @@
 }
 .o-complete-root{
   text-decoration: none;
-  color:#333;
+  color:$black-letters;
 }

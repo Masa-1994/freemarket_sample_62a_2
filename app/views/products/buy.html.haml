@@ -5,8 +5,7 @@
         = image_tag( '/images/fmarket_logo_red.svg',  class: 'o-proexhibit__headerimg' )
   .o-buymain
     %section.o-buysection
-      %h2.o-buytitle
-        購入内容の確認
+      %h2.o-buytitle 購入内容の確認
       %section.o-buycontents
         .o-buycontent
           %h3.o-buycontent
@@ -17,8 +16,7 @@
           %p.o-buyform__sabprice
             ¥
             = @product.price.to_s(:delimited)
-            %span.o-buyform__sabfee
-              送料込み
+            %span.o-buyform__sabfee 送料込み
         %ul.o-buypoints
           %li.o-pointtext 
             ポイントはありません
@@ -31,13 +29,11 @@
                 = @product.price.to_s(:delimited)
         .o-payjp-btn
           = form_for(@product,url: purchase_product_path) do
-            %button.o-buyprice__btn
-              購入する
+            %button.o-buyprice__btn 購入する
             
       %section.o-buyusers
         .o-buyuser
-          %h3.o-buyuser__title
-            配送先
+          %h3.o-buyuser__title 配送先
           %address.o-buyuser__text
             〒
             = current_user.address.postal_code.to_s(:phone)
@@ -48,8 +44,7 @@
 
       %section.o-buyusers
         .o-buyuser
-          %h3.o-buyuser__title
-            支払い方法
+          %h3.o-buyuser__title 支払い方法
           .o-buyuser__text
             クレジットカード
             .content__credit-cards__list--pay-num

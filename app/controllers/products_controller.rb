@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.order("created_at DESC")
-    @images = Image.includes(:product)
   end
 
   def new
@@ -32,11 +31,10 @@ class ProductsController < ApplicationController
       price: product_params[:price],
       seller_id: current_user.id
     )
-
-      if @product.save
-        params[:images][:image].each do |image|
-          @product.images.create(image: image, product_id: @product.id)
-        end
+    if @product.save
+      params[:images][:image].each do |image|
+        @product.images.create(image: image, product_id: @product.id)
+      end
       redirect_to root_path
     else
       @product.images.build
@@ -44,15 +42,8 @@ class ProductsController < ApplicationController
     end
   end
 
-
   def edit
     @product= Product.find(params[:id])
-    @images = @product.images
-    #親カテゴリーを呼び出す
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
   end
 
   def update
@@ -101,10 +92,9 @@ class ProductsController < ApplicationController
     @product.update(buyer_id: current_user.id)      #productテーブルにbuyer_idを入れる
 
     card_token = @creditcard.customer_id if @creditcard.present?
-
     Payjp.api_key = "sk_test_96c344952e792691d9fc840e"
     Payjp::Charge.create(
-      amount: @product.price,      #決済する値段
+      amount: @product.price,
       customer: card_token,
       currency: 'jpy'
     )
@@ -116,9 +106,7 @@ class ProductsController < ApplicationController
 
   
   def destroy
-  
     @product = Product.find(params[:id])
-
     if user_signed_in? && @product.seller_id == current_user.id
       @product.destroy
       redirect_to root_path

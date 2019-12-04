@@ -11,8 +11,7 @@
           商品の情報を入力
       .o-proexhibit__inner__form
         .o-proexhibit__imageuploads
-          %label.o-proexhibit__imageuploads__title
-            出品画像
+          %label.o-proexhibit__imageuploads__title 出品画像
           %span.o-proexhibit__required 必須
           %p.o-proexhibit__imageuploads__text
             最大10枚までアップロードできます
@@ -41,8 +40,7 @@
         
           .o-proexhibit__productname
             .o-proexhibit__productname__formgroup
-              %label.o-proexhibit__productname__title
-                商品名
+              %label.o-proexhibit__productname__title 商品名
               %span.o-proexhibit__required 必須
               = f.text_field :name, class: "o-inputproductname", placeholder:'商品名（必須 40文字まで）'
               = render partial: '/products/product-error-messages', locals: {product: @product, column: "name"}
@@ -54,15 +52,12 @@
               = render partial: '/products/product-error-messages', locals: {product: @product, column: "description"}
 
           .o-proexhibit__explain
-            %label.o-proexhibit__explain__title
-              商品の詳細
+            %label.o-proexhibit__explain__title 商品の詳細
             .o-proexhibit__explain__formbox
               .o-proexhibit__explain__fformgroup
-                %label.o-proexhibit__productname__title
-                  カテゴリー
+                %label.o-proexhibit__productname__title カテゴリー
                 %span.o-proexhibit__required 必須
                 .o-proexhibit__explain__from
-
                   -# 親カテゴリーを呼び出す
                   - @category_parent_array = [""]
                   - Category.where(ancestry: nil).each do |parent|
@@ -72,8 +67,7 @@
                   = render partial: '/products/product-error-messages', locals: {product: @product, column: "category"}
 
               .o-proexhibit__explain__formgroup
-                %label.o-proexhibit__productname__title
-                  商品の状態
+                %label.o-proexhibit__productname__title 商品の状態
                 %span.o-proexhibit__required 必須
                 .o-proexhibit__explain__from
                   %i.o-icon-bottom
@@ -116,7 +110,6 @@
                   %i.fa.fa-chevron-down.icon-bottom
                 = render partial: '/products/product-error-messages', locals: {product: @product, column: "shipping_date"}
 
-
           .o-proexhibit__price
             = f.label '販売価格(300~9,999,999)', class: 'o-proexhibit__price__title'
             %ul.o-proexhibit__price__formbox
@@ -140,8 +133,7 @@
                   販売利益
                 .o-profit-calculation
                   .o-profit__right
-              
-                  
+
           .o-proexhibit__btn
             .o-proexhibit__notes
               %p.o-proexhibit__note
