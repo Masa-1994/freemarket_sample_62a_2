@@ -44,18 +44,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  #   #imageテーブルへ保存
-  #   @product.images.build(
-  #     # image: product_params[:images_attributes]["0"]["image"]
-  #     image: product_params["image"]
-  #   )
-  #   if @product.save
-  #     redirect_to root_path
-  #   else
-  #     render "/products/new"
-  #   end
-    
-  # end
 
   def edit
     @product= Product.find(params[:id])
