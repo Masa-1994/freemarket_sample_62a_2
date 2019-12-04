@@ -5,9 +5,9 @@
 .h-user-body {
   position: relative;
   min-height: 100%;
-  background: #f5f5f5;
+  background: $border-gray;
   font-size: 14px;
-  color: #333;
+  color: $black-letters;
   line-height: 1;
 
 
@@ -17,7 +17,7 @@
     .h-user-contents {
       width: 700px;
       margin: 0 auto;
-      background: #fff;
+      background: $white;
 
       .h-user-title {
         text-align: center;
@@ -28,7 +28,7 @@
       }
 
       .h-user-content {
-        border-top: 1px solid #f5f5f5;
+        border-top: 1px solid $border-gray;
       }
     }
 
@@ -53,11 +53,11 @@
           }
 
           .h-form-require {
-            background: #ea352d;
+            background: $button-red;
             margin: 0 0 0 8px;
             padding: 2px 4px;
             border-radius: 2px;
-            color: #fff;
+            color: $white;
             font-size: 12px;
             vertical-align: top;
             font-weight: normal;
@@ -70,7 +70,7 @@
             margin: 0 0 0 8px;
             padding: 2px 4px;
             border-radius: 2px;
-            color: #fff;
+            color: $white;
             font-size: 12px;
             vertical-align: top;
           }
@@ -81,8 +81,8 @@
             height: 48px;
             padding: 10px 16px 8px;
             border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
+            border: 1px solid $light-gray;
+            background: $white;
             line-height: 1.5;
             font-size: 16px;
             white-space: nowrap;
@@ -104,8 +104,8 @@
             height: 48px;
             padding: 10px 16px 8px;
             border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
+            border: 1px solid $light-gray;
+            background: $white;
             line-height: 1.5;
             font-size: 16px;
             white-space: nowrap;
@@ -149,8 +149,8 @@
               height: 48px;
               padding: 10px 16px 8px;
               border-radius: 4px;
-              border: 1px solid #ccc;
-              background: #fff;
+              border: 1px solid $light-gray;
+              background: $white;
               line-height: 1.5;
               font-size: 16px;
             }
@@ -175,7 +175,7 @@
             height: 48px;
             padding: 0 16px;
             border-radius: 4px;
-            border: 1px solid #ccc;
+            border: 1px solid $light-gray;
             background: 0;
             font-size: 14px;
             line-height: 1.5;
@@ -242,15 +242,15 @@
 
 
         .h-btn-red {
-          background: #ea352d;
-          color: #fff;
+          background: $button-red;
+          color: $white;
           text-decoration: none;
-          color: #fff;
+          color: $white;
         }
 
         .h-btn-red:active {
-          background: gray;
-          color: #fff;
+          background: $gray;
+          color: $white;
         }
 
         .h-text-right {
@@ -259,7 +259,7 @@
         }
 
         .h-text-link {
-          color: #0099e8;
+          color: $link-blue;
           text-decoration: none;
 
           .h-icon-arrow-right {
@@ -268,7 +268,7 @@
         }
 
         .h-text-link:hover {
-          color: #32ADEC;
+          color: $link-blue-hover;
           text-decoration: underline;
         }
 

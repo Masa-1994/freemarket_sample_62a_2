@@ -1,7 +1,7 @@
 .k-login {
-  background-color: #f5f5f5;
+  background-color: $border-gray;
   .k-login-header {
-    background-color: #f5f5f5;
+    background-color: $border-gray;
     width: 100%;
     height: 128px;
     display: flex;
@@ -17,7 +17,7 @@
 
 
 .k-login-panel {
-  background-color: #FFF;
+  background-color: $white;
   width: 456px;
   margin: 0 auto;
   font-size: 14px;
@@ -31,13 +31,13 @@
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ;
       &__new {
       margin-top: 8px;
-      background-color: #0099e8;
+      background-color: $link-blue;
       width: 326px;
       height: 48px;
       order: 1px solid transparent;
       text-align: center;
       line-height: 48px;
-      color: #fff;
+      color: $white;
       position: relative;
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
@@ -46,11 +46,11 @@
     }
   }
   &__form-inner {
-    border-top: 1px solid #eee;
+    border-top: 1px solid $row-gray;
     padding: 40px 64px;
     &__facebook {
       margin: 16px 0 0;
-      color: #fff;
+      color: $white;
       background-color: #385185;
       width: 326px;
       height: 48px;
@@ -70,9 +70,9 @@
     }
     &__google {
       margin: 16px 0 0;
-      color: #333;
-      background-color: #FFF;
-      border: #979797 solid 1px;
+      color: $black-letters;
+      background-color: $white;
+      border: $gray solid 1px;
       width: 326px;
       height: 48px;
       order: 1px solid transparent;
@@ -81,7 +81,7 @@
       position: relative;
       .k-ag {
         text-decoration: none;
-        color: #333;
+        color: $black-letters;
       }
       &__i {
         position: absolute;
@@ -117,7 +117,7 @@
         width: 328px;
         padding: 10px 16px 8px;
         border-radius: 4px;
-        border: 1px solid #ccc;
+        border: 1px solid $light-gray;
         line-height: 1.5;
         font-size: 16px;
       }
@@ -127,13 +127,13 @@
         align-items: center;
         margin: 0 auto;
         margin-top: 8px;
-        background-color: #ea352d;
+        background-color: $button-red;
         width: 326px;
         height: 48px;
         order: 1px solid transparent;
         text-align: center;
         line-height: 48px;
-        color: #fff;
+        color: $white;
       }
       &__img {
         width: 304px;
@@ -147,7 +147,7 @@
 }
 
 .k-password-link-a {
-  color: #0099e8;
+  color: $link-blue;
   text-decoration: none;
 }
 

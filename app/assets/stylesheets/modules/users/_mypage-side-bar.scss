@@ -11,10 +11,10 @@
     .m-mypage-side-bar{
       &-list{
         .m-mypage-list2{
-          border-top: 1px solid #eee;
+          border-top: 1px solid $row-gray;
           .m-mypage-link{
             text-decoration:  none;
-            color: #333;
+            color: $black-letters;
           }
             .m-mypage-list-item{
               box-sizing: border-box;
@@ -22,15 +22,15 @@
               display: block;
               min-height: 48px;
               padding: 16px;
-              background-color: #fff;
-              color: #333;
+              background-color: $white;
+              color: $black-letters;
               font-size: 14px;
               
               .m-mypage.fa.fa-angle-right.icon{
                 position: absolute;
                 top: 10px;
                 right: 16px;
-                color: #ccc;
+                color: $light-gray;
                 font-size: 25px;
               }
             }
@@ -38,9 +38,9 @@
         .m-mypage-list2:hover{
           .m-mypage-list-item{
             opacity: 0.7;
-            background-color: #eee;
+            background-color: $row-gray;
             .m-mypage.fa.fa-angle-right.icon{
-              color: #333;
+              color: $black-letters;
               right: 10px;
               top: 13px;
               font-size: 22px;
