@@ -37,7 +37,7 @@
         text-align: justify;
         width: 300px;
         height: 420px;
-        background: #f5f5f5;
+        background: $border-gray;
         &__picture {
           width: 300px;
           height: 300px;
@@ -61,7 +61,7 @@
         text-align: justify;
         width: 300px;
         height: 420px;
-        background: #f5f5f5;
+        background: $border-gray;
         &__picture {
           width: 300px;
           height: 300px;
@@ -181,14 +181,14 @@
         display: flex;
         &__like {
           border-radius: 40px;
-          border: 1px solid #f5f5f5;
-          background: #f5f5f5;
+          border: 1px solid $border-gray;
+          background: $border-gray;
           padding: 8px 16px;
         }
         &__report {
           border-radius: 40px;
           margin: 0 0 0 16px;
-          background: #f5f5f5;
+          background: $border-gray;
           padding: 8px 16px;
           &__i {
             width: 13px;
@@ -209,7 +209,7 @@
         }
       }
       .k-relief {
-        color: #0099e8;
+        color: $link-blue;
         text-decoration: none;
       }
       .k-relief:hover {
@@ -244,7 +244,7 @@
           max-width: 100%;
           min-height: 104px;
           padding: 10px;
-          border: 1px solid #ccc;
+          border: 1px solid $light-gray;
           font-size: 16px;
           line-height: 1.5;
           border-radius: 0;
@@ -252,7 +252,7 @@
           overflow: auto;
         }
         .k-product-details__comment__post__form__textarea:focus{
-          border: 1px solid #008cff;
+          border: 1px solid $border-blue;
           outline: 0;
         }
         &__button {
@@ -316,7 +316,7 @@
         &__facebook {
           width: 44px;
           height: 44px;
-          color: #fff;
+          color: $white;
           background: #385185;
           font-size: 24px;
           display: flex;
@@ -403,11 +403,11 @@
                 float: left;
               }
               &__love {
-                color: #000;
+                color: $dark-black;
                 float: right;
                 &__i {
                   font-weight: bold;
-                  color: #646464;
+                  color: $gray;
                 }
               }
             }
@@ -423,10 +423,10 @@
     width: 1440px;
     height: 48px;
     position: relative;
-    border-top: 1px solid #eee;
+    border-top: 1px solid $row-gray;
     border-top-width: 1px;
     border-top-style: solid;
-    border-top-color: rgb(238, 238, 238);
+    border-top-color: $row-gray;
     &__ul {
       margin: 0 15%;
       padding: 16px 0;
@@ -460,7 +460,7 @@
   height: 420px;
   td {
     border: 2px solid;
-    border-color: #f5f5f5;
+    border-color: $border-gray;
     vertical-align: middle;
     margin: 8px;
     padding-left: 8px;
@@ -500,7 +500,7 @@
 }
 
 .k-blue-a {
-  color: #0099e8;
+  color: $link-blue;
   text-decoration: none;
 }
 
