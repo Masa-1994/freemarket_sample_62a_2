@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  #商品一覧ページ
   root "products#index"
 
   #商品関連情報
-  resources :products, only: [:index,:new,:create,:edit,:update,:show,:destroy] do
+  resources :products do
     member do
       get :buy              #商品購入
       patch :purchase       #payjp
@@ -13,7 +15,6 @@ Rails.application.routes.draw do
     collection do
       get 'category_children',defaults: { format: 'json' }             #子カテゴリー選択
       get 'category_grandchildren',defaults: { format: 'json' }        #孫カテゴリー選択
-      # get 'get_size', defaults: { format: 'json' }                   #サイズ選択
     end
   end
 
