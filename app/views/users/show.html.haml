@@ -24,6 +24,8 @@
               .m-mypage-number-detail
                 出品数
                 %span.m-mypage-span 19
+
+
         %section.m-mypage-container-news-todo.clearfix
           %ul.m-mypage-tabs
             %li.m-mypage-list3
@@ -31,17 +33,67 @@
                 %a.m-mypage-a お知らせ
             %li.m-mypage-list3
               %h3.m-mypage-h3
-                %a.m-mypage-a やることリスト
+                %a.m-mypage-a2 やることリスト
+
           .m-mypage-tab-contents
-            %ul#my-page-notification
-              %li.m-mypage-item-not-found.bold 現在、やることリストはありません
+            %ul.m-mypage-tab-contents__list
+              %li.m-mypage-tab-contents__list__box 
+                %i.fa.fa-angle-right.fa-2x
+                =image_tag "logo_red.svg",class: "m-mypage-tab-contents__list__box__img"
+                %a.m-mypage-tab-contents__list__box__body
+                  .m-mypage-tab-contents__list__box__body--text 《今なら販売手数料も梱包資材も実質無料！》詳しくはこちらから♪
+                  .m-mypage-tab-contents__list__box__body--time
+                    = fa_icon 'history', class: 'icon'
+                    .m-mypage-tab-contents__list__box__body--time--date 1日前
+
+              %li.m-mypage-tab-contents__list__box 
+                %i.fa.fa-angle-right.fa-2x
+                =image_tag "logo_red.svg",class: "m-mypage-tab-contents__list__box__img"
+                %a.m-mypage-tab-contents__list__box__body
+                  .m-mypage-tab-contents__list__box__body--text 【2,000円分のポイントが必ずもらえる】キャンペーン実施中！詳細はこちら
+                  .m-mypage-tab-contents__list__box__body--time
+                    = fa_icon 'history', class: 'icon'
+                    .m-mypage-tab-contents__list__box__body--time--date 3日前
+
+              %li.m-mypage-tab-contents__list__box 
+                %i.fa.fa-angle-right.fa-2x
+                =image_tag "logo_red.svg",class: "m-mypage-tab-contents__list__box__img"
+                %a.m-mypage-tab-contents__list__box__body
+                  .m-mypage-tab-contents__list__box__body--text 【今日まで！】本などをバーコード出品するだけで最大500ポイントがもらえる！
+                  .m-mypage-tab-contents__list__box__body--time
+                    = fa_icon 'history', class: 'icon'
+                    .m-mypage-tab-contents__list__box__body--time--date 3日前  
+
+              %li.m-mypage-tab-contents__list__box 
+                %i.fa.fa-angle-right.fa-2x
+                =image_tag "logo_red.svg",class: "m-mypage-tab-contents__list__box__img"
+                %a.m-mypage-tab-contents__list__box__body
+                  .m-mypage-tab-contents__list__box__body--text 【12/1まで】販売手数料も梱包資材も実質無料！詳しくはこちら
+                  .m-mypage-tab-contents__list__box__body--time
+                    = fa_icon 'history', class: 'icon'
+                    .m-mypage-tab-contents__list__box__body--time--date 6日前
+
+              %li.m-mypage-tab-contents__list__box 
+                %i.fa.fa-angle-right.fa-2x
+                =image_tag "logo_red.svg",class: "m-mypage-tab-contents__list__box__img"
+                %a.m-mypage-tab-contents__list__box__body
+                  .m-mypage-tab-contents__list__box__body--text 事務局から個別メッセージ「ログイン通知」
+                  .m-mypage-tab-contents__list__box__body--time
+                    = fa_icon 'history', class: 'icon'
+                    .m-mypage-tab-contents__list__box__body--time--date 10日前
+
+              %li.m-mypage-tab-contents__list__box
+                %a.m-mypage-tab-contents__list__box__summary 一覧を見る
+
+
         %section.m-mypage-container__tradings
           %h2.m-mypage-container__tradings-head 購入した商品
           %ul.m-mypage-container__tradings-tabs
             %li.m-mypage-trading-tabs
-              %a.m-mypage-a2 取引中
+              %a.m-mypage-a 取引中
             %li.m-mypage-trading-tabs
               %a.m-mypage-a2 過去の取引
+
           .m-mypage-container__tradings-contents
             %ul#trading-tab-list-now.tab-pane
               %li.m-mypage-item-not-found.bold  取引中の商品がありません

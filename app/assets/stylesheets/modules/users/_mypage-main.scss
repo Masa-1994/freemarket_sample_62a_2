@@ -77,6 +77,18 @@ body{
               font-size: 22px;
               text-align: center;
               .m-mypage-a{
+                background-color: #fff;
+                font-size: 16px;
+                line-height: 72px;
+                display: block;
+                color: $black-letters;
+                text-align: center;
+                position: relative;
+                height: 74px;
+                font-weight:bold;
+                border-top: 2px solid $button-red;
+              }
+              .m-mypage-a2{
                 font-size: 16px;
                 line-height: 72px;
                 display: block;
@@ -96,14 +108,66 @@ body{
           }
         }
         .m-mypage-tab-contents{
-          background-color: $white;
-          width: 700px;
-          height: 236px;
-          .m-mypage-item-not-found.bold{
-            padding: 160px 0 60px;
-            color: $light-gray;
-            text-align: center;
-            font-size: 16px
+          background-repeat: no-repeat;
+          margin: 0;
+          padding: 0;
+          &__list{
+            display: block;
+            &__box{
+              background-color: #fff;
+              border-bottom: 1px solid #eee;
+              display: block;
+              min-height: 80px;
+              padding: 16px;
+              color: #333;
+              .m-mypage-tab-contents__list__box__img{
+                position: relative;
+                float: left;
+                overflow: hidden;
+                width: 48px;
+                height: 48px;
+              }
+              .fa.fa-angle-right.fa-2x{
+                float: right;
+                padding-top: 5px;
+              }
+              &__body{
+                display: block;
+                color: #333;
+                margin: 0 40px 0 68px;
+                &--text{
+                  overflow: hidden;
+                  display: block;
+                  display: -webkit-box;
+                  max-height: 4.4em;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  text-overflow: ellipsis;
+                  line-height: 1.5;
+                  font-size : 14px
+                }
+                &--time{
+                  display: inline-block;
+                  color: #888;
+                  &--date{
+                    vertical-align: middle;
+                    float: right;
+                    padding-left: 7px;
+                    padding-top: 2px;
+                    font-size : 12px;
+                  }
+                }
+              }
+              &__summary{
+                display: block;
+                height: 56px;
+                margin: 0 auto;
+                background: #eee;
+                color: #333;
+                line-height: 56px;
+                text-align: center;
+              }
+            }
           }
         }
       }
@@ -128,6 +192,17 @@ body{
             width: 50%;
             float: left;
             display: inline-block;
+            .m-mypage-a{
+              font-size: 16px;
+              line-height: 72px;
+              display: block;
+              color: $black-letters;
+              text-align: center;
+              background-color: white;
+              height: 74px;
+              font-weight:bold;
+              border-top: 2px solid $button-red;
+            }
             .m-mypage-a2{
               font-size: 16px;
               line-height: 72px;
@@ -136,7 +211,7 @@ body{
               text-align: center;
               background-color: $row-gray;
               height: 74px;
-              font-weight:bold
+              font-weight:bold;
             }
           }
           .m-mypage-a2:hover{
