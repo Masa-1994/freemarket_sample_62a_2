@@ -1,3 +1,8 @@
+## ER図
+https://gyazo.com/4e249f19da146ff4ecae07fcff8762f6
+![メルカリクローンER図](https://user-images.githubusercontent.com/56540490/70218323-23172f80-1786-11ea-9424-62257c857cb3.png)
+
+
 # Mercari DB設計
 ## usersテーブル
 |Column             |Type   |Options                            |
