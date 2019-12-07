@@ -8,9 +8,21 @@ class SignupController < ApplicationController
   def index
   end
 
-  # 会員情報入力 ----------------------------------------------------
+  # 会員情報入力
+  #omniauth_callbacks_controllerからリダイレクトされたアクション
   def step1
-    @user = User.new
+    #sns認証を使った場合は情報利用してインスタンスを作成.
+    #viewで条件分岐などを利用してパスワードフォームを表示させない
+    if session[:password_confirmation]
+      @user = User.new(
+        #omniauth_callbacks_controllerで定義したsession
+        nickname: session[:nickname],
+        email: session[:email],
+        password: session[:password_confirmation]
+      )
+    else
+      @user = User.new
+    end
   end
 
   # 電話番号の確認 --------------------------------------------------
@@ -126,6 +138,11 @@ class SignupController < ApplicationController
       first_name_kana: session[:first_name_kana],                     # 名前（カナ）
       birthday_year: session[:birthday_year],                         # 生年月日
       phone_number: session[:phone_number]                            # 電話番号
+    )
+    SnsCredential.create(
+      uid: session[:uid],
+      provider: session[:provider],
+      user_id: @user.id
     )
     # addressテーブルに値を入れる
     @user.build_address(
